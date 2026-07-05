@@ -1,8 +1,8 @@
 <div align="center">
 
-# Drivers of Daily Pain
+# Drivers of Pain in Daily Life
 
-### Idiographic network analysis of attention, threat, and activity in chronic pain
+### An EMA-Based Idiographic Network Analysis of Attention, Threat, and Activity Engagement in Chronic Pain
 
 Stijn Van Severen<sup>1,*</sup> &middot;
 Ilse Viane<sup>1</sup> &middot;

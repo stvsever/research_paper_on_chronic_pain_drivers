@@ -47,10 +47,11 @@ def body(df, colspec):
     return lines
 
 
-def latex_table(df, caption, label, colspec=None, note=None, size=r"\footnotesize"):
+def latex_table(df, caption, label, colspec=None, note=None, size=r"\footnotesize",
+                placement="!htbp"):
     if colspec is None:
         colspec = "l" + "r" * (len(df.columns) - 1)
-    lines = [r"\begin{table}[H]", r"\raggedright", rf"\caption{{{caption}}}",
+    lines = [rf"\begin{{table}}[{placement}]", r"\raggedright", rf"\caption{{{caption}}}",
              rf"\label{{{label}}}", size, r"\begingroup",
              r"\setlength{\tabcolsep}{4pt}", r"\renewcommand{\arraystretch}{1.08}",
              r"\noindent"]
@@ -61,8 +62,9 @@ def latex_table(df, caption, label, colspec=None, note=None, size=r"\footnotesiz
     return "\n".join(lines) + "\n"
 
 
-def two_panel(pa, pb, caption, label, csa, csb, ta, tb, note, size=r"\footnotesize"):
-    lines = [r"\begin{table}[H]", r"\raggedright", rf"\caption{{{caption}}}",
+def two_panel(pa, pb, caption, label, csa, csb, ta, tb, note, size=r"\footnotesize",
+              placement="!htbp"):
+    lines = [rf"\begin{{table}}[{placement}]", r"\raggedright", rf"\caption{{{caption}}}",
              rf"\label{{{label}}}", size, r"\begingroup",
              r"\setlength{\tabcolsep}{4pt}", r"\renewcommand{\arraystretch}{1.08}",
              rf"\noindent\textit{{Panel A.}} {ta}\par\vspace{{2pt}}"]
@@ -75,8 +77,8 @@ def two_panel(pa, pb, caption, label, csa, csb, ta, tb, note, size=r"\footnotesi
 
 
 def three_panel(pa, pb, pc, caption, label, csa, csb, csc, ta, tb, tc, note,
-                size=r"\footnotesize"):
-    lines = [r"\begin{table}[H]", r"\raggedright", rf"\caption{{{caption}}}",
+                size=r"\footnotesize", placement="!htbp"):
+    lines = [rf"\begin{{table}}[{placement}]", r"\raggedright", rf"\caption{{{caption}}}",
              rf"\label{{{label}}}", size, r"\begingroup",
              r"\setlength{\tabcolsep}{4pt}", r"\renewcommand{\arraystretch}{1.08}",
              rf"\noindent\textit{{Panel A.}} {ta}\par\vspace{{2pt}}"]
