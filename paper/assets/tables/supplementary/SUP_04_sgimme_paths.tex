@@ -1,0 +1,32 @@
+\begin{table}[H]
+\raggedright
+\caption{S-GIMME path prevalence.}
+\label{tab:sup-sgimme}
+\scriptsize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcc@{}}
+\toprule
+Path & Class & Group $n$ & Individual $n$ \\
+\midrule
+ATTEND \textasciitilde{} ATTENDlag & Autoregressive & 66 & 0 \\
+ENGAGE \textasciitilde{} ENGAGElag & Autoregressive & 66 & 0 \\
+ATTEND \textasciitilde{} PIJN & Cross-variable & 66 & 0 \\
+PIJN \textasciitilde{} PIJNlag & Autoregressive & 66 & 0 \\
+THREAT \textasciitilde{} THREATlag & Autoregressive & 66 & 0 \\
+THREAT \textasciitilde{} ATTEND & Cross-variable & 0 & 13 \\
+PIJN \textasciitilde{} THREAT & Cross-variable & 0 & 11 \\
+ATTEND \textasciitilde{} THREAT & Cross-variable & 0 & 9 \\
+ENGAGE \textasciitilde{} PIJN & Cross-variable & 0 & 7 \\
+PIJN \textasciitilde{} ENGAGE & Cross-variable & 0 & 6 \\
+ATTEND \textasciitilde{} PIJNlag & Cross-variable & 0 & 5 \\
+PIJN \textasciitilde{} ATTENDlag & Cross-variable & 0 & 4 \\
+ATTEND \textasciitilde{} ENGAGE & Cross-variable & 0 & 4 \\
+THREAT \textasciitilde{} PIJN & Cross-variable & 0 & 4 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\scriptsize\textit{Note.} Counts are the number of participants for whom S-GIMME retained each path at the group or individual level. Paths place the outcome on the left of the tilde; 'lag' marks lagged (temporal) predictors.}
+\endgroup
+\end{table}

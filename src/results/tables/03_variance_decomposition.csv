@@ -1,0 +1,7 @@
+"variable","label","n_obs","n_persons","icc_person","var_between_person","var_between_day","var_within_day"
+"PIJN","Pain intensity",6262,68,0.485,0.476,0.133,0.391
+"THREAT","Threat value",6222,68,0.636,0.624,0.107,0.269
+"ATTEND","Attention to pain",6203,68,0.547,0.539,0.118,0.343
+"ENGAGE","Goal engagement",6143,68,0.205,0.2,0.073,0.727
+"EFFIC","Goal efficacy",6108,68,0.218,0.214,0.056,0.73
+"VALENCE","Activity valence",6136,68,0.199,0.196,0.048,0.755

@@ -1,0 +1,16 @@
+"coupling","moderator","within_b","within_p","interaction_b","interaction_SE","interaction_p","n_obs","n_pers"
+"Attention -> Pain","Threat",0.044,0.0332,-0.02,0.019,0.2969,5146,67
+"Attention -> Pain","Biomedical",0.045,0.0247,-0.04,0.018,0.0308,5146,67
+"Attention -> Pain","Personality",0.046,0.0307,0.002,0.02,0.9349,4894,64
+"Threat -> Pain","Threat",0.055,0.0075,-0.007,0.019,0.7277,5146,67
+"Threat -> Pain","Biomedical",0.055,0.0066,-0.019,0.018,0.2966,5146,67
+"Threat -> Pain","Personality",0.046,0.0224,0.019,0.018,0.2888,4894,64
+"Pain -> Attention","Threat",0.087,1e-04,-0.03,0.02,0.141,5107,67
+"Pain -> Attention","Biomedical",0.088,1e-04,-0.037,0.02,0.0682,5107,67
+"Pain -> Attention","Personality",0.088,2e-04,-0.016,0.021,0.4518,4857,64
+"Engagement -> Attention","Threat",0.006,0.7023,0.004,0.016,0.7837,5107,67
+"Engagement -> Attention","Biomedical",0.006,0.7066,-0.003,0.016,0.8432,5107,67
+"Engagement -> Attention","Personality",-0.002,0.8769,0.015,0.016,0.3447,4857,64
+"Pain -> Engagement","Threat",-0.026,0.1889,-0.005,0.018,0.7636,5068,67
+"Pain -> Engagement","Biomedical",-0.025,0.2053,-0.018,0.017,0.2865,5068,67
+"Pain -> Engagement","Personality",-0.025,0.2314,-0.003,0.018,0.8826,4823,64

@@ -1,0 +1,728 @@
+\documentclass[11pt,a4paper]{article}
+
+% Viane chronic-pain experience-sampling manuscript.
+% Compile with: tectonic main.tex
+% References use natbib with the bundled apalike BibTeX style, so no biber dependency is required.
+\PassOptionsToPackage{colorlinks=true,linkcolor=NavyBlue,citecolor=NavyBlue,urlcolor=NavyBlue}{hyperref}
+\usepackage[a4paper,margin=2.54cm,top=2.85cm,bottom=2.7cm,headheight=14pt,headsep=16pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xurl}
+\usepackage[american]{babel}
+\usepackage[round]{natbib}
+\usepackage{orcidlink}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\AtBeginDocument{%
+  \providecommand{\doi}[1]{\url{https://doi.org/#1}}%
+  \renewcommand{\doi}[1]{\url{https://doi.org/#1}}%
+}
+\captionsetup{font=small,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=false}
+\setlength{\parindent}{1.5em}
+\setlength{\textfloatsep}{14pt plus 3pt minus 3pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\onehalfspacing
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Drivers of Daily Pain}
+\fancyhead[R]{\footnotesize Van Severen, Viane, De Paepe, \& Crombez}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\footnotesize Drivers of Daily Pain}%
+  \fancyhead[R]{\footnotesize Van Severen, Viane, De Paepe, \& Crombez}%
+  \fancyfoot[C]{\footnotesize\thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 0fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\renewcommand{\topfraction}{0.94}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.82}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\makeatother
+
+\newcommand{\figurenote}[1]{\par\vspace{2pt}\footnotesize\textit{Note.} #1}
+\title{Drivers of Daily Pain: Idiographic Network Analysis of Attention, Threat, and Activity in Chronic Pain}
+\author{Stijn Van Severen*, Ilse Viane, Annick De Paepe, and Geert Crombez}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{fancy}
+\vspace*{\fill}
+\begin{center}
+{\fontsize{18.6}{23.2}\selectfont\textbf{Drivers of Daily Pain: Idiographic Network Analysis\\
+of Attention, Threat, and Activity in Chronic Pain}\par}
+\vspace{1.2em}
+\normalsize
+Stijn Van Severen\textsuperscript{1,*}\,\orcidlink{0009-0003-9181-966X},
+Ilse Viane\textsuperscript{1},
+Annick De Paepe\textsuperscript{1}\,\orcidlink{0000-0002-9366-3692}, and
+Geert Crombez\textsuperscript{1}\,\orcidlink{0000-0002-4744-8561}\\[0.6em]
+\footnotesize
+\textsuperscript{1}\,Department of Experimental-Clinical and Health Psychology,
+Ghent University, Ghent, Belgium\\
+\textsuperscript{*}\,Corresponding author: \href{mailto:stijn.vanseveren@ugent.be}{stijn.vanseveren@ugent.be}
+\end{center}
+\vspace{0.8em}
+
+\begin{abstract}
+\noindent
+According to the cognitive-affective model of the interruptive function of pain, pain
+preferentially recruits attention, the strength of this recruitment is governed by the threat
+value of pain rather than by its intensity alone, and the resulting capture of attention
+competes with the pursuit of goal-directed activity. To examine these dynamics in daily life,
+patients with chronic pain ($N=68$ in the analytic sample) completed a momentary diary eight
+times per day for two weeks ($6{,}262$ completed prompts,
+median $=96$ per person, range $30$ to $122$). Momentary pain, its threat value (the mean of
+pain-related fear and catastrophizing), attention to pain, and goal engagement were modelled as
+within-person temporal networks. Because the series reach the length recommended for individual
+estimation, person-specific networks formed the primary analysis, with a multilevel vector
+autoregressive (mlVAR) model as the partial-pooling benchmark and S-GIMME as a confirmatory
+estimator. The
+benchmark recovered a coherent within-person threat-attention-pain circuit: a higher than usual
+threat value predicted a stronger subsequent focus on pain ($b=.125$, $95\%$ CI $[.078, .172]$),
+higher subsequent pain ($b=.096$, $[.047, .145]$), and pain in turn predicted a stronger
+subsequent focus on pain ($b=.083$, $[.046, .120]$); attention also predicted higher subsequent
+pain ($b=.038$, $[.003, .073]$). These average effects summarized wide heterogeneity: the
+per-person threat-to-pain coupling ranged from $-.24$ to $.86$, was individually reliable in 11
+of 66 participants, and was positive in every participant for whom the regularized individual
+network selected it. Between persons, a baseline threat-value profile (catastrophizing and
+vigilance) predicted more attention to pain
+($r=.39$, $p=.001$) and less goal engagement ($r=-.30$, $p=.01$), and did so more specifically
+than biomedical severity and neuroticism. Attention and threat, rather than pain intensity
+alone, appear to drive the momentary experience of chronic pain, in a way that is directionally
+shared across patients but strongly person-specific in magnitude.\\[0.5em]
+\noindent\textit{Keywords:} chronic pain; attention to pain; threat value of pain; ecological
+momentary assessment; idiographic networks; multilevel vector autoregression
+\end{abstract}
+
+\vspace*{\fill}
+\end{titlepage}
+\setcounter{page}{2}
+\section{Introduction}
+
+\subsection{Pain demands attention}
+Pain interrupts what a person is doing and demands attention, an adaptive property that becomes
+a burden when pain persists \citep{eccleston1999pain}. In the cognitive-affective model of the
+interruptive function of pain, the degree to which pain captures attention and disrupts ongoing
+behaviour is not fixed by pain intensity. It depends on the threat value of the pain, that is,
+on how far the pain is appraised as dangerous or as signalling harm, and on the characteristics
+of the activity that the pain interrupts \citep{eccleston1999pain,eccleston2007worry}.
+Experimental work established that the threat value of somatic information, carried by
+pain-related fear and catastrophic thinking, enhances the attentional interference produced by
+pain \citep{crombez1998catastrophizing,crombez1999fear,crombez2013attention}. Pain-related fear
+has been shown to be more disabling than pain itself \citep{crombez1999fear}, and attention to
+pain is a candidate process linking that threat to daily disability
+\citep{vandamme2010keeping}.
+
+Whether these laboratory processes operate in the everyday life of patients with chronic pain has
+been examined with experience-sampling (diary) methods, which repeatedly sample momentary pain,
+pain-related appraisals, attention to pain, and ongoing activity in the natural environment
+\citep{tennen1996daily,peters2000electronic}. Such methods make it possible to ask whether the
+threat value of pain and the attention it recruits precede momentary pain in daily life, as the
+interruptive-function model predicts, and whether the activity that pain interrupts is displaced
+when pain and attention rise.
+
+\subsection{From group averages to within-person dynamics}
+Most evidence on the determinants of pain and disability is between persons. Such designs show
+whether patients who are more fearful or more vigilant are, on average, more disabled, but they
+cannot answer the within-person prospective question that the interruptive-function model
+implies: when a given patient attends to pain more than usual, or appraises it as more
+threatening than usual, does pain then rise, and does this differ across patients? Between-person
+and within-person associations need not agree in size or even in sign
+\citep{curran2011disaggregation,fisher2018lack}, and processes that unfold within individuals
+over time require models specified at that level
+\citep{molenaar2004manifesto,hamaker2017no,wright2020personalized}. Experience sampling supports
+this aim by repeatedly measuring experience in daily life
+\citep{myingermeys2018experience,shiffman2008ecological,stone1998strategies}.
+
+Network models offer a natural language for such data: constructs are nodes, and temporal or
+contemporaneous associations are edges \citep{borsboom2013network,bringmann2013network}. Two
+estimators are widely used. Multilevel vector autoregression
+\citep[mlVAR;][]{bringmann2013network,epskamp2018gaussian} estimates a group-level network while
+allowing person-specific deviations through random effects. Group iterative multiple model
+estimation, including its subgrouping extension S-GIMME
+\citep{gates2012group,lane2019uncovering}, searches for group, subgroup, and individual paths. A
+practical constraint is series length: stable fully individual networks typically require on the
+order of 100 observations per person, a bar that many brief experience-sampling protocols do not
+clear \citep{beltz2016bridging}. Whether idiographic estimation is defensible therefore depends on
+the density and duration of the sampling protocol at hand.
+
+\subsection{The present study}
+The present study uses a chronic-pain experience-sampling dataset in which patients completed a
+battery of questionnaires and then, using a palmtop computer, answered a short momentary diary
+eight times per day for two weeks, together with a brief morning and evening diary. The analysis
+asks what drives momentary pain in daily life. With a median of 96 completed prompts per person,
+individual estimation is defensible, unlike in briefer protocols such as a companion study in
+which about 44 prompts per person were available. Guided by the interruptive-function model,
+momentary pain is modelled together with its threat value (the appraisal of pain as dangerous,
+indexed by momentary fear and catastrophizing), attention to pain, and goal engagement
+(absorption in the ongoing activity that pain interrupts). Because momentary pain, threat,
+attention, and engagement are mutually entangled and the data are observational, the temporal
+edges are read as within-person predictive associations rather than as causal effects
+\citep{rohrer2018thinking}. Two research questions guide the analysis.
+
+\begin{description}[leftmargin=2.2em,itemsep=2pt]
+  \item[\textbf{RQ1.}] How do momentary threat value, attention to pain, and goal engagement
+  relate temporally to momentary pain at the level of the individual patient, and how much do
+  these person-specific dynamics differ across patients?
+  \item[\textbf{RQ2.}] Are individual differences in the momentary experience of pain accounted
+  for by a baseline threat-value profile (catastrophizing, vigilance), over and above a
+  biomedical profile (pain severity, duration) and a personality profile (neuroticism)?
+\end{description}
+
+\section{Method}
+
+\subsection{Participants and design}
+Patients with chronic musculoskeletal pain, recruited through a university pain clinic, first
+completed a battery of validated questionnaires and then carried a palmtop computer that
+signalled them eight times per day for two weeks to complete a short momentary diary, together
+with a brief morning and evening diary. All 68 participants with momentary diary data met the
+compliance criterion (at least 25 completed prompts) and formed the analytic sample,
+contributing 6,262 completed momentary prompts (median $=96$ per person, mean $=92.1$, range
+$=30$ to $122$). Sixty-five of the 68 participants completed at least 50 prompts, and most
+approached or exceeded the series length usually recommended for individual network estimation.
+Baseline questionnaires were available for 67 participants. Sample characteristics are summarized
+in \Cref{tab:sample}.
+
+\input{../assets/tables/main/MAIN_01_sample_descriptives}
+
+\subsection{Momentary measures}
+At each prompt, participants rated a set of items on seven-point scales (1 = not at all,
+7 = very much). Momentary pain was the pain-intensity item (``I am in pain now''). Attention to
+pain was the item ``I focus on my pain''; a second, reverse-keyed item (``I can ignore the pain
+now'') was combined with it to form a two-item attention composite used in a sensitivity
+analysis. The threat value of pain was the mean of momentary fear (``I am afraid of the pain
+now'') and catastrophizing (``I feel that my pain is becoming too much for me''), the two
+appraisals that, in the interruptive-function model, amplify the attentional capture by pain; the
+two items co-varied within persons ($r=.41$) and across persons ($r=.68$), supporting their
+combination into a single threat node, and a model in which they were entered separately is
+reported as a sensitivity analysis. Goal engagement was ``I am absorbed in this activity'', the
+central goal-directed activity characteristic in the diary. Two further goal-directed
+characteristics, efficacy (``I am good at this'') and valence (``I like doing this''), were used
+in an extended model. Participants also reported their location, whether they were alone, whether
+they had taken pain medication, and whether the prompt disturbed them. The exact item wording and
+the mapping to analytic variables are documented in the study codebook.
+
+\subsection{Baseline measures}
+Baseline questionnaires provided the trait profiles for RQ2. The threat-value profile combined
+the Pain Catastrophizing Scale total \citep{sullivan1995pain} and the Pain Vigilance and
+Awareness Questionnaire total \citep{roelofs2003pvaq}, the two constructs that capture
+threat-related appraisal and monitoring. The biomedical profile combined the West
+Haven-Yale Multidimensional Pain Inventory pain-severity subscale \citep{kerns1985mpi} and pain
+duration. The personality profile was NEO-FFI neuroticism \citep{costa1992neo}, which correlated
+positively with concurrent distress on the Hospital Anxiety and Depression Scale ($r=.73$),
+supporting its scoring. Each profile was standardized.
+
+\subsection{Statistical modelling}
+Analyses were implemented in a reproducible pipeline in which statistical models were written in
+\textsf{R} \citep{rcoreteam2024} and orchestrated from \textsf{Python}, which handled
+preprocessing, tables, and visualization. Each modelling step is a separate script, and all
+reported tables and figures were regenerated from the processed data.
+
+\paragraph{Preprocessing and time structure.} Momentary items were scored and, where relevant,
+reverse keyed before analysis. A prompt was coded as completed when the pain item was answered.
+Temporal predictors were formed from adjacent prompts within the same study day; no lag was
+carried across the overnight gap. Variables were person-standardized before temporal modelling,
+so that lag-1 coefficients can be read as standardized within-person effects. Weak stationarity
+was examined for each person and variable with linear-trend and KPSS tests, which motivated a
+within-person detrended sensitivity model.
+
+\paragraph{Variance decomposition.} Null multilevel models with random person intercepts and
+nested person-day intercepts \citep{bates2015lme4} partitioned each momentary measure into
+between-person, between-day, and within-day variance. The within-day component is the
+moment-to-moment variance available to the lag-1 networks.
+
+\paragraph{Primary idiographic networks for RQ1.} Because the series reach the recommended
+length, fully individual networks were the primary analysis. For each participant a regularized
+network was estimated with graphicalVAR, which selects a sparse lag-1 temporal network and a
+contemporaneous network by extended Bayesian information criterion \citep{epskamp2018tutorial}.
+To quantify the spread and the precision of the pain-driver couplings, an unregularized
+within-person model of the pain equation was also fitted for each participant, regressing
+momentary pain on the previous prompt's pain, threat, attention, and engagement, and its
+driver-to-pain coefficients were retained with 95\% confidence intervals.
+
+\paragraph{Pooled benchmark and confirmatory estimator.} A multilevel VAR model
+\citep{epskamp2018gaussian} on the four core nodes provided the partial-pooling benchmark. It
+estimates a directed lag-1 temporal network, an undirected contemporaneous network of same-prompt
+residual partial correlations, and a between-person network of partial correlations among person
+means. Random effects were orthogonal. The temporal fixed effects give the average within-person
+network, and the random-effect standard deviations index between-person heterogeneity. S-GIMME
+\citep{lane2019uncovering} was run as a confirmatory estimator to check whether a second
+data-driven method recovered the same backbone.
+
+\paragraph{RQ2 analyses.} Two complementary analyses were used. First, each participant's mean
+momentary attention to pain and mean goal engagement were related to the three baseline profiles
+with zero-order and partial (controlling
+mean momentary pain) correlations and a hierarchical regression. Second, a cross-level moderation
+tested whether a baseline profile shapes the \emph{within-person} coupling strength: for each of
+five pre-specified couplings, a multilevel model estimated the coupling as a random slope and its
+interaction with each standardized profile. This one-step test replaces the underpowered
+correlation of two-step per-person coefficients with baseline traits.
+
+\paragraph{Robustness and diagnostics.} The benchmark temporal network was re-estimated after
+within-person detrending, with the two-item attention composite, with a stricter compliance
+threshold (at least 70 prompts), and in a six-node extension adding efficacy and valence.
+Sampling stability was assessed with leave-one-participant-out refitting and a person-level
+cluster bootstrap (200 resamples). Residual diagnostics examined residual shape, residual-fitted
+associations, and within-person lag-1 residual autocorrelation. Daily functioning was examined
+by relating each day's momentary experience to the evening reports of goal success and pain
+interference in multilevel models.
+
+\subsection{Literature-derived hypotheses}
+For RQ1, four hypotheses were specified. H1 predicted positive temporal persistence for pain,
+threat, attention, and engagement. H2 predicted a positive within-person threat-attention-pain
+circuit: a higher than usual threat value and more attention to pain would be followed by higher
+pain, and higher pain would be followed by more attention to pain. H3 predicted that higher pain
+would be followed by less goal engagement, the interruption of goal pursuit. H4 predicted
+substantial person-specific heterogeneity in these couplings. For RQ2, H5 predicted that the
+baseline threat-value profile would explain individual differences in the momentary experience of
+pain better than the biomedical or personality profiles.
+
+\section{Results}
+
+\subsection{Compliance, within-person variance, and feasibility}
+Compliance was good for a two-week eight-per-day protocol, with a modest decline across days
+(\Cref{sfig:design}). The variance decomposition showed that all momentary measures carried
+substantial within-person signal (\Cref{fig:variance}, \Cref{tab:emadesc}). Momentary pain was
+split about evenly between and within persons (ICC $=.49$; within-day share $=.39$), attention to
+pain behaved similarly (ICC $=.55$; within-day $=.34$), the threat value of pain was more
+trait-like (ICC $=.64$; within-day $=.27$), and goal engagement was overwhelmingly momentary
+(ICC $=.21$; within-day $=.73$). The completed-prompt distribution clustered near the recommended
+series length for individual estimation (\Cref{fig:variance}, Panel A), which is the basis for
+foregrounding person-specific networks. Within persons, momentary pain co-varied positively with
+threat ($r=.48$) and attention ($r=.48$), and weakly negatively with engagement, efficacy, and
+valence (all $r$ between $-.08$ and $-.10$; \Cref{fig:variance}, Panel D).
+
+\begin{figure}[htbp]
+\raggedright
+\caption{Series length, within-person variance, and pain-driver correlations.}
+\label{fig:variance}
+\noindent\includegraphics[width=0.96\textwidth]{../assets/figures/main/MAIN_01_variance_feasibility.png}
+\figurenote{Panel A shows the distribution of completed prompts per person, with the median and
+the approximate idiographic series-length threshold marked. Panel B partitions each measure into
+between-person, between-day, and within-day variance. Panel C shows the within-day to
+between-person variance ratio. Panel D shows within-person correlations of each driver with pain.}
+\end{figure}
+
+\input{../assets/tables/main/MAIN_02_ema_descriptives_variance}
+
+\subsection{RQ1: A within-person threat-attention-pain circuit}
+The pooled benchmark provides the average within-person structure against which the
+person-specific estimates are read (\Cref{fig:networks}, \Cref{tab:temporal}). All four states
+were positively self-persistent (pain $b=.344$, threat $b=.297$, attention $b=.188$, engagement
+$b=.149$; all $p<.001$), supporting H1. A coherent threat-attention-pain circuit then emerged,
+supporting H2. The strongest cross-lagged effect was from threat to attention: a higher than
+usual threat value predicted a stronger subsequent focus on pain ($b=.125$, $SE=.024$,
+$p<.001$), the momentary counterpart of the model's claim that threat amplifies the attentional
+capture by pain. Threat also predicted higher subsequent pain ($b=.096$, $SE=.025$, $p<.001$),
+pain predicted a stronger subsequent focus on pain ($b=.083$, $SE=.019$, $p<.001$), closing a
+bidirectional pain-attention loop, and attention predicted higher subsequent pain ($b=.038$,
+$SE=.018$, $p=.039$). The interruption of goal engagement by pain was in the predicted direction,
+reached only a trend in the pooled Wald test ($b=-.048$, $SE=.026$, $p=.065$), but was supported by
+the person-level bootstrap (95\% CI $[-.100, -.003]$; see robustness below), giving qualified
+support to H3. The contemporaneous network was dominated by the
+same-prompt threat-pain, attention-pain, and threat-attention associations (partial $r=.33$,
+$.28$, and $.27$, all $p<.001$), and the between-person network by the trait threat-attention and
+threat-pain associations (\Cref{tab:sup-contemporaneous-between}).
+
+\begin{figure}[htbp]
+\raggedright
+\caption{Pooled benchmark momentary networks from multilevel VAR.}
+\label{fig:networks}
+\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/main/MAIN_02_mlvar_networks.png}
+\figurenote{Panel A shows the directed temporal (lag-1) network within day. Panel B shows the
+contemporaneous network at the same prompt. Blue edges are positive, red edges are negative, edge
+width scales with strength, and faded edges are not statistically significant. The between-person
+network is reported in \Cref{tab:sup-contemporaneous-between}.}
+\end{figure}
+
+\input{../assets/tables/main/MAIN_03_mlvar_temporal_effects}
+
+\subsection{Individual heterogeneity in the pain-driver couplings}
+The average circuit summarizes wide person-to-person variation, supporting H4
+(\Cref{fig:heterogeneity}). The unregularized per-person threat-to-pain coefficient ranged from
+$-.24$ to $.86$ (mean $=.082$), the attention-to-pain coefficient from $-.31$ to $.73$
+(mean $=.068$), and the engagement-to-pain coefficient from $-.53$ to $.31$ (mean $=.001$;
+\Cref{fig:heterogeneity}, Panel A). The per-person means matched the pooled fixed effects, but
+the spread was large and, for engagement, centred on zero with substantial variation in both
+directions. Individual estimates of the threat-to-pain coupling were individually reliable in 11
+of 66 participants, more than expected by chance and all in the positive direction
+(\Cref{fig:heterogeneity}, Panel B). Regularized individual networks were sparse but interpretable:
+the median number of selected temporal edges was one, edge selection was dominated by the
+autoregressions, and among the cross-variable edges the threat-to-pain and attention-to-pain
+edges were the most frequently selected pain-driver edges and were positive whenever selected
+(\Cref{fig:heterogeneity}, Panel C, \Cref{sfig:feasibility}, \Cref{tab:sup-graphicalvar}). The
+between-person heterogeneity was structured rather than uniform, with the largest between-person
+standard deviations on the threat-involving and attention-involving paths
+(\Cref{fig:heterogeneity}, Panel D). S-GIMME, run as a confirmatory estimator, recovered the
+autoregressive backbone and a shared threat-attention-pain cluster (\Cref{sfig:sgimme},
+\Cref{tab:sup-sgimme}). Adding efficacy and valence in a six-node extension left the core
+four-node structure essentially unchanged (\Cref{sfig:extended}, \Cref{tab:sup-extended}).
+
+\begin{figure}[htbp]
+\raggedright
+\caption{Individual heterogeneity in the pain-driver couplings.}
+\label{fig:heterogeneity}
+\noindent\includegraphics[width=0.96\textwidth]{../assets/figures/main/MAIN_03_idiographic_heterogeneity.png}
+\figurenote{Panel A shows the per-person lag-1 coefficients of threat, attention, and engagement
+predicting pain, with the per-person mean and the mlVAR fixed effect marked. Panel B shows each
+participant's unregularized threat-to-pain estimate with its 95\% confidence interval, sorted;
+intervals excluding zero are highlighted. Panel C shows the percentage of participants for whom
+graphicalVAR selected each directed temporal edge. Panel D shows the between-person heterogeneity
+network, in which edge width and colour intensity scale with the standard deviation of the
+per-person lag-1 coefficient for that path.}
+\end{figure}
+
+\subsection{RQ2: Baseline profiles and the momentary experience of pain}
+Between persons, the baseline
+threat-value profile was reliably related to the momentary experience of pain
+(\Cref{fig:link}, \Cref{tab:link}). Participants with a stronger threat-value profile attended
+more to pain (zero-order $r=.39$, $p=.001$; partial $r=.39$, $p=.001$ controlling mean pain) and
+engaged less with their activities ($r=-.30$, $p=.01$; partial $r=-.30$, $p=.01$). Both
+associations were specific to the threat-value profile: the biomedical profile was unrelated to
+attention ($r=.12$, $p=.32$) or engagement ($r=-.05$, $p=.70$), and the personality profile was
+weaker and, for attention, reduced after controlling pain ($r=.34$ to partial $r=.26$). Adding the
+three profiles to mean pain doubled the explained variance in mean attention (from $R^2=.18$ to
+$R^2=.37$) and explained variance in mean engagement that pain alone did not
+($R^2=.00$ to $R^2=.10$). Baseline profiles did not, however, moderate the \emph{within-person}
+coupling strengths: across the five pre-specified couplings and the three profiles, only one of
+15 cross-level interactions reached significance, no more than expected by chance
+(\Cref{fig:link}, Panel D, \Cref{tab:sup-moderation}). Trait vulnerability therefore shaped how
+much, on average, a patient attended to pain and disengaged from activity, but not the
+moment-to-moment coupling strengths, which remained person-specific. H5 was thus supported at the
+level of mean states but not at the level of the within-person dynamics.
+
+\begin{figure}[htbp]
+\raggedright
+\caption{Baseline trait profiles and the momentary experience of pain.}
+\label{fig:link}
+\noindent\includegraphics[width=0.96\textwidth]{../assets/figures/main/MAIN_04_trait_link.png}
+\figurenote{Panel A shows the partial correlation (controlling mean momentary pain) of each
+baseline profile with mean momentary attention to pain and mean goal engagement. Panels B and C
+show the threat-value profile against mean attention to pain and mean goal engagement, with an
+ordinary least squares fit and a 95\% confidence band. Panel D shows the incremental variance in
+each mean state explained by adding the baseline profiles to mean pain. Panel E shows the
+zero-order correlations of the three profiles with the momentary states. Panel F shows the
+cross-level moderation of the within-person couplings by the threat-value profile, with 95\%
+confidence intervals.}
+\end{figure}
+
+\input{../assets/tables/main/MAIN_04_trait_between_person}
+
+\subsection{Robustness}
+The benchmark temporal circuit was stable across sensitivity analyses (\Cref{sfig:robustness},
+\Cref{tab:agreement}). The 16 temporal coefficients reproduced under within-person detrending
+($r=.997$), the two-item attention composite ($r=.987$), a stricter compliance threshold
+($r=1.000$), and the six-node extension, with no sign changes. In leave-one-participant-out
+refits, the circuit edges retained their sign in every refit. Decomposing the threat node into its
+two components in a five-node model confirmed that both catastrophizing and fear independently
+predicted a stronger subsequent focus on pain (catastrophizing $b=.087$, fear $b=.049$) and higher
+subsequent pain, justifying their combination into a single threat node. In the person-level
+bootstrap, all of the circuit edges had 95\% intervals that excluded zero, including the
+pain-to-engagement edge
+($b=-.048$, bootstrap 95\% CI $[-.100, -.003]$) that had only reached a trend in the pooled Wald
+test, so the interruption of goal engagement by pain was supported once sampling variability in
+persons was taken into account (\Cref{tab:robust}). Residual diagnostics showed near-zero
+within-person lag-1 residual autocorrelation. Daily functioning outcomes showed only weak within-person day-level coupling
+with the momentary measures (\Cref{sfig:dysfunction}, \Cref{tab:sup-dysfunction}), consistent with
+the small between-day variance of pain and reinforcing that the action in these data is at the
+moment-to-moment level where the idiographic networks operate. Momentary measures showed a small
+drift across the two study weeks but no change in the temporal structure (\Cref{sfig:context},
+\Cref{tab:sup-context}).
+
+\section{Discussion}
+This study used a chronic-pain experience-sampling dataset with an idiographic lens and asked what
+drives momentary pain. Three findings stand out. First, at the level of the individual
+patient, threat and attention, rather than pain intensity alone, precede momentary pain, in a
+compact threat-attention-pain circuit (threat to attention $b=.125$; threat to pain $b=.096$; pain
+to attention $b=.083$). Second, this shared circuit summarizes wide person-to-person variation:
+the threat-to-pain coupling ranged from clearly negative to strongly positive, and was
+individually reliable in only a minority of patients. Third, a baseline threat-value profile
+predicted how much a patient attended to pain and disengaged from activity ($r=.39$ and $r=-.30$),
+but not the strength of the within-person couplings. Each research question is discussed in turn,
+followed by limitations and future directions.
+
+\subsection{Main findings}
+\subsubsection{A shared but person-specific threat-attention-pain circuit (RQ1)}
+The momentary dynamics matched the cognitive-affective model of the interruptive function of pain
+\citep{eccleston1999pain}. The largest cross-lagged effect ran from threat to attention, the
+momentary expression of the model's central claim that the threat value of pain, and not its
+intensity alone, governs how strongly pain captures attention
+\citep{crombez1998catastrophizing,crombez2013attention}. Threat and attention then preceded higher
+pain, and pain fed back into attention, closing a self-reinforcing loop that is consistent with
+accounts of hypervigilance and worry in chronic pain
+\citep{eccleston2007worry,vandamme2010keeping,crombez2012fear}. The interruption of goal
+engagement by pain was small and reached significance only in the person-level bootstrap, which
+fits the observation that most everyday activities were not pain-related
+and that engagement is largely momentary and context-bound; it is a real but modest effect that
+sits at the edge of what this design can resolve.
+
+The central RQ1 result, however, is that this shared circuit summarizes wide individual variation.
+The threat-to-pain coupling ranged from clearly negative to strongly positive across patients, and
+the average masked that range, a concrete instance of the group-to-individual
+non-generalizability that motivates within-person modelling
+\citep{fisher2018lack,molenaar2004manifesto}. When individual networks were estimated directly,
+they were estimable but sparse: most patients showed a strong pain autoregression and few selected
+cross-variable edges, and the threat-to-pain and attention-to-pain edges, when selected, were
+always positive. The idiographic picture is therefore a directional backbone that is broadly
+shared but whose magnitude, and even presence, is person-specific, which is the answer the
+intermediate series length here makes possible \citep{beltz2016bridging,wright2020personalized}.
+
+\subsubsection{Trait vulnerability and the level of the momentary experience (RQ2)}
+At the level of mean states, the baseline threat-value profile predicted more attention to pain
+and less goal engagement, and did so more specifically than biomedical severity or neuroticism.
+This pattern supports the claim that threat appraisal, not pain severity alone, organizes the
+daily experience of chronic pain.
+
+The within-person dynamics tell a different and complementary story. Baseline profiles did not
+moderate the coupling strengths: how strongly a patient's threat or attention predicted their next
+report of pain was not captured by their questionnaire scores. One reading is that trait
+vulnerability sets the average level of vigilance and disengagement, whereas the moment-to-moment
+coupling is governed by state processes and context that baseline questionnaires do not index.
+This dissociation between level effects, which are trait-linked, and dynamic effects, which are
+person-specific, is itself an argument for measuring the dynamics directly rather than inferring
+them from traits \citep{wright2020personalized}.
+
+\subsection{Limitations}
+Several limitations qualify these conclusions. They concern, in turn, the individual estimates,
+the causal status of the edges, the temporal design, the measurement of the constructs, the
+statistical power for individual differences, and the generality of the sample.
+
+First, although the series length supports individual estimation, the regularized individual
+networks were sparse, so person-specific cross-variable edges should be read as heterogeneity
+around a shared backbone rather than as precise individual parameters. The unregularized
+per-person coefficients preserve the spread but are noisy, and the mlVAR random effects shrink
+person-specific effects toward the group mean; the two representations bracket the true
+heterogeneity rather than pinpoint it.
+
+Second, the analysis is observational. Threat, attention, and pain were not manipulated and can
+influence one another through unmeasured time-varying causes such as mood, medication, or activity
+demands, so the temporal edges are predictive within-person associations, not causal effects
+\citep{rohrer2018thinking}. The self-reinforcing appearance of the pain-attention loop is a
+statistical description, not a demonstration of a vicious cycle.
+
+Third, the temporal resolution is coarse and unequal. Adjacent prompts are separated by variable
+hours, no lag is carried overnight, and momentary reports are retrospective over a short window.
+Some pain processes, such as the reflexive capture of attention by a pain spike, may unfold faster
+than this design can observe, whereas others, such as behavioural disengagement, may require longer
+than a single prompt interval \citep{hamaker2017no}. The weak group-level interruption of
+engagement may reflect this mismatch of time scales as much as a weak process.
+
+Fourth, the momentary constructs are single items or short composites, chosen to keep the diary
+brief. The two-item attention analysis was reassuring and the threat composite combined two
+appraisals, but multi-item momentary measurement would improve reliability and would allow fear and
+catastrophizing to be separated rather than pooled into a single threat node.
+
+Fifth, the RQ2 sample of 67 participants with baseline data is modest for individual-difference
+analyses. The between-person associations were robust, but the cross-level moderation was better
+powered for the average coupling than for its moderation, so the absence of trait moderation should
+be read as a failure to detect rather than as evidence of no moderation.
+
+Sixth, all data come from a single chronic-pain cohort recruited at one pain clinic, with a
+predominance of women and of back and widespread pain. Replication in more diverse samples, and in
+other pain conditions, is needed before the threat-attention-pain circuit is generalized.
+
+\subsection{Future directions}
+Four directions follow from these findings. First, and most directly, single-case experimental and
+N-of-1 designs are needed to move from prediction toward mechanism. Because the threat-to-attention
+and threat-to-pain couplings are the empirical core of the circuit, they are natural intervention
+targets: a within-person experiment that reduces threat appraisals, for example through
+reappraisal or exposure, could test whether a patient's own threat-to-pain coupling weakens, which
+prediction alone cannot establish \citep{wright2020personalized,crombez2012fear}.
+
+Second, the design should be enriched to resolve the time scales at which these processes operate.
+Denser sampling around pain episodes, event-contingent prompts triggered by pain spikes, and the
+addition of passive context sensing would let the fast, reflexive capture of attention be
+separated from slower behavioural disengagement, and would give individual networks the series
+length needed to estimate cross-variable edges with more precision \citep{beltz2016bridging}.
+
+Third, the node set should be expanded and refined. Separating fear from catastrophizing, adding
+additional goal-directed activity characteristics measured in the diary, and including
+mood and medication as covariates would test whether the threat-attention-pain circuit is specific
+or embedded in a broader affective-motivational system, and whether goal engagement interrupts pain
+more clearly when it is measured as sustained absorption rather than momentary state.
+
+Fourth, because trait vulnerability predicted the level but not the dynamics of the momentary
+experience, person-specific coupling estimates may carry information beyond questionnaires. Whether
+these estimates can be used, alongside baseline profiles, to tailor attention- and threat-focused
+interventions is an open and clinically consequential question that larger and longer studies
+should address directly.
+
+\section{Conclusion}
+This idiographic network study of a chronic-pain diary showed that momentary pain, its threat
+value, attention to pain, and goal engagement form a within-person threat-attention-pain circuit in
+which threat and attention, rather than pain intensity alone, precede momentary pain. The circuit
+is shared in direction but strongly person-specific in magnitude. A baseline threat-value profile
+predicted how much a patient attended to pain and disengaged from activity, but it did not predict
+the strength of the within-person couplings.
+The findings support measuring the dynamics of threat and attention directly in daily life, and
+using person-specific estimates, rather than baseline traits alone, as a basis for understanding
+and eventually tailoring psychological pain care.
+
+\clearpage
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\clearpage
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+\subsection*{Supplementary Figures}
+\addcontentsline{toc}{subsection}{Supplementary Figures}
+
+\begin{figure}[H]
+\raggedright
+\caption{Design, compliance, and data quality.}
+\label{sfig:design}
+\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_01_design_compliance.png}
+\figurenote{Panel A shows completed prompts per participant with the median. Panel B shows the
+distribution of completed prompts against the idiographic threshold. Panel C shows compliance
+across the 14 days. Panel D shows prompts per person-day (violins) against the target of eight.
+Panel E shows responses by prompt position within the day. Panel F shows study days covered per
+participant.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Item distributions and per-person stationarity.}
+\label{sfig:stationarity}
+\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_02_stationarity.png}
+\figurenote{Panel A shows the share of individual series flagged by a linear-trend test and by KPSS
+for each core node. Panels B and C show the distributions of per-person linear-trend and KPSS
+p-values. Panel D shows the skewness of the core items. Panel E shows example within-person pain
+series. Panel F shows the mean within-person autocorrelation of each node at lags one to three.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Missingness and imputation benchmark.}
+\label{sfig:missingness}
+\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_03_missingness_imputation.png}
+\figurenote{Panel A shows momentary missingness by measure. Panels B and C show the held-out
+reconstruction error and correlation of univariate and multivariate imputation methods. Panel D
+shows the distribution of consecutive-missing run lengths. Panel E shows response counts by prompt
+position. Panel F shows the accuracy trade-off between reconstruction error and held-out
+correlation.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Per-person graphicalVAR feasibility.}
+\label{sfig:feasibility}
+\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_04_graphicalvar_feasibility.png}
+\figurenote{Panel A shows selected temporal edges per person with the median. Panel B plots
+selected edges against series length. Panel C shows the temporal edge-selection frequency across
+persons. Panel D shows the number of participants with a nonzero key edge.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{S-GIMME shared and individual structure.}
+\label{sfig:sgimme}
+\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_05_sgimme.png}
+\figurenote{Panel A shows the S-GIMME subgroup sizes. Panel B shows the series length available for
+S-GIMME. Panel C lists the most common S-GIMME group-level paths, with counts indicating the
+participants for whom each path was retained at the group level. Panel D lists the most common
+individual-level cross-variable paths.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Extended six-node model.}
+\label{sfig:extended}
+\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_06_extended_network.png}
+\figurenote{Panels A and B show the temporal and contemporaneous networks of the six-node model,
+which adds momentary efficacy and valence. Panel C compares the core four-node temporal
+coefficients between the primary and extended models.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Robustness of the temporal circuit.}
+\label{sfig:robustness}
+\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_07_robustness.png}
+\figurenote{Panel A shows person cluster-bootstrap 95\% intervals for the cross-lagged edges. Panel
+B shows leave-one-participant-out ranges. Panel C compares within-person detrended coefficients with
+the primary coefficients. Panel D shows the edge-weight correlation of each sensitivity refit with
+the primary network.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Daily dysfunction dynamics.}
+\label{sfig:dysfunction}
+\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_08_daily_dysfunction.png}
+\figurenote{Panel A shows within-person day-level models relating the day's momentary experience to
+the evening reports of pain interference and goal success. Panel B shows within-person day-level
+correlations. Panel C shows day pain against evening interference within persons. Panel D shows the
+distributions of the evening outcomes.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Everyday context and time-in-study.}
+\label{sfig:context}
+\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_09_context.png}
+\figurenote{Panel A shows where prompts occurred. Panel B shows the momentary states by location.
+Panel C shows the momentary states when alone versus accompanied. Panel D shows the week-2 minus
+week-1 drift for each measure with 95\% confidence intervals from participant-clustered mixed
+models.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Within-person and between-person correlations.}
+\label{sfig:correlations}
+\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_10_within_between_correlations.png}
+\figurenote{Panel A shows correlations after within-person centring. Panel B shows correlations
+among person means. Panel C shows the between-person minus within-person difference matrix.}
+\end{figure}
+
+\clearpage
+\subsection*{Supplementary Tables}
+\addcontentsline{toc}{subsection}{Supplementary Tables}
+
+\input{../assets/tables/supplementary/SUP_01_contemporaneous_between_edges}
+\input{../assets/tables/supplementary/SUP_02_stationarity}
+\input{../assets/tables/supplementary/SUP_03_imputation_comparison}
+\input{../assets/tables/supplementary/SUP_04_sgimme_paths}
+\input{../assets/tables/supplementary/SUP_05_graphicalvar_selection}
+\input{../assets/tables/supplementary/SUP_06_extended_model}
+\input{../assets/tables/supplementary/SUP_07_perperson_couplings}
+\input{../assets/tables/supplementary/SUP_08_robustness_stability}
+\input{../assets/tables/supplementary/SUP_09_sensitivity_agreement}
+\input{../assets/tables/supplementary/SUP_10_moderation}
+\input{../assets/tables/supplementary/SUP_11_daily_dysfunction}
+\input{../assets/tables/supplementary/SUP_12_context}
+
+\end{document}

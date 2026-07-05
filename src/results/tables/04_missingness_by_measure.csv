@@ -1,0 +1,7 @@
+measure,observed,missing,pct_missing
+Pain,6262,0,0.0
+Threat,6222,40,0.6
+Attention,6203,59,0.9
+Engagement,6143,119,1.9
+Efficacy,6108,154,2.5
+Valence,6136,126,2.0

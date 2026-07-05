@@ -1,0 +1,34 @@
+\begin{table}[H]
+\raggedright
+\caption{Per-person graphicalVAR: temporal edge-selection frequency.}
+\label{tab:sup-graphicalvar}
+\scriptsize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llc@{}}
+\toprule
+Directed edge & Type & \% of persons selecting \\
+\midrule
+Pain intensity $\rightarrow$ Pain intensity & Autoregressive & 45.6 \\
+Threat value $\rightarrow$ Threat value & Autoregressive & 36.8 \\
+Attention to pain $\rightarrow$ Attention to pain & Autoregressive & 27.9 \\
+Attention to pain $\rightarrow$ Threat value & Cross-variable & 14.7 \\
+Pain intensity $\rightarrow$ Attention to pain & Cross-variable & 13.2 \\
+Threat value $\rightarrow$ Pain intensity & Cross-variable & 13.2 \\
+Threat value $\rightarrow$ Attention to pain & Cross-variable & 11.8 \\
+Goal engagement $\rightarrow$ Goal engagement & Autoregressive & 11.8 \\
+Attention to pain $\rightarrow$ Pain intensity & Cross-variable & 11.8 \\
+Pain intensity $\rightarrow$ Threat value & Cross-variable & 8.8 \\
+Goal engagement $\rightarrow$ Attention to pain & Cross-variable & 7.4 \\
+Pain intensity $\rightarrow$ Goal engagement & Cross-variable & 4.4 \\
+Goal engagement $\rightarrow$ Pain intensity & Cross-variable & 4.4 \\
+Goal engagement $\rightarrow$ Threat value & Cross-variable & 4.4 \\
+Threat value $\rightarrow$ Goal engagement & Cross-variable & 2.9 \\
+Attention to pain $\rightarrow$ Goal engagement & Cross-variable & 1.5 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\scriptsize\textit{Note.} Percentage of fitted participants for whom the regularized (EBIC) individual network selected each directed lag-1 edge. Autoregressive edges dominate; cross-variable edges are sparse and heterogeneous.}
+\endgroup
+\end{table}

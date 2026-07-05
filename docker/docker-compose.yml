@@ -1,0 +1,11 @@
+services:
+  paper-analysis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      VENV: /opt/viane-pain-ema-venv
+    volumes:
+      - ../:/workspace
+    working_dir: /workspace
+    command: ["make", "check"]

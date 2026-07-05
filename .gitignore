@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+*.secret
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.xdv
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Project tools
+.tools/
+.cargo-tools/
+tmp/
+
+# R / RStudio local state
+.Rhistory
+.RData
+.Rproj.user/
+Rplots.pdf
+
+# Sensitive clinical data and local study archive - do not commit.
+src/data/raw/
+src/data/processed/
+src/other/
+src/other/legacy_dump_outlook/
+src/other/legacy_dump_outlook/context.md
+
+# Study materials may carry identifiable questionnaire/project content; keep the codebook only.
+src/utils/study_materials/*.pdf
+src/utils/study_materials/*.docx
+src/utils/study_materials/*.doc
+
+# Model objects and per-person model input data may embed participant-level records.
+src/results/models/**/*.rds
+src/results/models/gimme_out/
+
+# Do not publish row-level derived exports that can expose prompt-level participant traces.
+src/results/tables/02_timing_long.csv
+src/results/tables/04_imputation_example.csv
+src/results/networks/05_mlvar_residuals_long.csv
+
+# Do not publish participant-level derived exports with subject/pid rows or per-person estimates.
+src/results/tables/02_compliance_per_person.csv
+src/results/tables/04_stationarity_perperson.csv
+src/results/tables/06_sgimme_inclusion.csv
+src/results/tables/06_sgimme_subgroup_membership.csv
+src/results/tables/07_graphicalvar_individual_summary.csv
+src/results/tables/08_trait_profiles.csv
+src/results/networks/05_mlvar_core_subject_temporal_coefs.csv
+src/results/networks/06_sgimme_individual_path_estimates.csv
+src/results/networks/07_graphicalvar_individual_edges.csv
+src/results/networks/07_perperson_pain_equation.csv
+src/results/networks/07_perperson_var_ols_wide.csv

@@ -1,0 +1,7 @@
+method,type,std_rmse,std_mae,r_heldout
+mice,multivariate,0.86,0.653,0.526
+knn,multivariate,0.964,0.741,0.296
+mean,univariate,1.018,0.804,-0.195
+median,univariate,1.076,0.748,-0.032
+linear,univariate,1.101,0.803,0.242
+locf,univariate,1.273,0.875,0.188

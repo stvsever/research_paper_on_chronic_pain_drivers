@@ -1,0 +1,37 @@
+\begin{table}[H]
+\raggedright
+\caption{Missing data and imputation benchmark.}
+\label{tab:sup-imputation}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textit{Panel A.} Momentary missingness by measure.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc@{}}
+\toprule
+Measure & Observed & Missing & \% missing \\
+\midrule
+Pain & 6262 & 0 & 0.0 \\
+Threat & 6222 & 40 & 0.6 \\
+Attention & 6203 & 59 & 0.9 \\
+Engagement & 6143 & 119 & 1.9 \\
+Efficacy & 6108 & 154 & 2.5 \\
+Valence & 6136 & 126 & 2.0 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel B.} Univariate and multivariate imputation compared by held-out reconstruction.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccc@{}}
+\toprule
+Method & Type & Std. RMSE & Std. MAE & $r$ (held-out) \\
+\midrule
+mice & multivariate & 0.86 & 0.653 & 0.526 \\
+knn & multivariate & 0.964 & 0.741 & 0.296 \\
+mean & univariate & 1.018 & 0.804 & -0.195 \\
+median & univariate & 1.076 & 0.748 & -0.032 \\
+linear & univariate & 1.101 & 0.803 & 0.242 \\
+locf & univariate & 1.273 & 0.875 & 0.188 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} The primary temporal models use available-case (pairwise) handling within each equation. As a benchmark, 20\% of observed values were held out at random and reconstructed. Multivariate methods that borrow strength across concurrent measures recovered momentary fluctuations best, which supports the available-case decision.}
+\endgroup
+\end{table}

@@ -1,0 +1,34 @@
+\begin{table}[H]
+\raggedright
+\caption{Pooled temporal (lag-1) network: multilevel VAR fixed effects (benchmark).}
+\label{tab:temporal}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Effect (lag-1) & Estimate & SE & 95\% CI & $p$ & Random SD \\
+\midrule
+Pain intensity $\rightarrow$ Attention to pain & 0.083 & 0.019 & [0.05, 0.12] & <.001 & 0.07 \\
+Threat value $\rightarrow$ Pain intensity & 0.096 & 0.025 & [0.05, 0.15] & <.001 & 0.118 \\
+Threat value $\rightarrow$ Attention to pain & 0.125 & 0.024 & [0.08, 0.17] & <.001 & 0.101 \\
+Pain intensity $\rightarrow$ Threat value & 0.043 & 0.013 & [0.02, 0.07] & .001 & 0.0 \\
+Attention to pain $\rightarrow$ Threat value & 0.045 & 0.017 & [0.01, 0.08] & .009 & 0.077 \\
+Attention to pain $\rightarrow$ Pain intensity & 0.038 & 0.018 & [0.00, 0.07] & .039 & 0.067 \\
+Pain intensity $\rightarrow$ Goal engagement & -0.048 & 0.026 & [-0.10, 0.00] & .065 & 0.102 \\
+Attention to pain $\rightarrow$ Goal engagement & 0.028 & 0.023 & [-0.02, 0.07] & .219 & 0.042 \\
+Threat value $\rightarrow$ Goal engagement & -0.014 & 0.03 & [-0.07, 0.04] & .631 & 0.106 \\
+Goal engagement $\rightarrow$ Pain intensity & 0.003 & 0.012 & [-0.02, 0.03] & .809 & 0.049 \\
+Goal engagement $\rightarrow$ Threat value & -0.001 & 0.009 & [-0.02, 0.02] & .886 & 0.0 \\
+Goal engagement $\rightarrow$ Attention to pain & 0.0 & 0.012 & [-0.02, 0.02] & .996 & 0.052 \\
+Pain intensity $\rightarrow$ Pain intensity & 0.344 & 0.025 & [0.29, 0.39] & <.001 & 0.15 \\
+Threat value $\rightarrow$ Threat value & 0.297 & 0.027 & [0.24, 0.35] & <.001 & 0.163 \\
+Attention to pain $\rightarrow$ Attention to pain & 0.188 & 0.025 & [0.14, 0.24] & <.001 & 0.149 \\
+Goal engagement $\rightarrow$ Goal engagement & 0.149 & 0.021 & [0.11, 0.19] & <.001 & 0.125 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} Standardized within-person coefficients from the mlVAR benchmark. Cross-lagged effects are listed above autoregressive effects. Random SD is the between-person standard deviation of the effect, the pooled-model index of heterogeneity.}
+\endgroup
+\end{table}

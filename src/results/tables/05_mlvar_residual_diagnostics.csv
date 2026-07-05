@@ -1,0 +1,5 @@
+"node","resid_skewness","resid_kurtosis","mean_resid_acf1","resid_fitted_cor"
+"Pain",-0.183,1.402,-0.04,0
+"Threat",1.251,4.282,-0.017,0
+"Attention",0.437,1.061,-0.007,0
+"Engagement",-0.245,-0.333,-0.008,0

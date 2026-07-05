@@ -1,0 +1,6 @@
+location_lab,n_prompts,mean_pain,mean_attend,mean_fear,mean_engage,pct
+Outside/underway,3172,4.58,2.97,1.92,3.85,50.73
+Home,1612,4.43,2.76,1.81,4.14,25.78
+Work,652,4.48,2.95,1.93,4.14,10.43
+Other,636,4.56,2.75,1.8,4.24,10.17
+Hospital,181,4.46,3.03,1.8,4.01,2.89
