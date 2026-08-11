@@ -1,0 +1,9 @@
+state,flow_variable,n,R2_accounts,R2_accounts_plus_flow,delta_R2
+Attention to pain,Flow proneness (strict),64,0.196,0.229,0.033
+Attention to pain,Mean flow experience,64,0.196,0.208,0.012
+Pain intensity,Flow proneness (strict),64,0.362,0.443,0.081
+Pain intensity,Mean flow experience,64,0.362,0.363,0.001
+Pain interference,Flow proneness (strict),64,0.355,0.388,0.033
+Pain interference,Mean flow experience,64,0.355,0.359,0.004
+Threat value,Flow proneness (strict),64,0.408,0.417,0.009
+Threat value,Mean flow experience,64,0.408,0.422,0.014

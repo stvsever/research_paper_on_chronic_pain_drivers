@@ -1,0 +1,6 @@
+"variable","role","n","mean","sd","icc_person","within_share"
+"CHALLENGE","Condition",6165,3.28,1.98,0.242,0.758
+"EFFIC","Condition",6108,4.79,1.55,0.226,0.774
+"ENGAGE","Experience",6143,4,1.9,0.213,0.787
+"VALENCE","Experience",6136,4.9,1.58,0.207,0.793
+"FLOWEXP","Experience",6035,4.45,1.51,0.201,0.799

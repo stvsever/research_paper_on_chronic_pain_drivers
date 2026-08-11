@@ -171,7 +171,7 @@ within-person couplings.
         ├── study_materials/
         └── pipeline/
             ├── full/run_all.py
-            └── separate/01..12
+            └── separate/01..13
 ```
 
 ---
@@ -189,7 +189,7 @@ Resume from a stage, or run one stage:
 
 ```bash
 make run-from STAGE=07
-make run-stage STAGE=12
+make run-stage STAGE=13
 ```
 
 ### Manuscript

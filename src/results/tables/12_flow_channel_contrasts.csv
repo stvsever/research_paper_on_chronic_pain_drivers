@@ -1,0 +1,17 @@
+"model","outcome","term","estimate","SE","df","t","p","n_obs"
+"channel (vs apathy)","PIJN","(Intercept)",4.612,0.132,71.8,34.84,1.035e-46,5976
+"channel (vs apathy)","PIJN","chanFlow",-0.179,0.039,5912.2,-4.58,4.748e-06,5976
+"channel (vs apathy)","PIJN","chanRelaxation",-0.21,0.04,5915.9,-5.24,1.68e-07,5976
+"channel (vs apathy)","PIJN","chanAnxiety",0.028,0.044,5912.4,0.64,0.5217,5976
+"channel (vs apathy)","ATTEND","(Intercept)",3.055,0.149,70.6,20.47,2.098e-31,5948
+"channel (vs apathy)","ATTEND","chanFlow",-0.169,0.039,5882.5,-4.31,1.631e-05,5948
+"channel (vs apathy)","ATTEND","chanRelaxation",-0.28,0.04,5885.4,-6.96,3.728e-12,5948
+"channel (vs apathy)","ATTEND","chanAnxiety",-0.006,0.044,5882.7,-0.14,0.888,5948
+"channel (vs apathy)","PIJN_AFF","(Intercept)",3.929,0.148,72.8,26.46,4.535e-39,5938
+"channel (vs apathy)","PIJN_AFF","chanFlow",-0.173,0.047,5875.5,-3.65,0.0002625,5938
+"channel (vs apathy)","PIJN_AFF","chanRelaxation",-0.272,0.049,5879.7,-5.56,2.745e-08,5938
+"channel (vs apathy)","PIJN_AFF","chanAnxiety",0.131,0.054,5875.9,2.44,0.01473,5938
+"channel (vs apathy)","THREAT","(Intercept)",2.298,0.136,69.6,16.92,2.355e-26,5954
+"channel (vs apathy)","THREAT","chanFlow",-0.07,0.03,5886.9,-2.36,0.01822,5954
+"channel (vs apathy)","THREAT","chanRelaxation",-0.167,0.031,5889,-5.47,4.749e-08,5954
+"channel (vs apathy)","THREAT","chanAnxiety",0.043,0.034,5887.1,1.28,0.2007,5954

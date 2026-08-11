@@ -52,10 +52,13 @@ STEPS = [
     ("10", "R",  "10_robustness/06_compliance_threshold.R", []),
     ("10", "R",  "10_robustness/07_threat_decomposition.R", []),
     ("11", "R",  "11_dysfunction_dynamics/01_daily_dysfunction.R", []),
-    ("12", "py", "12_figures_tables/01_main_figures.py", []),
-    ("12", "py", "12_figures_tables/02_supp_figures.py", []),
-    ("12", "py", "12_figures_tables/03_tables.py", []),
-    ("12", "py", "12_figures_tables/04_latex_tables.py", []),
+    ("12", "R",  "12_flow_states/01_flow_construct.R", []),
+    ("12", "R",  "12_flow_states/02_flow_pain_models.R", []),
+    ("12", "py", "12_flow_states/03_flow_trait_link.py", []),
+    ("13", "py", "13_figures_tables/01_main_figures.py", []),
+    ("13", "py", "13_figures_tables/02_supp_figures.py", []),
+    ("13", "py", "13_figures_tables/03_tables.py", []),
+    ("13", "py", "13_figures_tables/04_latex_tables.py", []),
 ]
 
 

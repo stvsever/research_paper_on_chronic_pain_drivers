@@ -1,0 +1,8 @@
+"direction","outcome","random_SD"
+"flow(t-1) -> outcome(t)","PIJN",0.044
+"flow(t-1) -> outcome(t)","ATTEND",0.065
+"flow(t-1) -> outcome(t)","PIJN_AFF",0.038
+"flow(t-1) -> outcome(t)","THREAT",0.049
+"predictor(t-1) -> flow(t)","PIJN",0.086
+"predictor(t-1) -> flow(t)","ATTEND",0.063
+"predictor(t-1) -> flow(t)","THREAT",0.089

@@ -1,0 +1,32 @@
+### Flow and the momentary experience of pain
+
+| model | outcome | term | estimate | SE | df | t | p | n_obs |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| base | PIJN | FLOWEXP_w | -0.096 | 0.02 | 105.7 | -4.83 | 4.659e-06 | 5976 |
+| base | PIJN | balance_w | -0.028 | 0.012 | 5927.1 | -2.27 | 0.02297 | 5976 |
+| base | PIJN | elevation_w | 0.012 | 0.016 | 5196.3 | 0.74 | 0.4622 | 5976 |
+| activity-adjusted | PIJN | FLOWEXP_w | -0.094 | 0.02 | 106.1 | -4.69 | 8.321e-06 | 5969 |
+| activity-adjusted | PIJN | balance_w | -0.025 | 0.012 | 5918.3 | -2.03 | 0.04256 | 5969 |
+| activity-adjusted | PIJN | elevation_w | -0.003 | 0.018 | 5419.4 | -0.14 | 0.8852 | 5969 |
+| activity-adjusted | PIJN | ACTIEF_w | 0.019 | 0.01 | 5538.0 | 1.98 | 0.04831 | 5969 |
+| base | ATTEND | FLOWEXP_w | -0.077 | 0.019 | 88.1 | -4.13 | 8.194e-05 | 5948 |
+| base | ATTEND | balance_w | 0.006 | 0.012 | 5890.6 | 0.5 | 0.6137 | 5948 |
+| base | ATTEND | elevation_w | 0.012 | 0.016 | 4734.2 | 0.74 | 0.4582 | 5948 |
+| activity-adjusted | ATTEND | FLOWEXP_w | -0.074 | 0.019 | 88.7 | -3.95 | 0.0001559 | 5941 |
+| activity-adjusted | ATTEND | balance_w | 0.01 | 0.012 | 5880.5 | 0.84 | 0.4026 | 5941 |
+| activity-adjusted | ATTEND | elevation_w | -0.009 | 0.018 | 5055.8 | -0.49 | 0.6275 | 5941 |
+| activity-adjusted | ATTEND | ACTIEF_w | 0.027 | 0.01 | 5251.4 | 2.72 | 0.006538 | 5941 |
+| base | PIJN_AFF | FLOWEXP_w | -0.143 | 0.025 | 88.8 | -5.78 | 1.113e-07 | 5938 |
+| base | PIJN_AFF | balance_w | -0.041 | 0.015 | 5894.2 | -2.78 | 0.005466 | 5938 |
+| base | PIJN_AFF | elevation_w | 0.057 | 0.02 | 5235.1 | 2.89 | 0.003855 | 5938 |
+| activity-adjusted | PIJN_AFF | FLOWEXP_w | -0.139 | 0.025 | 89.5 | -5.56 | 2.82e-07 | 5931 |
+| activity-adjusted | PIJN_AFF | balance_w | -0.034 | 0.015 | 5886.1 | -2.31 | 0.02096 | 5931 |
+| activity-adjusted | PIJN_AFF | elevation_w | 0.015 | 0.022 | 5464.2 | 0.68 | 0.4962 | 5931 |
+| activity-adjusted | PIJN_AFF | ACTIEF_w | 0.059 | 0.012 | 5568.5 | 4.96 | 7.397e-07 | 5931 |
+| base | THREAT | FLOWEXP_w | -0.08 | 0.014 | 94.1 | -5.82 | 8.177e-08 | 5954 |
+| base | THREAT | balance_w | -0.002 | 0.009 | 5889.1 | -0.18 | 0.8575 | 5954 |
+| base | THREAT | elevation_w | 0.037 | 0.012 | 4770.4 | 2.99 | 0.002795 | 5954 |
+| activity-adjusted | THREAT | FLOWEXP_w | -0.079 | 0.014 | 95.5 | -5.7 | 1.331e-07 | 5947 |
+| activity-adjusted | THREAT | balance_w | 0.001 | 0.009 | 5879.2 | 0.09 | 0.9315 | 5947 |
+| activity-adjusted | THREAT | elevation_w | 0.022 | 0.013 | 5100.1 | 1.67 | 0.09564 | 5947 |
+| activity-adjusted | THREAT | ACTIEF_w | 0.021 | 0.007 | 5285.6 | 2.87 | 0.004141 | 5947 |

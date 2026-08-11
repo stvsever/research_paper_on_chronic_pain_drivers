@@ -1,0 +1,16 @@
+"model","term","estimate","SE","df","t","p"
+"balance + elevation","(Intercept)",1.083,0.376,62,2.88,0.005401
+"balance + elevation","balance_w",0.006,0.02,71.6,0.28,0.7824
+"balance + elevation","elevation_w",0.744,0.024,63.9,31.63,9.619e-41
+"balance + elevation","balance_b",-0.111,0.049,64.3,-2.24,0.02844
+"balance + elevation","elevation_b",0.796,0.085,61.3,9.33,2.214e-13
+"challenge x skill","(Intercept)",1.054,0.387,64.5,2.72,0.008332
+"challenge x skill","CHALLENGE_w",0.296,0.018,69.7,16.13,3.122e-25
+"challenge x skill","EFFIC_w",0.486,0.02,68.9,24.24,1.964e-35
+"challenge x skill","CHALLENGE_b",0.332,0.056,64.9,5.89,1.529e-07
+"challenge x skill","EFFIC_b",0.484,0.075,64.6,6.47,1.544e-08
+"challenge x skill","CHALLENGE_w:EFFIC_w",-0.007,0.005,5716,-1.43,0.1522
+"quadrant (vs apathy)","(Intercept)",3.338,0.083,81,40.2,2.752e-55
+"quadrant (vs apathy)","chan_DFlow",2.118,0.04,5924.4,53.12,0
+"quadrant (vs apathy)","chan_DRelaxation",1.255,0.041,5933.3,30.58,7.794e-191
+"quadrant (vs apathy)","chan_DAnxiety",0.951,0.045,5925,20.99,2.241e-94

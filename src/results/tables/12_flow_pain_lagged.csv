@@ -1,0 +1,22 @@
+"model","outcome","term","estimate","SE","df","t","p","n_obs"
+"flow(t-1) -> outcome(t)","PIJN","(Intercept)",0.063,0.013,5021.9,5.06,4.417e-07,5065
+"flow(t-1) -> outcome(t)","PIJN","FLOWEXP_lag",-0.002,0.014,65.8,-0.14,0.8878,5065
+"flow(t-1) -> outcome(t)","PIJN","PIJN_lag",0.395,0.013,4975.1,31.05,1.265e-193,5065
+"flow(t-1) -> outcome(t)","ATTEND","(Intercept)",0.009,0.013,4968.8,0.66,0.5105,5016
+"flow(t-1) -> outcome(t)","ATTEND","FLOWEXP_lag",-0.012,0.016,63.5,-0.76,0.4507,5016
+"flow(t-1) -> outcome(t)","ATTEND","ATTEND_lag",0.266,0.013,4995.3,19.84,2.379e-84,5016
+"flow(t-1) -> outcome(t)","PIJN_AFF","(Intercept)",0.037,0.013,4960.1,2.89,0.003856,4999
+"flow(t-1) -> outcome(t)","PIJN_AFF","FLOWEXP_lag",0.001,0.014,68.4,0.1,0.9211,4999
+"flow(t-1) -> outcome(t)","PIJN_AFF","PIJN_AFF_lag",0.352,0.013,4921.5,26.89,1.131e-148,4999
+"flow(t-1) -> outcome(t)","THREAT","(Intercept)",0.025,0.013,4979.3,1.91,0.05615,5025
+"flow(t-1) -> outcome(t)","THREAT","FLOWEXP_lag",-0.011,0.014,62.7,-0.78,0.4387,5025
+"flow(t-1) -> outcome(t)","THREAT","THREAT_lag",0.321,0.013,5007.7,24.15,5.133e-122,5025
+"predictor(t-1) -> flow(t)","PIJN","(Intercept)",0.016,0.014,5021.8,1.19,0.2348,5065
+"predictor(t-1) -> flow(t)","PIJN","PIJN_lag",-0.019,0.018,66,-1.09,0.2796,5065
+"predictor(t-1) -> flow(t)","PIJN","FLOWEXP_lag",0.128,0.014,5034.3,9.14,8.688e-20,5065
+"predictor(t-1) -> flow(t)","ATTEND","(Intercept)",0.017,0.014,3221.6,1.22,0.2242,5039
+"predictor(t-1) -> flow(t)","ATTEND","ATTEND_lag",-0.001,0.016,60.6,-0.08,0.9368,5039
+"predictor(t-1) -> flow(t)","ATTEND","FLOWEXP_lag",0.131,0.014,5015.2,9.38,9.545e-21,5039
+"predictor(t-1) -> flow(t)","THREAT","(Intercept)",0.016,0.014,3138.7,1.15,0.2483,5044
+"predictor(t-1) -> flow(t)","THREAT","THREAT_lag",-0.017,0.018,66.8,-0.96,0.3423,5044
+"predictor(t-1) -> flow(t)","THREAT","FLOWEXP_lag",0.129,0.014,5039,9.28,2.545e-20,5044

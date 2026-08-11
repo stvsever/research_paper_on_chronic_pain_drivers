@@ -1,4 +1,4 @@
-"""Stage 12.4 - Generate LaTeX (booktabs) tables for the manuscript.
+"""Stage 13.4 - Generate LaTeX (booktabs) tables for the manuscript.
 
 The manuscript inputs these files directly, so table layout rules live here: titles above the
 table, notes below, all tables left-aligned. Main and supplementary tables are regenerated
@@ -433,9 +433,100 @@ def sup_12():
         "across the two-week protocol."))
 
 
+# ---- MAIN_05 flow (stage 12) -------------------------------------------------
+def main_05():
+    """Flow and the momentary experience of pain.
+
+    Panel A gives the condition-to-experience model that tests whether the flow model holds
+    within persons; Panel B gives the contemporaneous and lag-1 associations of the flow
+    experience with pain. Both are produced whether or not the section is used, so the
+    manuscript can input them without rerunning anything.
+    """
+    cond = pd.read_csv(T / "12_flow_condition_experience_fixed.csv")
+    con = pd.read_csv(T / "12_flow_pain_contemporaneous.csv")
+    lag = pd.read_csv(T / "12_flow_pain_lagged.csv")
+    rnd = pd.read_csv(T / "12_flow_condition_experience_random.csv")
+
+    TERM = {"balance_w": "Balance (within)", "elevation_w": "Elevation (within)",
+            "balance_b": "Balance (between)", "elevation_b": "Elevation (between)"}
+    ca = cond[(cond["model"] == "balance + elevation") & cond["term"].isin(TERM)].copy()
+    rsd = rnd[rnd["model"] == "balance + elevation"].set_index("term")["random_SD"]
+    pa = pd.DataFrame({
+        "Term": [TERM[t] for t in ca["term"]],
+        "$b$": [f"{v:.3f}" for v in ca["estimate"]],
+        "SE": [f"{v:.3f}" for v in ca["SE"]],
+        "$p$": [fmt_p(v) for v in ca["p"]],
+        "Random SD": [f"{rsd[t]:.3f}" if t in rsd.index else "" for t in ca["term"]]})
+
+    OUT = {"PIJN": "Pain intensity", "PIJN_AFF": "Pain interference",
+           "ATTEND": "Attention to pain", "THREAT": "Threat value"}
+    cb = con[(con["model"] == "activity-adjusted") & (con["term"] == "FLOWEXP_w")]
+    cb = cb.set_index("outcome")
+    lf = lag[(lag["model"] == "flow(t-1) -> outcome(t)") &
+             (lag["term"] == "FLOWEXP_lag")].set_index("outcome")
+    pb = pd.DataFrame({
+        "Outcome": [OUT[o] for o in OUT],
+        "$b$ (same beep)": [f"{cb.loc[o, 'estimate']:.3f}" for o in OUT],
+        "SE": [f"{cb.loc[o, 'SE']:.3f}" for o in OUT],
+        "$p$": [fmt_p(cb.loc[o, "p"]) for o in OUT],
+        "$b$ (lag 1)": [f"{lf.loc[o, 'estimate']:.3f}" for o in OUT],
+        "SE ": [f"{lf.loc[o, 'SE']:.3f}" for o in OUT],
+        "$p$ ": [fmt_p(lf.loc[o, "p"]) for o in OUT]})
+
+    write("MAIN_05_flow_pain_models.tex", two_panel(
+        pa, pb, "Flow states and the momentary experience of pain.", "tab:flow",
+        "lcccc", "lcccccc",
+        "Challenge-skill condition predicting the flow experience (multilevel, random "
+        "slopes).",
+        "Flow experience and the momentary experience of pain, same beep and lag 1.",
+        "The flow experience is the mean of absorption and enjoyment; balance is "
+        "$-|$challenge $-$ skill$|$ and elevation is (challenge + skill)/2, both "
+        "person-mean centered. Panel B models are adjusted for momentary physical "
+        "activation; lag-1 models control the outcome's own lag and are estimated on "
+        "person-standardized scores within day."))
+
+
+# ---- SUP_13 flow operationalization ------------------------------------------
+def sup_13():
+    ch = pd.read_csv(T / "12_flow_channel_profiles.csv")
+    pv = pd.read_csv(T / "12_flow_prevalence_by_rule.csv")
+    sn = pd.read_csv(T / "12_flow_standardization_sensitivity.csv")
+
+    ca = ch[ch["rule"] == "A_abs5"][["channel", "n", "share", "mean_pijn",
+                                     "mean_pijn_aff", "mean_attend", "mean_threat",
+                                     "mean_flowexp"]].copy()
+    ca["share"] = (ca["share"] * 100).round(1)
+    ca.columns = ["Channel", "$n$", "\\%", "Pain", "Interference", "Attention", "Threat",
+                  "Flow experience"]
+
+    pb = pv[["rule_label", "moments_condition", "moments_gated", "person_median",
+             "n_persons_zero"]].copy()
+    for c in ["moments_condition", "moments_gated", "person_median"]:
+        pb[c] = (pb[c] * 100).round(1)
+    pb.columns = ["Standardization rule", "Condition met (\\%)", "Gated flow (\\%)",
+                  "Median person (\\%)", "Persons at zero"]
+
+    pc = sn[["metric_label", "term", "estimate", "SE", "p"]].copy()
+    pc["p"] = pc["p"].map(fmt_p)
+    pc.columns = ["Metric", "Term", "$b$", "SE", "$p$"]
+
+    write("SUP_13_flow_operationalization.tex", three_panel(
+        ca, pb, pc, "Flow operationalization: channels, prevalence, and standardization "
+                    "sensitivity.", "tab:sup-flow",
+        "lcccccc", "lcccc", "llccc",
+        "Momentary profile of the four channels (absolute rule, both items $\\geq$ 5).",
+        "Prevalence of flow moments under each standardization rule.",
+        "Condition terms predicting the flow experience on each metric.",
+        "The gated criterion requires both the challenge-skill condition and a high flow "
+        "experience. Within-person standardization forces a relative distribution and "
+        "therefore assigns above-average moments to every participant, which is why the "
+        "absolute rules are reported alongside it."))
+
+
 def main():
-    for fn in [main_01, main_02, main_03, main_04, sup_01, sup_02, sup_03, sup_04,
-               sup_05, sup_06, sup_07, sup_08, sup_09, sup_10, sup_11, sup_12]:
+    for fn in [main_01, main_02, main_03, main_04, main_05, sup_01, sup_02, sup_03,
+               sup_04, sup_05, sup_06, sup_07, sup_08, sup_09, sup_10, sup_11, sup_12,
+               sup_13]:
         try:
             fn()
         except Exception as e:

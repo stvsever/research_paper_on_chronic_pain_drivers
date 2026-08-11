@@ -1,0 +1,11 @@
+"model","term","random_SD"
+"balance + elevation","(Intercept)",0.43
+"balance + elevation","balance_w",0.131
+"balance + elevation","elevation_w",0.164
+"balance + elevation","residual",0.999
+"challenge x skill","(Intercept)",0.445
+"challenge x skill","CHALLENGE_w",0.134
+"challenge x skill","EFFIC_w",0.14
+"challenge x skill","residual",0.961
+"quadrant (vs apathy)","(Intercept)",0.642
+"quadrant (vs apathy)","residual",1.114

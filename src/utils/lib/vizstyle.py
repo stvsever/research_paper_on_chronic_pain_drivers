@@ -28,6 +28,8 @@ NODE_COLORS = {
     "ENGAGE": "#3a9e6e",     # goal engagement       - green
     "EFFIC": "#d98a3d",      # goal efficacy         - amber
     "VALENCE": "#8a6d3b",    # activity valence      - brown
+    "CHALLENGE": "#7a5ea8",  # activity challenge    - muted violet
+    "FLOWEXP": "#4f8f5a",    # flow experience       - deep green
 }
 
 # Pretty labels for nodes (English, concise). Single-line so they fit inside network nodes;
@@ -39,6 +41,8 @@ NODE_LABELS = {
     "ENGAGE": "Engage",
     "EFFIC": "Efficacy",
     "VALENCE": "Valence",
+    "CHALLENGE": "Challenge",
+    "FLOWEXP": "Flow exp.",
 }
 
 # Longer descriptive labels for bar/axis contexts.
@@ -49,6 +53,8 @@ NODE_LABELS_LONG = {
     "ENGAGE": "Goal engagement",
     "EFFIC": "Goal efficacy",
     "VALENCE": "Activity valence",
+    "CHALLENGE": "Activity challenge",
+    "FLOWEXP": "Flow experience",
 }
 
 # Diverging edge colors (positive = blue, negative = red), colorblind-safe.
@@ -64,6 +70,26 @@ TRAIT_COLORS = {
     "Biomedical": "#2a7f9e",
     "Personality": "#8a6d3b",
 }
+
+# Flow construct (stage 12). The flow experience is a composite of engagement and valence,
+# so it takes a hue between the green of engagement and the brown of valence; the
+# challenge-skill condition terms are kept visually distinct from the experience.
+FLOW_COLORS = {
+    "FLOWEXP": "#4f8f5a",       # flow experience (absorption + enjoyment)
+    "CHALLENGE": "#7a5ea8",     # challenge appraisal
+    "balance": "#6b8fae",       # challenge-skill balance
+    "elevation": "#c98a2b",     # challenge-skill elevation
+}
+
+# The four Massimini and Carli channels. Flow is the accent; the other three are
+# deliberately quieter so the flow cell reads first.
+CHANNEL_COLORS = {
+    "Flow": "#3a9e6e",
+    "Relaxation": "#6b8fae",
+    "Anxiety": "#c1483f",
+    "Apathy": "#9aa5b1",
+}
+CHANNEL_ORDER = ["Flow", "Relaxation", "Anxiety", "Apathy"]
 
 
 def apply_style() -> None:

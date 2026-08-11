@@ -1,0 +1,6 @@
+variable,n_negative,n_nonnegative,mean_negative,mean_nonnegative,cohens_d,p
+Threat,45,17,0.059,-0.271,0.398,0.1506
+Biomedical,45,17,-0.071,0.272,-0.46,0.1312
+Personality,42,17,-0.002,-0.133,0.129,0.6539
+Flow proneness (strict),45,17,0.161,0.293,-0.739,0.0268
+Mean pain,45,17,4.313,5.073,-0.69,0.0287

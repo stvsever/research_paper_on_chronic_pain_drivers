@@ -18,7 +18,8 @@ order (Python stages in-process, R stages through `Rscript`). Use `--from` to re
 | 09 | Link between person-specific couplings and baseline accounts (RQ2). |
 | 10 | Robustness battery (detrended, attention composite, compliance, extended, LOO, bootstrap). |
 | 11 | Daily dysfunction dynamics (evening functioning outcomes). |
-| 12 | Figures and tables for the manuscript. |
+| 12 | Flow states: the challenge-skill condition, the flow experience, and their relation to pain. |
+| 13 | Figures and tables for the manuscript. |
 
 R does the statistical models; Python does preprocessing, orchestration, and visualization.
 The boundary is deliberate and is documented in `src/utils/lib/runr.py`.

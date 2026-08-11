@@ -1,0 +1,4 @@
+"quantity","n_persons","median","q25","q75","min","max","pct_negative","n_sig_negative","n_sig_positive"
+"contemporaneous r",63,-0.137,-0.203,0.01,-0.465,0.445,73,NA,NA
+"contemporaneous b",63,-0.137,-0.203,0.01,-0.465,0.445,73,14,4
+"lagged b",63,0,-0.084,0.052,-0.265,0.227,49.2,2,0

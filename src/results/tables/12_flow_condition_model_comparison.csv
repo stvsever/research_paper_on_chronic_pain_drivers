@@ -1,0 +1,4 @@
+"model","AIC","BIC","n_obs"
+"balance + elevation",17320.8,17401.1,5976
+"challenge x skill",16879.7,16966.7,5976
+"quadrant (vs apathy)",18482,18522.2,5976

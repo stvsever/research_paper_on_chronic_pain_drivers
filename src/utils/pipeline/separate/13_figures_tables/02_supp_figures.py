@@ -1,4 +1,4 @@
-"""Stage 12.2 - Supplementary manuscript figures (SUP_01 to SUP_10).
+"""Stage 13.2 - Supplementary manuscript figures (SUP_01 to SUP_11).
 
 Each supplementary figure is a rich, multi-panel extension of a methodological theme, so the
 supplement documents design, data quality, modelling assumptions, and robustness in depth.
@@ -555,9 +555,150 @@ def sup_10():
     vs.savefig(fig, FIG / "SUP_10_within_between_correlations.png")
 
 
+# --- SUP_11 flow operationalization (6 panels) ------------------------------
+def sup_11():
+    """How the flow construct was built, and how much the build choices matter.
+
+    The supplement carries the operationalization so the main figure can carry the result:
+    item distributions, the within versus between correlation structure of the four items,
+    prevalence under each standardization rule, the per-person distribution of flow moments,
+    the sensitivity of the condition terms to the standardization choice, and the
+    person-level link with the baseline trait accounts.
+    """
+    f = pd.read_csv(paths.RESULTS_MODELS / "12_flow_analytic_frame.csv")
+    prev = pd.read_csv(T / "12_flow_prevalence_by_rule.csv")
+    pers = pd.read_csv(T / "12_flow_person_prevalence.csv")
+    sens = pd.read_csv(T / "12_flow_standardization_sensitivity.csv")
+    link = pd.read_csv(T / "12_flow_trait_link.csv")
+    corr = pd.read_csv(T / "12_flow_item_correlations.csv")
+
+    items = ["CHALLENGE", "EFFIC", "ENGAGE", "VALENCE"]
+    roles = ["condition", "condition", "experience", "experience"]
+    fig, ax = plt.subplots(2, 3, figsize=(15.5, 9.0))
+
+    # Panel A: response distribution of the four items, split by their role in the model.
+    a = ax[0, 0]
+    w = 0.2
+    for k, (it, role) in enumerate(zip(items, roles)):
+        counts = f[it].value_counts(normalize=True).reindex(range(1, 8), fill_value=0)
+        a.bar(np.arange(1, 8) + (k - 1.5) * w, counts.values, w,
+              color=vs.NODE_COLORS.get(it, vs.MUTED), edgecolor="white",
+              label=f"{vs.node_label(it)} ({role})")
+    a.set_xticks(range(1, 8))
+    a.set_xlabel("Response (1 = not at all, 7 = very much)")
+    a.set_ylabel("Share of moments")
+    a.set_title("The four flow items")
+    a.legend(fontsize=7.5); vs.bar_axes(a); vs.panel_label(a, "A")
+
+    # Panel B: within- and between-person correlation structure of the four items.
+    a = ax[0, 1]
+    vlist = items + ["FLOWEXP"]
+    wi = corr[corr["level"] == "within"].set_index("variable")[vlist].loc[vlist].values
+    be = corr[corr["level"] == "between"].set_index("variable")[vlist].loc[vlist].values
+    M = np.tril(wi, -1) + np.triu(be, 1) + np.diag(np.full(len(vlist), np.nan))
+    im = a.imshow(M, cmap="RdBu_r", vmin=-1, vmax=1)
+    labs = [vs.node_label(v) for v in vlist]
+    a.set_xticks(range(len(vlist))); a.set_yticks(range(len(vlist)))
+    a.set_xticklabels(labs, rotation=35, ha="right", fontsize=7.5)
+    a.set_yticklabels(labs, fontsize=7.5)
+    for i in range(len(vlist)):
+        for j in range(len(vlist)):
+            if np.isfinite(M[i, j]):
+                a.text(j, i, f"{M[i, j]:.2f}", ha="center", va="center", fontsize=7,
+                       color=vs.INK if abs(M[i, j]) < 0.6 else "white")
+    a.set_title("Lower = within, upper = between")
+    vs.matrix_axes(a); vs.add_cbar(fig, a, im, label="r"); vs.panel_label(a, "B")
+
+    # Panel C: prevalence of flow moments under each standardization rule.
+    a = ax[0, 2]
+    lab_map = {"A_abs4": "Absolute\n(both >= 4)", "A_abs5": "Absolute\n(both >= 5)",
+               "D_center": "Person-mean\ncentered", "C_withinz": "Within-person\nz"}
+    prev = prev.set_index("rule").loc[list(lab_map)].reset_index()
+    x = np.arange(len(prev)); w = 0.36
+    a.bar(x - w / 2, prev["moments_condition"], w, color=vs.MUTED,
+          label="Condition met", edgecolor="white")
+    a.bar(x + w / 2, prev["moments_gated"], w, color=vs.CHANNEL_COLORS["Flow"],
+          label="Condition + experience gate", edgecolor="white")
+    for xi, row in zip(x, prev.itertuples()):
+        a.text(xi, max(row.moments_condition, row.moments_gated) + 0.025,
+               f"{int(row.n_persons_zero)} of {int(row.n_persons)}\nnever reach it",
+               ha="center", fontsize=7, color=vs.MUTED)
+    a.set_xticks(x); a.set_xticklabels([lab_map[r] for r in prev["rule"]], fontsize=7.5)
+    a.set_ylim(0, 0.66)
+    a.set_ylabel("Share of moments classified as flow")
+    a.set_title("Standardization decides prevalence")
+    a.legend(fontsize=7.5); vs.bar_axes(a); vs.panel_label(a, "C")
+
+    # Panel D: per-person flow prevalence, ordered, under both absolute criteria.
+    a = ax[1, 0]
+    pp = pers.sort_values("flow_prop_abs5").reset_index(drop=True)
+    y = np.arange(len(pp))
+    a.barh(y, pp["flow_prop_abs4"], color="#c9d2db", edgecolor="none",
+           label="Liberal (both >= 4)")
+    a.barh(y, pp["flow_prop_abs5"], color=vs.CHANNEL_COLORS["Flow"], edgecolor="none",
+           label="Strict (both >= 5)")
+    nz = int((pp["flow_prop_abs5"] == 0).sum())
+    a.text(0.98, 0.30, f"{nz} participants never reach\nthe strict criterion",
+           transform=a.transAxes, ha="right", va="bottom", fontsize=8, color=vs.MUTED)
+    a.set_yticks([])
+    a.set_xlabel("Share of that person's moments in flow")
+    a.set_ylabel("Participants, ordered")
+    a.set_title("Flow proneness varies widely")
+    a.legend(fontsize=7.5, loc="lower right")
+    vs.bar_axes(a, "horizontal"); vs.panel_label(a, "D")
+
+    # Panel E: are the condition coefficients robust to the standardization choice?
+    a = ax[1, 1]
+    order = ["D_center", "C_withinz", "A_raw"]
+    lab_e = {"D_center": "Person-mean\ncentered", "C_withinz": "Within-person\nz",
+             "A_raw": "Raw absolute\nscale"}
+    x = np.arange(len(order)); w = 0.36
+    for k, (term, color) in enumerate([("Balance", vs.FLOW_COLORS["balance"]),
+                                       ("Elevation", vs.FLOW_COLORS["elevation"])]):
+        sub = sens[sens["term"] == term].set_index("metric").loc[order]
+        a.bar(x + (k - 0.5) * w, sub["estimate"], w, yerr=1.96 * sub["SE"], color=color,
+              label=term, edgecolor="white",
+              error_kw={"ecolor": vs.INK, "elinewidth": 1.0, "capsize": 3})
+    a.axhline(0, color=vs.INK, lw=0.8)
+    a.set_xticks(x); a.set_xticklabels([lab_e[o] for o in order], fontsize=8)
+    a.set_ylabel("Effect on flow experience (95% CI)")
+    a.set_title("Condition terms across metrics")
+    a.legend(fontsize=8); vs.bar_axes(a); vs.panel_label(a, "E")
+
+    # Panel F: person-level flow variables against the three baseline trait accounts.
+    a = ax[1, 2]
+    fvars = ["Flow proneness (strict)", "Mean flow experience", "Mean challenge",
+             "Mean skill", "Flow-pain coupling"]
+    accs = ["Threat", "Biomedical", "Personality"]
+    M = np.full((len(fvars), len(accs)), np.nan)
+    P = np.full((len(fvars), len(accs)), np.nan)
+    for i, fv in enumerate(fvars):
+        for j, acc in enumerate(accs):
+            row = link[(link["flow_variable"] == fv) & (link["account"] == acc)]
+            if len(row):
+                M[i, j] = row["zero_order_r"].iloc[0]
+                P[i, j] = row["zero_order_p"].iloc[0]
+    im = a.imshow(M, cmap="RdBu_r", vmin=-0.5, vmax=0.5, aspect="auto")
+    a.set_xticks(range(len(accs))); a.set_xticklabels(accs, fontsize=8)
+    a.set_yticks(range(len(fvars)))
+    a.set_yticklabels([v.replace(" (strict)", "") for v in fvars], fontsize=7.5)
+    for i in range(len(fvars)):
+        for j in range(len(accs)):
+            if np.isfinite(M[i, j]):
+                star = "*" if P[i, j] < 0.05 else ""
+                a.text(j, i, f"{M[i, j]:.2f}{star}", ha="center", va="center", fontsize=8,
+                       color=vs.INK if abs(M[i, j]) < 0.35 else "white")
+    a.set_title("Person-level flow and baseline profiles")
+    vs.matrix_axes(a); vs.add_cbar(fig, a, im, label="r"); vs.panel_label(a, "F")
+
+    fig.tight_layout(h_pad=2.8, w_pad=2.8)
+    vs.savefig(fig, FIG / "SUP_11_flow_operationalization.png")
+
+
 def main():
     np.random.seed(20260703)
-    for fn in [sup_01, sup_02, sup_03, sup_04, sup_05, sup_06, sup_07, sup_08, sup_09, sup_10]:
+    for fn in [sup_01, sup_02, sup_03, sup_04, sup_05, sup_06, sup_07, sup_08, sup_09,
+               sup_10, sup_11]:
         try:
             fn()
         except Exception as e:
