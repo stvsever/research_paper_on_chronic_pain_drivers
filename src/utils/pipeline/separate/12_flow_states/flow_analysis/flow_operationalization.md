@@ -1,13 +1,16 @@
 # Flow operationalization: specification and decision record
 
 Companion reference to [`analyze_flow.ipynb`](analyze_flow.ipynb). The notebook is the full
-analysis with all output; this file is the compact specification, the decision record, and the
-results summary, for anyone who wants the substance without running anything.
+report with all output; this file is the compact specification, the decision record, and the
+results summary, for anyone who wants the substance without opening the notebook.
+
+All models are estimated by the R pipeline in the parent directory; the notebook is the reporting
+layer over its output.
 
 Project 21: Viane et al. (2004, *Pain*) / Crombez et al. (2013). Palmtop experience sampling, 8
 random beeps per day plus a morning and an evening diary, 14 days.
 
-**Status.** Analysis complete, pipeline implemented, manuscript untouched.
+**Status.** Analysis complete and implemented as pipeline stage 12.
 
 ---
 
@@ -62,6 +65,7 @@ that conflates the antecedent with the outcome.
 | --- | --- | --- |
 | Research question | All three: V1 prevalence, V2 model, V3 dynamics, each with its own operationalization | They ask different things and must not be mixed |
 | Standardization | **D** person-mean centering primary; **A** raw absolute for all prevalence claims; **B** grand-mean z and **C** within-person z as sensitivity | D separates level from fluctuation and is the multilevel standard. Only A can represent the absence of flow |
+| Day and time of day | Tested as level-1 covariates, then omitted from the reported models | Time of day is significant in its own right but changes no focal estimate (elevation 0.7443 to 0.7456; flow-pain -0.0937 to -0.1010) |
 | Flow condition | **Continuous** balance and elevation primary; quadrant retained for description; additive form also fitted | Continuous retains information; the additive form turns out to fit best |
 | Absolute threshold | Both items **>= 5** conservative, **>= 4** reported alongside | Only under the strict rule can a participant score zero |
 | Analysis track | **B** hybrid multilevel with random slopes primary; **C** per person for heterogeneity | Estimates the average effect and the spread at once; partial pooling stabilises short series |
@@ -89,8 +93,8 @@ carry slightly more threat (d = 0.15) and negative affect (d = 0.19) but not mor
 | A. Absolute, both >= 4 | 39.6% | 36.8% | 35.0% | 0 of 68 |
 | A. Absolute, both >= 5 | 22.0% | 19.3% | 16.4% | **4 of 68** |
 | B. Grand-mean z | 30.6% | 27.8% | 26.7% | 2 of 68 |
-| C. Within-person z | 29.1% | 24.7% | 24.5% | 0 of 68 |
-| D. Person-mean centred | 29.1% | 24.7% | 24.5% | 0 of 68 |
+| C. Within-person z | 28.9% | 24.6% | 24.5% | 0 of 68 |
+| D. Person-mean centred | 28.9% | 24.6% | 24.5% | 0 of 68 |
 
 Flow-like moments are common. The relative metrics cannot represent absence, which is why every
 prevalence claim is made on metric A. Under the strict rule the largest channel is **relaxation**
@@ -103,22 +107,24 @@ prevalence claim is made on metric A. Under the strict rule the largest channel 
 | Term | b | SE | p | Random SD |
 | --- | --- | --- | --- | --- |
 | Elevation (within) | **0.744** | 0.024 | <.001 | 0.164 |
-| Balance (within) | 0.005 | 0.020 | .81 | 0.132 |
-| Elevation (between) | **0.804** | 0.085 | <.001 | |
-| Balance (between) | **-0.108** | 0.051 | **.033** | |
+| Balance (within) | 0.006 | 0.020 | .78 | 0.132 |
+| Elevation (between) | **0.796** | 0.085 | <.001 | |
+| Balance (between) | **-0.111** | 0.049 | **.028** | |
 
-Elevation alone accounts for about 43 percent of the within-person variance in the flow
-experience. Balance is null within persons and significantly negative between persons and on the
-raw scale (b = -0.090, p < .001). Model comparison: additive challenge plus skill AIC 16879,
-balance plus elevation 17320, categorical quadrant 18487; the challenge-by-skill interaction is
+Balance is null within persons and significantly negative between persons and on the raw scale
+(b = -0.090, p < .001). Across all four standardization metrics, elevation stays between 0.74 and
+0.89 and balance is never positive. Model comparison: additive challenge plus skill AIC 16880,
+balance plus elevation 17321, categorical quadrant 18482; the challenge-by-skill interaction is
 not significant (p = .15).
 
 **The flow condition acts additively in these data, not configurationally.**
 
 ### V3, temporal structure and person specificity
 
-Condition at t-1 predicting the experience at t: elevation b = 0.051, SE = 0.025, p = .039;
-balance b = -0.009, p = .68. The lagged elevation effect is 6 percent of the concurrent one.
+Condition at t-1 predicting the experience at t, controlling the flow-experience autoregression:
+elevation b = 0.052, SE = 0.028, p = .062 (marginal, not significant); balance b = -0.007, p = .70.
+The lagged elevation effect is 6 percent of the concurrent one (0.052 against 0.856), so the
+temporal antecedence the theory implies is not detectable at this sampling interval.
 
 Per-person flow-pain slopes (63 persons, person-standardized):
 
@@ -133,24 +139,32 @@ Concurrent, activity-adjusted, within persons:
 
 | Outcome | b | SE | p | Random SD |
 | --- | --- | --- | --- | --- |
-| Pain interference | **-0.139** | 0.025 | <.001 | 0.190 |
-| Pain intensity | **-0.094** | 0.020 | <.001 | 0.123 |
-| Threat value | **-0.079** | 0.014 | <.001 | 0.058 |
-| Attention to pain | **-0.074** | 0.019 | <.001 | 0.105 |
+| Pain interference | **-0.139** | 0.025 | <.001 | 0.146 |
+| Pain intensity | **-0.094** | 0.020 | <.001 | 0.114 |
+| Threat value | **-0.079** | 0.014 | <.001 | 0.071 |
+| Attention to pain | **-0.074** | 0.019 | <.001 | 0.097 |
 
-Lag 1, both directions: all seven paths null (p between .60 and .95), while every autoregression
-is large and significant. The relation is strictly concurrent.
+Lag 1, both directions: all seven paths null (p between .28 and .94), while every autoregression is
+large and significant (pain 0.395, interference 0.352, threat 0.321, attention 0.266). The relation
+is strictly concurrent.
 
-Channel contrasts against apathy: flow is better on all four outcomes (-0.074 to -0.179), but
-**relaxation is better still** (-0.169 to -0.281), and anxiety is no better than apathy and
-significantly worse on interference (+0.125, p = .020).
+Channel contrasts against apathy: flow is better on all four outcomes (-0.070 to -0.179), but
+**relaxation is better still** (-0.167 to -0.280), and anxiety is no better than apathy and
+significantly worse on interference (+0.131, p = .015).
 
 ### Person-level flow proneness and baseline profiles
 
 Mean flow experience correlates -0.27 with the baseline threat profile (p = .028) and -0.26 with
 neuroticism (p = .035); both survive partialling out mean pain. No baseline account predicts the
-flow-pain slope. Flow proneness adds delta R2 = .079 to the prediction of mean pain over the three
+flow-pain slope. Flow proneness adds delta R2 = .081 to the prediction of mean pain over the three
 accounts.
+
+### Robustness
+
+Standardization A/B/C/D: elevation 0.74 to 0.89 everywhere, balance never positive. Day and beep
+number as level-1 covariates: time of day is itself significant but no focal estimate moves.
+Compliance floor at 20, 30, 50, 70 moments: the flow-pain estimate moves from -0.0937 to -0.0883
+and stays significant throughout.
 
 ## 7. Conclusions in one paragraph
 
@@ -177,14 +191,15 @@ zero; no multiplicity correction applied.
 | --- | --- |
 | Full analysis notebook | `analyze_flow.ipynb` (this directory) |
 | Figures | `figures/` (this directory) |
-| R analysis pipeline | `../` (stage 12: `01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`) |
-| Numeric results | `src/results/tables/12_flow_*.csv` (19 files) |
+| R analysis pipeline (all estimation) | `../` (stage 12: `01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`) |
+| Numeric results | `src/results/tables/12_flow_*.csv` |
 | Derived analytic frame | `src/results/models/12_flow_analytic_frame.csv` |
 | Manuscript figures | `paper/assets/figures/main/MAIN_05_flow_states.png`, `paper/assets/figures/supplementary/SUP_11_flow_operationalization.png` |
 | Manuscript tables | `paper/assets/tables/main/MAIN_05_flow_pain_models.tex`, `paper/assets/tables/supplementary/SUP_13_flow_operationalization.tex` |
 
-Reproduce the R side with `make run-stage STAGE=12`; reproduce the notebook by running all cells.
-The two implementations agree to within 0.008 on every coefficient (Appendix A of the notebook).
+Regenerate the numbers with `make run-stage STAGE=12`, then re-run the notebook to refresh its
+tables and figures. Appendix A of the notebook maps every reported result to the script and file
+that produced it.
 
 ## 10. References
 

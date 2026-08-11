@@ -74,14 +74,16 @@ write_result(rbind(cor_block(c(FLOW_ITEMS, "FLOWEXP"), "_w", "within"),
 # Rule labels follow the operationalization note: A = raw absolute thresholds,
 # C = within-person z (median/zero split), D = person-mean centered (zero split).
 rules <- list(
-  list(id = "A_abs4", label = "Absolute, both items >= 4",
-       ch = f$CHALLENGE, sk = f$EFFIC, cut = FLOW_ABS_LIBERAL),
-  list(id = "A_abs5", label = "Absolute, both items >= 5",
-       ch = f$CHALLENGE, sk = f$EFFIC, cut = FLOW_ABS_STRICT),
-  list(id = "D_center", label = "Person-mean centered, above own mean",
-       ch = f$CHALLENGE_w, sk = f$EFFIC_w, cut = 0),
-  list(id = "C_withinz", label = "Within-person z, above own mean",
-       ch = f$CHALLENGE_z, sk = f$EFFIC_z, cut = 0)
+  list(id = "A_abs4", label = "A. Absolute, both items >= 4",
+       ch = f$CHALLENGE, sk = f$EFFIC, exp = f$FLOWEXP, cut = FLOW_ABS_LIBERAL),
+  list(id = "A_abs5", label = "A. Absolute, both items >= 5",
+       ch = f$CHALLENGE, sk = f$EFFIC, exp = f$FLOWEXP, cut = FLOW_ABS_STRICT),
+  list(id = "B_grandz", label = "B. Grand-mean z, above the sample mean",
+       ch = f$CHALLENGE_gz, sk = f$EFFIC_gz, exp = f$FLOWEXP_gz, cut = 0),
+  list(id = "C_withinz", label = "C. Within-person z, above own mean",
+       ch = f$CHALLENGE_z, sk = f$EFFIC_z, exp = f$FLOWEXP_z, cut = 0),
+  list(id = "D_center", label = "D. Person-mean centered, above own mean",
+       ch = f$CHALLENGE_w, sk = f$EFFIC_w, exp = f$FLOWEXP_w, cut = 0)
 )
 
 profile_vars <- c("PIJN", "PIJN_AFF", "ATTEND", "THREAT", "FLOWEXP",
@@ -96,10 +98,7 @@ for (r in rules) {
   # Under the absolute rules the gate is the same absolute cut; under the relative rules
   # it is the person's own mean. The gate blocks the "balanced but disengaged" false
   # positive that an unguarded quadrant classification produces.
-  gate <- switch(substr(r$id, 1, 1),
-                 "A" = f$FLOWEXP >= r$cut,
-                 "D" = f$FLOWEXP_w >= 0,
-                 "C" = f$FLOWEXP_z >= 0)
+  gate <- r$exp >= r$cut
   f[[paste0("flow_gated_", r$id)]] <- as.integer(ch == "Flow" & gate)
 
   for (lv in levels(ch)) {
@@ -201,11 +200,13 @@ write_result(cmp, "12_flow_condition_model_comparison.csv")
 # condition terms keep their sign, size, and significance.
 sens_rows <- list()
 metrics <- list(
-  list(id = "D_center", label = "Person-mean centered (primary)",
+  list(id = "D_center", label = "D. Person-mean centered (primary)",
        out = "FLOWEXP_w", bal = "balance_w", ele = "elevation_w"),
-  list(id = "C_withinz", label = "Within-person z", out = "FLOWEXP_z",
+  list(id = "C_withinz", label = "C. Within-person z", out = "FLOWEXP_z",
        bal = "balance_z", ele = "elevation_z"),
-  list(id = "A_raw", label = "Raw absolute scale", out = "FLOWEXP",
+  list(id = "B_grandz", label = "B. Grand-mean z", out = "FLOWEXP_gz",
+       bal = "balance_gz", ele = "elevation_gz"),
+  list(id = "A_raw", label = "A. Raw absolute scale", out = "FLOWEXP",
        bal = "balance_raw", ele = "elevation_raw")
 )
 for (mm in metrics) {
@@ -226,12 +227,63 @@ for (mm in metrics) {
 }
 write_result(do.call(rbind, sens_rows), "12_flow_standardization_sensitivity.csv")
 
+# --- 6. day and time of day as level-1 covariates ----------------------------
+# The nesting specification allows day in study and beep number as level-1 covariates. If the
+# focal estimates move once they are added, the reported models would have to carry them.
+f$beep_c <- f$beep - mean(f$beep, na.rm = TRUE)
+f$day_c  <- f$day - mean(f$day, na.rm = TRUE)
+cov_rows <- list()
+for (spec in list(
+      list(lab = "V2: condition -> experience", focal = "elevation_w",
+           base = "FLOWEXP ~ balance_w + elevation_w + balance_b + elevation_b",
+           re = "(1 + balance_w + elevation_w | pid)"),
+      list(lab = "Flow -> pain (activity-adjusted)", focal = "FLOWEXP_w",
+           base = "PIJN ~ FLOWEXP_w + balance_w + elevation_w + ACTIEF_w",
+           re = "(1 + FLOWEXP_w | pid)"))) {
+  m0 <- lmerTest::lmer(as.formula(paste(spec$base, "+", spec$re)), data = f,
+                       REML = TRUE, control = ctrl)
+  m1 <- lmerTest::lmer(as.formula(paste(spec$base, "+ beep_c + day_c +", spec$re)), data = f,
+                       REML = TRUE, control = ctrl)
+  c0 <- summary(m0)$coefficients; c1 <- summary(m1)$coefficients
+  cov_rows[[length(cov_rows) + 1]] <- data.frame(
+    model = spec$lab, focal_term = spec$focal,
+    b_without = round(c0[spec$focal, "Estimate"], 4),
+    b_with = round(c1[spec$focal, "Estimate"], 4),
+    p_with = signif(c1[spec$focal, "Pr(>|t|)"], 4),
+    beep_p = signif(c1["beep_c", "Pr(>|t|)"], 4),
+    day_p = signif(c1["day_c", "Pr(>|t|)"], 4))
+}
+write_result(do.call(rbind, cov_rows), "12_flow_covariate_check.csv")
+
+# --- 7. missingness characterisation -----------------------------------------
+# Non-response in a chronic pain sample may be informative: high-pain, low-activity moments
+# are plausibly the ones most likely to be skipped. Compare the moments where the flow items
+# are missing against those where they are present.
+miss_rows <- list()
+for (v in c("PIJN", "PIJN_AFF", "ATTEND", "THREAT", "NEGAFF", "POSAFF", "ACTIEF")) {
+  a <- d[[v]][flow_cc]; b <- d[[v]][!flow_cc]
+  a <- a[!is.na(a)];    b <- b[!is.na(b)]
+  if (length(b) < 10) next
+  tt <- stats::t.test(b, a)
+  pooled <- sqrt((stats::var(a) + stats::var(b)) / 2)
+  miss_rows[[length(miss_rows) + 1]] <- data.frame(
+    variable = v, mean_present = round(mean(a), 2), mean_missing = round(mean(b), 2),
+    n_missing = length(b), cohens_d = round((mean(b) - mean(a)) / pooled, 3),
+    p = signif(tt$p.value, 4))
+}
+miss <- do.call(rbind, miss_rows)
+miss$n_moments_dropped <- sum(!flow_cc)
+miss$pct_dropped <- round(100 * mean(!flow_cc), 2)
+write_result(miss, "12_flow_missingness.csv")
+
 # persist the analytic frame so the pain-model stage and the figure stage use exactly the
 # same derived variables and channel assignments.
 keep <- c("pid", "subject", "day", "beep", FLOW_ITEMS, "FLOWEXP",
           paste0(c(FLOW_ITEMS, "FLOWEXP", "PIJN", "ATTEND", "THREAT", "PIJN_AFF", "ACTIEF"), "_w"),
           paste0(c(FLOW_ITEMS, "FLOWEXP"), "_z"),
+          paste0(c(FLOW_ITEMS, "FLOWEXP"), "_gz"),
           "balance_w", "elevation_w", "balance_z", "elevation_z",
+          "balance_gz", "elevation_gz", "beep_c", "day_c",
           "balance_b", "elevation_b", "balance_raw", "elevation_raw",
           "PIJN", "PIJN_AFF", "ATTEND", "THREAT", "NEGAFF", "POSAFF", "ACTIEF",
           grep("^chan_|^flow_gated_", names(f), value = TRUE))

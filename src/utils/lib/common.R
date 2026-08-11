@@ -122,12 +122,17 @@ build_flow <- function(d) {
     d[[paste0(v, "_w")]] <- within_center(d[[v]], d$pid)
     d[[paste0(v, "_b")]] <- between_mean(d[[v]], d$pid)
     d[[paste0(v, "_z")]] <- within_z(d[[v]], d$pid)
+    # grand-mean (pooled) z, standardization option B
+    s_ <- stats::sd(d[[v]], na.rm = TRUE); if (is.na(s_) || s_ == 0) s_ <- 1
+    d[[paste0(v, "_gz")]] <- (d[[v]] - mean(d[[v]], na.rm = TRUE)) / s_
   }
   # condition terms on the two within-person metrics
   d$balance_w   <- -abs(d$CHALLENGE_w - d$EFFIC_w)
   d$elevation_w <- (d$CHALLENGE_w + d$EFFIC_w) / 2
   d$balance_z   <- -abs(d$CHALLENGE_z - d$EFFIC_z)
   d$elevation_z <- (d$CHALLENGE_z + d$EFFIC_z) / 2
+  d$balance_gz   <- -abs(d$CHALLENGE_gz - d$EFFIC_gz)
+  d$elevation_gz <- (d$CHALLENGE_gz + d$EFFIC_gz) / 2
   # between-person condition terms (person means of the raw items)
   d$balance_b   <- -abs(d$CHALLENGE_b - d$EFFIC_b)
   d$elevation_b <- (d$CHALLENGE_b + d$EFFIC_b) / 2

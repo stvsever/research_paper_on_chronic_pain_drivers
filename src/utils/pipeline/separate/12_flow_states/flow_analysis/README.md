@@ -5,16 +5,14 @@ end to end by someone deciding whether the construct earns a place in the manusc
 
 | File | What it is |
 | --- | --- |
-| [`analyze_flow.ipynb`](analyze_flow.ipynb) | The full analysis, with every cell pre-run. Sections 1 to 13 plus a cross-validation appendix. Start here. |
-| [`flow_operationalization.md`](flow_operationalization.md) | Compact specification, decision record, and results summary, for reading without running anything. |
+| [`analyze_flow.ipynb`](analyze_flow.ipynb) | The reporting layer, with every cell pre-run. Sections 1 to 13 plus a provenance appendix. Start here. |
+| [`flow_operationalization.md`](flow_operationalization.md) | Compact specification, decision record, and results summary, for reading without opening the notebook. |
 | `figures/` | The six figures the notebook generates. |
 
-The notebook re-estimates every model in Python, independently of the R pipeline in the parent
-directory (stage 12). Appendix A compares the two implementations coefficient by coefficient; they
-agree to within 0.008.
+**Division of labour.** All models are estimated by the R pipeline in the parent directory
+(`01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`), which runs inside
+`make run-all`. The notebook fits nothing: it reads that pipeline's result tables, renders them,
+draws the figures, and interprets the findings. Appendix A of the notebook maps every result to the
+script and the file that produced it.
 
-**The manuscript has not been modified.** The manuscript-shaped figures and tables are generated
-by stage 13 but nothing inputs them, so adding the section later is a matter of two `\input` lines
-and one `\includegraphics`.
-
-To reproduce: run all cells in the notebook, or `make run-stage STAGE=12` for the R side.
+To regenerate the numbers: `make run-stage STAGE=12`, then re-run the notebook.

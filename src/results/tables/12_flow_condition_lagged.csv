@@ -1,0 +1,8 @@
+"model","outcome","term","estimate","SE","df","t","p","n_obs"
+"condition(t-1) -> experience(t)","FLOWEXP","(Intercept)",0.009,0.022,4903.8,0.39,0.6933,5065
+"condition(t-1) -> experience(t)","FLOWEXP","balance_zz_lag",-0.007,0.017,3544.8,-0.39,0.6962,5065
+"condition(t-1) -> experience(t)","FLOWEXP","elevation_zz_lag",0.052,0.028,141.8,1.88,0.06169,5065
+"condition(t-1) -> experience(t)","FLOWEXP","FLOWEXP_lag",0.108,0.019,5039.9,5.8,6.941e-09,5065
+"condition(t) -> experience(t), same rows","FLOWEXP","(Intercept)",0.017,0.026,68.7,0.66,0.5127,5065
+"condition(t) -> experience(t), same rows","FLOWEXP","balance_zz",-0.001,0.022,71.3,-0.05,0.9628,5065
+"condition(t) -> experience(t), same rows","FLOWEXP","elevation_zz",0.856,0.022,54.7,39.74,4.621e-42,5065

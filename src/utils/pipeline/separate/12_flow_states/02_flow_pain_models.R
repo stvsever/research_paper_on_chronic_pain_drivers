@@ -118,6 +118,31 @@ for (p in c("PIJN", "ATTEND", "THREAT")) {
 write_result(do.call(rbind, lag_rows), "12_flow_pain_lagged.csv")
 write_result(do.call(rbind, lag_rand), "12_flow_lagged_random_slopes.csv")
 
+# --- 2b. V3 proper: does the condition at t-1 predict the experience at t? ----
+# The specification's third question asks whether the challenge-skill configuration precedes
+# absorption in time. This is the flow model's own temporal test, distinct from the
+# flow-to-pain models above. The flow experience autoregression is controlled, and a
+# same-beep model on the identical rows gives the concurrent effect for comparison.
+z$balance_zz   <- -abs(z$CHALLENGE - z$EFFIC)
+z$elevation_zz <- (z$CHALLENGE + z$EFFIC) / 2
+for (v in c("balance_zz", "elevation_zz")) {
+  z[[paste0(v, "_lag")]] <- ave(seq_len(nrow(z)), paste(z$pid, z$day), FUN = function(idx) {
+    x <- z[[v]][idx]; c(NA, x[-length(x)])
+  })
+}
+m_v3 <- lmerTest::lmer(
+  FLOWEXP ~ balance_zz_lag + elevation_zz_lag + FLOWEXP_lag +
+    (1 + balance_zz_lag + elevation_zz_lag | pid),
+  data = z, REML = TRUE, control = ctrl)
+zc <- z[stats::complete.cases(z[, c("FLOWEXP", "balance_zz_lag", "elevation_zz_lag",
+                                    "FLOWEXP_lag")]), ]
+m_v3_same <- lmerTest::lmer(
+  FLOWEXP ~ balance_zz + elevation_zz + (1 + balance_zz + elevation_zz | pid),
+  data = zc, REML = TRUE, control = ctrl)
+v3 <- rbind(tidy_fixed(m_v3, "condition(t-1) -> experience(t)", "FLOWEXP"),
+            tidy_fixed(m_v3_same, "condition(t) -> experience(t), same rows", "FLOWEXP"))
+write_result(v3, "12_flow_condition_lagged.csv")
+
 # --- 3. idiographic per-person associations -----------------------------------
 per <- list()
 for (id in unique(z$pid)) {
@@ -181,6 +206,28 @@ summ <- data.frame(
                      sum(per$lo_lagged > 0, na.rm = TRUE)))
 write_result(summ, "12_flow_perperson_summary.csv")
 
+# --- 4. compliance-threshold sensitivity --------------------------------------
+# The person-level analyses use a 50-moment floor. This checks that the headline
+# flow-to-pain estimate does not depend on where that floor is placed.
+n_by_pid <- table(f$pid)
+comp_rows <- list()
+for (thr in c(20L, 30L, 50L, 70L)) {
+  keep <- names(n_by_pid)[n_by_pid >= thr]
+  sub <- f[f$pid %in% keep, ]
+  m <- lmerTest::lmer(PIJN ~ FLOWEXP_w + balance_w + elevation_w + ACTIEF_w +
+                        (1 + FLOWEXP_w | pid), data = sub, REML = TRUE, control = ctrl)
+  co <- summary(m)$coefficients
+  comp_rows[[length(comp_rows) + 1]] <- data.frame(
+    threshold = thr, n_persons = length(keep), n_moments = nobs(m),
+    estimate = round(co["FLOWEXP_w", "Estimate"], 4),
+    SE = round(co["FLOWEXP_w", "Std. Error"], 4),
+    p = signif(co["FLOWEXP_w", "Pr(>|t|)"], 4))
+}
+write_result(do.call(rbind, comp_rows), "12_flow_compliance_sensitivity.csv")
+
+cat("\n=== V3: condition(t-1) -> experience(t) ===\n")
+print(v3[v3$term != "(Intercept)", c("model", "term", "estimate", "SE", "p")],
+      row.names = FALSE)
 cat("\n=== contemporaneous flow -> momentary experience (activity-adjusted) ===\n")
 print(con[con$model == "activity-adjusted" & con$term == "FLOWEXP_w",
           c("outcome", "estimate", "SE", "p")], row.names = FALSE)
