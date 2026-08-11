@@ -27,7 +27,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "lib"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "lib"))
 import paths  # noqa: E402
 
 paths.ensure_dirs()

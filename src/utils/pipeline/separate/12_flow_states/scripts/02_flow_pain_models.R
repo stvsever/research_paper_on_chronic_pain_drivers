@@ -22,7 +22,7 @@
 
 this <- normalizePath(sub("--file=", "",
   grep("--file=", commandArgs(FALSE), value = TRUE)[1]), mustWork = FALSE)
-lib <- file.path(dirname(this), "..", "..", "..", "lib")
+lib <- file.path(dirname(this), "..", "..", "..", "..", "lib")
 source(file.path(lib, "common.R"))
 need(c("lme4", "lmerTest"))
 

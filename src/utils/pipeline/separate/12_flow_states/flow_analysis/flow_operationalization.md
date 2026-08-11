@@ -4,8 +4,8 @@ Companion reference to [`analyze_flow.ipynb`](analyze_flow.ipynb). The notebook 
 report with all output; this file is the compact specification, the decision record, and the
 results summary, for anyone who wants the substance without opening the notebook.
 
-All models are estimated by the R pipeline in the parent directory; the notebook is the reporting
-layer over its output.
+All models are estimated by the scripts in [`../scripts/`](../scripts/); the notebook is the
+reporting layer over their output.
 
 Project 21: Viane et al. (2004, *Pain*) / Crombez et al. (2013). Palmtop experience sampling, 8
 random beeps per day plus a morning and an evening diary, 14 days.
@@ -191,7 +191,7 @@ zero; no multiplicity correction applied.
 | --- | --- |
 | Full analysis notebook | `analyze_flow.ipynb` (this directory) |
 | Figures | `figures/` (this directory) |
-| R analysis pipeline (all estimation) | `../` (stage 12: `01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`) |
+| Analysis scripts (all estimation) | `../scripts/` (`01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`) |
 | Numeric results | `src/results/tables/12_flow_*.csv` |
 | Derived analytic frame | `src/results/models/12_flow_analytic_frame.csv` |
 | Manuscript figures | `paper/assets/figures/main/MAIN_05_flow_states.png`, `paper/assets/figures/supplementary/SUP_11_flow_operationalization.png` |
