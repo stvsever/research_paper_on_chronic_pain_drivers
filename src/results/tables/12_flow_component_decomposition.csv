@@ -1,0 +1,37 @@
+"model","outcome","term","estimate","SE","t","p"
+"entered alone","PIJN","ENGAGE_w",-0.069,0.014,-4.82,7.389e-06
+"entered alone","PIJN","VALENCE_w",-0.077,0.016,-4.65,1.819e-05
+"entered alone","PIJN","CHALLENGE_w",-0.004,0.017,-0.22,0.8235
+"entered alone","PIJN","EFFIC_w",-0.088,0.016,-5.47,8.512e-07
+"entered alone","PIJN","FLOWEXP_w",-0.096,0.018,-5.4,8.516e-07
+"all four together","PIJN","ENGAGE_w",-0.055,0.011,-4.79,1.73e-06
+"all four together","PIJN","VALENCE_w",-0.023,0.013,-1.7,0.08858
+"all four together","PIJN","CHALLENGE_w",0.032,0.011,2.87,0.004138
+"all four together","PIJN","EFFIC_w",-0.045,0.013,-3.43,0.0006183
+"entered alone","PIJN_AFF","ENGAGE_w",-0.089,0.017,-5.21,1.879e-06
+"entered alone","PIJN_AFF","VALENCE_w",-0.118,0.021,-5.58,7.229e-07
+"entered alone","PIJN_AFF","CHALLENGE_w",0.004,0.022,0.17,0.8639
+"entered alone","PIJN_AFF","EFFIC_w",-0.125,0.021,-5.85,1.743e-07
+"entered alone","PIJN_AFF","FLOWEXP_w",-0.133,0.022,-5.96,1.347e-07
+"all four together","PIJN_AFF","ENGAGE_w",-0.062,0.014,-4.48,7.708e-06
+"all four together","PIJN_AFF","VALENCE_w",-0.057,0.016,-3.48,0.0005039
+"all four together","PIJN_AFF","CHALLENGE_w",0.053,0.013,3.99,6.712e-05
+"all four together","PIJN_AFF","EFFIC_w",-0.063,0.016,-3.99,6.752e-05
+"entered alone","ATTEND","ENGAGE_w",-0.048,0.013,-3.62,0.000589
+"entered alone","ATTEND","VALENCE_w",-0.074,0.015,-5.05,6.256e-06
+"entered alone","ATTEND","CHALLENGE_w",0.006,0.015,0.42,0.6783
+"entered alone","ATTEND","EFFIC_w",-0.086,0.017,-4.99,5.349e-06
+"entered alone","ATTEND","FLOWEXP_w",-0.077,0.016,-4.71,1.727e-05
+"all four together","ATTEND","ENGAGE_w",-0.029,0.011,-2.49,0.01277
+"all four together","ATTEND","VALENCE_w",-0.035,0.013,-2.61,0.009196
+"all four together","ATTEND","CHALLENGE_w",0.031,0.011,2.76,0.005774
+"all four together","ATTEND","EFFIC_w",-0.049,0.013,-3.77,0.0001617
+"entered alone","THREAT","ENGAGE_w",-0.039,0.009,-4.56,2.492e-05
+"entered alone","THREAT","VALENCE_w",-0.066,0.012,-5.44,1.051e-06
+"entered alone","THREAT","CHALLENGE_w",0.017,0.012,1.38,0.1722
+"entered alone","THREAT","EFFIC_w",-0.059,0.013,-4.66,2.098e-05
+"entered alone","THREAT","FLOWEXP_w",-0.068,0.012,-5.59,6.096e-07
+"all four together","THREAT","ENGAGE_w",-0.023,0.009,-2.65,0.008067
+"all four together","THREAT","VALENCE_w",-0.044,0.01,-4.3,1.749e-05
+"all four together","THREAT","CHALLENGE_w",0.035,0.008,4.19,2.828e-05
+"all four together","THREAT","EFFIC_w",-0.026,0.01,-2.57,0.01009

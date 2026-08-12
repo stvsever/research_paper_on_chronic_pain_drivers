@@ -172,7 +172,7 @@ def main_04():
     tab = cc[["state", "account", "n", "zero", "partial"]].copy()
     tab.columns = ["Mean momentary state", "Account", "$n$", "$r$ ($p$)",
                    "Partial $r$ ($p$)"]
-    write("MAIN_04_trait_between_person.tex", latex_table(
+    write("MAIN_05_trait_between_person.tex", latex_table(
         tab, "RQ2 between-person associations of the baseline accounts with mean momentary "
              "attention to pain and goal engagement.", "tab:link", colspec="llccc",
         note=("Zero-order and partial (controlling mean momentary pain) correlations of each "
@@ -473,7 +473,7 @@ def main_05():
         "SE ": [f"{lf.loc[o, 'SE']:.3f}" for o in OUT],
         "$p$ ": [fmt_p(lf.loc[o, "p"]) for o in OUT]})
 
-    write("MAIN_05_flow_pain_models.tex", two_panel(
+    write("MAIN_04_flow_pain_models.tex", two_panel(
         pa, pb, "Flow states and the momentary experience of pain.", "tab:flow",
         "lcccc", "lcccccc",
         "Challenge-skill condition predicting the flow experience (multilevel, random "
@@ -513,7 +513,7 @@ def sup_13():
     write("SUP_13_flow_operationalization.tex", three_panel(
         ca, pb, pc, "Flow operationalization: channels, prevalence, and standardization "
                     "sensitivity.", "tab:sup-flow",
-        "lcccccc", "lcccc", "llccc",
+        "lccccccc", "lcccc", "llccc",
         "Momentary profile of the four channels (absolute rule, both items $\\geq$ 5).",
         "Prevalence of flow moments under each standardization rule.",
         "Condition terms predicting the flow experience on each metric.",

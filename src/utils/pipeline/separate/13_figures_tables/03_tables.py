@@ -42,12 +42,12 @@ def main():
     write_md(pd.read_csv(N / "05_mlvar_core_temporal_edges.csv"),
              MD_MAIN / "MAIN_03_mlvar_temporal_effects.md", "Pooled temporal effects")
     write_md(pd.read_csv(T / "09_between_person_correlations.csv"),
-             MD_MAIN / "MAIN_04_trait_between_person.md", "RQ2 between-person associations")
+             MD_MAIN / "MAIN_05_trait_between_person.md", "RQ2 between-person associations")
     # Flow (stage 12). Written as manuscript-shaped mirrors so the section can be assembled
     # if the results are judged to warrant a place in the paper.
     fc = pd.read_csv(T / "12_flow_pain_contemporaneous.csv")
     write_md(fc[fc["term"].isin(["FLOWEXP_w", "balance_w", "elevation_w", "ACTIEF_w"])],
-             MD_MAIN / "MAIN_05_flow_pain_models.md", "Flow and the momentary experience of pain")
+             MD_MAIN / "MAIN_04_flow_pain_models.md", "Flow and the momentary experience of pain")
     write_md(pd.read_csv(T / "12_flow_channel_profiles.csv"),
              MD_SUPP / "SUP_13_flow_channels.md", "Momentary profile of the four flow channels")
     write_md(pd.read_csv(T / "12_flow_prevalence_by_rule.csv"),

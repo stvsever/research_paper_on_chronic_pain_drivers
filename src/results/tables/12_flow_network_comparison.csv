@@ -1,0 +1,5 @@
+"edge","benchmark_absorption","benchmark_p","flow_composite","flow_p","difference"
+"Pain(t-1) -> activity node(t)",-0.048,0.065,-0.021,0.413,0.027
+"Activity node(t-1) -> Pain(t)",0.003,0.809,0,0.991,-0.003
+"Pain - activity node (contemporaneous)",-0.064,0.003,-0.066,0.002,-0.002
+"Attention - activity node (contemporaneous)",-0.022,0.188,-0.027,0.109,-0.005

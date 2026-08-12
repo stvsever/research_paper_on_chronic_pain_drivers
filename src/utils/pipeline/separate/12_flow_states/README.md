@@ -23,6 +23,7 @@ flow index.
 | `01_flow_construct.R` | Builds the flow variables, the four-channel classification under five standardization rules, per-person prevalence, the multilevel condition-to-experience model with two alternative parameterizations, the standardization sensitivity table, the day and time-of-day covariate check, and the missingness characterisation. |
 | `02_flow_pain_models.R` | Concurrent and lag-1 multilevel models of flow with pain, attention to pain, interference, and threat; the lagged condition-to-experience test; channel contrasts; the per-person distribution of the flow-pain coupling; and the compliance-threshold sensitivity. |
 | `03_flow_trait_link.py` | Person-level flow proneness against the stage 08 baseline accounts, incremental variance, and the profile of the persons whose flow-pain coupling is negative. |
+| `04_flow_mlvar.R` | Re-estimates the benchmark network with the flow composite in place of the single absorption node, and decomposes the composite into its four constituents entered alone and jointly. |
 
 Outputs land in `src/results/tables/12_flow_*.csv` and `src/results/models/12_flow_analytic_frame.csv`.
 

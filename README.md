@@ -2,7 +2,7 @@
 
 # Drivers of Pain in Daily Life
 
-### An EMA-Based Idiographic Network Analysis of Attention, Threat, and Activity Engagement in Chronic Pain
+### An EMA-Based Idiographic Network Analysis of Attention, Threat, Flow, and Activity Engagement in Chronic Pain
 
 Stijn Van Severen<sup>1,*</sup> &middot;
 Ilse Viane<sup>1</sup> &middot;
@@ -171,7 +171,7 @@ within-person couplings.
         ├── study_materials/
         └── pipeline/
             ├── full/run_all.py
-            └── separate/01..13
+            └── separate/01..13   (12 = flow states, 13 = figures and tables)
 ```
 
 ---
