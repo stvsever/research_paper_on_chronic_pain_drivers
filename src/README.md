@@ -32,7 +32,7 @@ make run-from  STAGE=07   # resume from a stage
 | 09 | Link between person-specific couplings and the baseline profiles |
 | 10 | Robustness battery (detrending, composites, compliance, bootstrap, leave-one-out) |
 | 11 | Daily dysfunction dynamics from the evening diary |
-| 12 | [Flow states](utils/pipeline/separate/12_flow_states): the challenge-skill condition, the flow experience, and their relation to pain. Includes a standalone [notebook report](utils/pipeline/separate/12_flow_states/flow_analysis/analyze_flow.ipynb) |
+| 12 | Flow states: the challenge-skill condition, the flow experience, and their relation to pain |
 | 13 | Figures and tables for the manuscript |
 
 R does the statistical models, Python does preprocessing, orchestration, and visualization. The

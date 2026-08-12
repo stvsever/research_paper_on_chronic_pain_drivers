@@ -133,7 +133,15 @@ dominated by the same-prompt threat-pain, attention-pain, and threat-attention a
 The average couplings summarize wide person-to-person variation. Regularized individual networks
 are sparse, but the threat-to-pain edge is positive whenever it is selected.
 
-**MAIN_04: Baseline trait profiles and the momentary experience of pain**
+**MAIN_04: Flow and the momentary experience of pain**
+
+![Flow and pain](paper/assets/figures/main/MAIN_04_flow_pain.png)
+
+A higher than usual flow experience accompanies lower pain and, more strongly, less pain
+interference at the same prompt, with nothing at lag 1 in either direction. The association is
+person-specific: negative in most participants, reliably reversed in a few.
+
+**MAIN_05: Baseline trait profiles and the momentary experience of pain**
 
 ![Trait link](paper/assets/figures/main/MAIN_05_trait_link.png)
 
