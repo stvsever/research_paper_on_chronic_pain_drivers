@@ -685,64 +685,10 @@ def sup_11():
     vs.savefig(fig, FIG / "SUP_11_flow_measurement.png")
 
 
-# --- SUP_12 flow as a composite construct (2 panels) -----------------------
-def sup_12():
-    """Whether the composite is more than one of its constituents."""
-    dec = pd.read_csv(T / "12_flow_component_decomposition.csv")
-    cmp_net = pd.read_csv(T / "12_flow_network_comparison.csv")
-
-    COMP = {"ENGAGE_w": "Absorption", "VALENCE_w": "Enjoyment",
-            "CHALLENGE_w": "Challenge", "EFFIC_w": "Skill"}
-    fig, ax = plt.subplots(1, 2, figsize=(12.6, 4.7))
-
-    a = ax[0]
-    order = ["ENGAGE_w", "VALENCE_w", "EFFIC_w", "CHALLENGE_w"]
-    dp = dec[dec["outcome"] == "PIJN"]
-    y = np.arange(len(order))[::-1]
-    for shift, model, color, lab in [(0.17, "entered alone", vs.MUTED, "Entered alone"),
-                                     (-0.17, "all four together", vs.NODE_COLORS["FLOWEXP"],
-                                      "All four together")]:
-        sub = dp[dp["model"] == model].set_index("term")
-        est = np.array([sub.loc[t, "estimate"] for t in order])
-        se = np.array([sub.loc[t, "SE"] for t in order])
-        a.errorbar(est, y + shift, xerr=1.96 * se, fmt="o", ms=5, color=color, ecolor=color,
-                   elinewidth=1.6, capsize=2.5, label=lab)
-    cval = dp[(dp["model"] == "entered alone") &
-              (dp["term"] == "FLOWEXP_w")]["estimate"].iloc[0]
-    a.axvline(cval, color=vs.NODE_COLORS["FLOWEXP"], lw=1.1, ls=":")
-    a.text(cval, -0.62, f"composite\n{cval:.3f}", fontsize=7.5, ha="center", va="top",
-           color=vs.NODE_COLORS["FLOWEXP"])
-    a.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    a.set_ylim(-0.75, len(order) - 0.25)
-    a.set_yticks(y); a.set_yticklabels([COMP[t] for t in order], fontsize=8.5)
-    a.set_xlabel("Effect on momentary pain (95% CI)")
-    a.set_title("Which constituent carries the association")
-    a.legend(fontsize=8, loc="lower right"); vs.panel_label(a, "A")
-
-    a = ax[1]
-    lab_short = {"Pain(t-1) -> activity node(t)": "Pain (t-1)\n-> node (t)",
-                 "Activity node(t-1) -> Pain(t)": "Node (t-1)\n-> pain (t)",
-                 "Pain - activity node (contemporaneous)": "Pain - node\n(same beep)",
-                 "Attention - activity node (contemporaneous)": "Attention - node\n(same beep)"}
-    x = np.arange(len(cmp_net)); w = 0.36
-    a.bar(x - w / 2, cmp_net["benchmark_absorption"], w, color=vs.MUTED, edgecolor="white",
-          label="Absorption only (benchmark)")
-    a.bar(x + w / 2, cmp_net["flow_composite"], w, color=vs.NODE_COLORS["FLOWEXP"],
-          edgecolor="white", label="Flow experience composite")
-    a.axhline(0, color=vs.INK, lw=0.8)
-    a.set_xticks(x); a.set_xticklabels([lab_short[e] for e in cmp_net["edge"]], fontsize=7.5)
-    a.set_ylabel("Edge weight")
-    a.set_title("The composite reproduces the benchmark")
-    a.legend(fontsize=7.5); vs.bar_axes(a); vs.panel_label(a, "B")
-
-    fig.tight_layout(w_pad=2.8)
-    vs.savefig(fig, FIG / "SUP_12_flow_composite.png")
-
-
 def main():
     np.random.seed(20260703)
     for fn in [sup_01, sup_02, sup_03, sup_04, sup_05, sup_06, sup_07, sup_08, sup_09,
-               sup_10, sup_11, sup_12]:
+               sup_10, sup_11]:
         try:
             fn()
         except Exception as e:
