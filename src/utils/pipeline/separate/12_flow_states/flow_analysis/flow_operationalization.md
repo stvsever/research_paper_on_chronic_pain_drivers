@@ -194,8 +194,8 @@ zero; no multiplicity correction applied.
 | Analysis scripts (all estimation) | `../scripts/` (`01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`) |
 | Numeric results | `src/results/tables/12_flow_*.csv` |
 | Derived analytic frame | `src/results/models/12_flow_analytic_frame.csv` |
-| Manuscript figures | `paper/assets/figures/main/MAIN_05_flow_states.png`, `paper/assets/figures/supplementary/SUP_11_flow_operationalization.png` |
-| Manuscript tables | `paper/assets/tables/main/MAIN_05_flow_pain_models.tex`, `paper/assets/tables/supplementary/SUP_13_flow_operationalization.tex` |
+| Manuscript figures | `paper/assets/figures/main/MAIN_04_flow_pain.png`, `paper/assets/figures/supplementary/SUP_11_flow_measurement.png` |
+| Manuscript tables | `paper/assets/tables/main/MAIN_04_flow_pain_models.tex`, `paper/assets/tables/supplementary/SUP_13_flow_operationalization.tex` |
 
 Regenerate the numbers with `make run-stage STAGE=12`, then re-run the notebook to refresh its
 tables and figures. Appendix A of the notebook maps every reported result to the script and file

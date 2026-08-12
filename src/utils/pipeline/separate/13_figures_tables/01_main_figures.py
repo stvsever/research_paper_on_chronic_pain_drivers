@@ -322,86 +322,120 @@ def main_04():
 
 
 def main_05():
-    """Flow as a composite construct (stage 12).
+    """Flow and the momentary experience of pain (stage 12).
 
-    Three panels: which constituent carries the association with pain, whether the composite
-    behaves differently from the single absorption node it replaces, and the concurrent
-    associations of the flow experience with the momentary pain measures.
+    Panels A to C give the pooled picture: the concurrent associations, all lag-1 effects in both
+    directions, and the four challenge-skill channels against apathy. Panels D to F give the
+    idiographic distribution behind it.
     """
-    dec = pd.read_csv(T / "12_flow_component_decomposition.csv")
-    cmp_net = pd.read_csv(T / "12_flow_network_comparison.csv")
     con = pd.read_csv(T / "12_flow_pain_contemporaneous.csv")
+    lag = pd.read_csv(T / "12_flow_pain_lagged.csv")
+    chan = pd.read_csv(T / "12_flow_channel_contrasts.csv")
+    per = pd.read_csv(T / "12_flow_perperson_slopes.csv")
 
-    COMP = {"ENGAGE_w": "Absorption", "VALENCE_w": "Enjoyment",
-            "CHALLENGE_w": "Challenge", "EFFIC_w": "Skill", "FLOWEXP_w": "Flow experience"}
-    OUT = {"PIJN": "Pain intensity", "PIJN_AFF": "Pain interference",
+    OUT = ["PIJN", "PIJN_AFF", "ATTEND", "THREAT"]
+    LAB = {"PIJN": "Pain intensity", "PIJN_AFF": "Pain interference",
            "ATTEND": "Attention to pain", "THREAT": "Threat value"}
+    FLOW = vs.NODE_COLORS["FLOWEXP"]
 
-    fig, axes = plt.subplots(1, 3, figsize=(15.6, 4.7))
+    fig, ax = plt.subplots(2, 3, figsize=(15.6, 9.2))
 
-    # Panel A: component decomposition on pain intensity, alone versus mutually adjusted.
-    ax = axes[0]
-    order = ["ENGAGE_w", "VALENCE_w", "EFFIC_w", "CHALLENGE_w"]
-    dp = dec[dec["outcome"] == "PIJN"]
-    y = np.arange(len(order))[::-1]
-    for shift, model, color, lab in [(0.17, "entered alone", vs.MUTED, "Entered alone"),
-                                     (-0.17, "all four together", vs.NODE_COLORS["FLOWEXP"],
-                                      "All four together")]:
-        sub = dp[dp["model"] == model].set_index("term")
-        est = np.array([sub.loc[t, "estimate"] for t in order])
-        se = np.array([sub.loc[t, "SE"] for t in order])
-        ax.errorbar(est, y + shift, xerr=1.96 * se, fmt="o", ms=5, color=color, ecolor=color,
-                    elinewidth=1.6, capsize=2.5, label=lab)
-    comp = dp[(dp["model"] == "entered alone") & (dp["term"] == "FLOWEXP_w")]
-    cval = comp["estimate"].iloc[0]
-    ax.axvline(cval, color=vs.NODE_COLORS["FLOWEXP"], lw=1.1, ls=":")
-    ax.text(cval, -0.62, f"composite\n{cval:.3f}", fontsize=7.5, ha="center", va="top",
-            color=vs.NODE_COLORS["FLOWEXP"])
-    ax.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    ax.set_ylim(-0.75, len(order) - 0.25)
-    ax.set_yticks(y); ax.set_yticklabels([COMP[t] for t in order], fontsize=8.5)
-    ax.set_xlabel("Effect on momentary pain (95% CI)")
-    ax.set_title("Which constituent carries the association")
-    ax.legend(fontsize=8, loc="lower right"); vs.panel_label(ax, "A")
+    ax_ = ax[0, 0]
+    y = np.arange(len(OUT))[::-1]
+    for shift, mdl, colr, lab in [(0.16, "base", vs.MUTED, "Unadjusted"),
+                                  (-0.16, "activity-adjusted", FLOW, "Activity-adjusted")]:
+        sub = con[(con["model"] == mdl) & (con["term"] == "FLOWEXP_w")].set_index("outcome")
+        est = np.array([sub.loc[o, "estimate"] for o in OUT])
+        se = np.array([sub.loc[o, "SE"] for o in OUT])
+        ax_.errorbar(est, y + shift, xerr=1.96 * se, fmt="o", ms=5, color=colr, ecolor=colr,
+                     elinewidth=1.6, capsize=2.5, label=lab)
+    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
+    ax_.set_yticks(y); ax_.set_yticklabels([LAB[o] for o in OUT], fontsize=8.5)
+    ax_.set_xlabel("Effect of the flow experience (95% CI)")
+    ax_.set_title("Same beep")
+    ax_.legend(fontsize=8, loc="upper left"); vs.panel_label(ax_, "A")
 
-    # Panel B: does the composite behave like the absorption node it replaces?
-    ax = axes[1]
-    lab_short = {"Pain(t-1) -> activity node(t)": "Pain (t-1)\n-> node (t)",
-                 "Activity node(t-1) -> Pain(t)": "Node (t-1)\n-> pain (t)",
-                 "Pain - activity node (contemporaneous)": "Pain - node\n(same beep)",
-                 "Attention - activity node (contemporaneous)": "Attention - node\n(same beep)"}
-    x = np.arange(len(cmp_net)); w = 0.36
-    ax.bar(x - w / 2, cmp_net["benchmark_absorption"], w, color=vs.MUTED,
-           edgecolor="white", label="Absorption only (benchmark)")
-    ax.bar(x + w / 2, cmp_net["flow_composite"], w, color=vs.NODE_COLORS["FLOWEXP"],
-           edgecolor="white", label="Flow experience composite")
-    ax.axhline(0, color=vs.INK, lw=0.8)
-    ax.set_xticks(x)
-    ax.set_xticklabels([lab_short[e] for e in cmp_net["edge"]], fontsize=7.5)
-    ax.set_ylabel("Edge weight")
-    ax.set_title("The composite reproduces the benchmark")
-    ax.legend(fontsize=7.5); vs.bar_axes(ax); vs.panel_label(ax, "B")
+    ax_ = ax[0, 1]
+    fw = lag[(lag["model"] == "flow(t-1) -> outcome(t)") &
+             (lag["term"] == "FLOWEXP_lag")].copy()
+    fw["label"] = "Flow -> " + fw["outcome"].map(LAB)
+    rv = lag[lag["model"] == "predictor(t-1) -> flow(t)"].copy()
+    rv = rv[rv["term"] == rv["outcome"] + "_lag"]
+    rv["label"] = rv["outcome"].map(LAB) + " -> Flow"
+    lg = pd.concat([fw, rv], ignore_index=True)
+    y = np.arange(len(lg))[::-1]
+    cols = [FLOW if l.startswith("Flow ->") else vs.NODE_COLORS["PIJN"] for l in lg["label"]]
+    for yy, e, se, c in zip(y, lg["estimate"], lg["SE"], cols):
+        ax_.hlines(yy, e - 1.96 * se, e + 1.96 * se, color=c, lw=2.2)
+        ax_.plot(e, yy, "o", ms=5, color=vs.INK, zorder=3)
+    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
+    ax_.set_yticks(y); ax_.set_yticklabels(lg["label"], fontsize=8)
+    ax_.set_xlabel("Lag-1 effect, standardized (95% CI)")
+    ax_.set_title("Lag 1, both directions")
+    vs.panel_label(ax_, "B")
 
-    # Panel C: concurrent associations of the flow experience with the pain measures.
-    ax = axes[2]
-    outs = list(OUT)
-    y = np.arange(len(outs))[::-1]
-    for shift, model, color, lab in [(0.16, "base", vs.MUTED, "Unadjusted"),
-                                     (-0.16, "activity-adjusted", vs.NODE_COLORS["FLOWEXP"],
-                                      "Activity-adjusted")]:
-        sub = con[(con["model"] == model) & (con["term"] == "FLOWEXP_w")].set_index("outcome")
-        est = np.array([sub.loc[o, "estimate"] for o in outs])
-        se = np.array([sub.loc[o, "SE"] for o in outs])
-        ax.errorbar(est, y + shift, xerr=1.96 * se, fmt="o", ms=5, color=color, ecolor=color,
-                    elinewidth=1.6, capsize=2.5, label=lab)
-    ax.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    ax.set_yticks(y); ax.set_yticklabels([OUT[o] for o in outs], fontsize=8.5)
-    ax.set_xlabel("Effect of the flow experience (95% CI)")
-    ax.set_title("Flow and the momentary pain measures")
-    ax.legend(fontsize=8, loc="upper left"); vs.panel_label(ax, "C")
+    ax_ = ax[0, 2]
+    ch = chan[chan["term"].str.startswith("chan")].copy()
+    ch["channel"] = ch["term"].str.replace("chan", "", regex=False)
+    piv = ch.pivot(index="channel", columns="outcome", values="estimate")
+    piv = piv.reindex(["Flow", "Relaxation", "Anxiety"])[OUT]
+    x = np.arange(len(OUT)); w = 0.26
+    for k, name in enumerate(piv.index):
+        ax_.bar(x + (k - 1) * w, piv.loc[name].values, w, color=vs.CHANNEL_COLORS[name],
+                edgecolor="white", label=name)
+    ax_.axhline(0, color=vs.INK, lw=0.8)
+    ax_.set_xticks(x); ax_.set_xticklabels([LAB[o].replace(" ", "\n") for o in OUT], fontsize=8)
+    ax_.set_ylabel("Difference from apathy")
+    ax_.set_title("The four channels against apathy")
+    ax_.legend(fontsize=8); vs.bar_axes(ax_); vs.panel_label(ax_, "C")
 
-    fig.tight_layout(w_pad=2.8)
-    vs.savefig(fig, FIG / "MAIN_04_flow_construct.png")
+    ax_ = ax[1, 0]
+    pp = per.dropna(subset=["b_contemp"]).sort_values("b_contemp").reset_index(drop=True)
+    y = np.arange(len(pp))
+    sneg, spos = pp["hi_contemp"] < 0, pp["lo_contemp"] > 0
+    cols = np.where(sneg, FLOW, np.where(spos, vs.NODE_COLORS["PIJN"], "#c9d2db"))
+    ax_.hlines(y, pp["lo_contemp"], pp["hi_contemp"], color=cols, lw=1.4)
+    ax_.plot(pp["b_contemp"], y, "o", ms=2.6, color=vs.INK)
+    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
+    ax_.axvline(pp["b_contemp"].median(), color=FLOW, lw=1.2, ls=":")
+    ax_.text(0.02, 0.97, f"median $b$ = {pp['b_contemp'].median():.2f}\n"
+             f"{int(sneg.sum())} of {len(pp)} reliably negative\n"
+             f"{int(spos.sum())} reliably positive",
+             transform=ax_.transAxes, va="top", fontsize=8, color=vs.MUTED)
+    ax_.set_yticks([]); ax_.set_ylabel("Participants, ordered")
+    ax_.set_xlabel("Person-specific concurrent slope (95% CI)")
+    ax_.set_title("Flow and pain, same beep")
+    vs.panel_label(ax_, "D")
+
+    ax_ = ax[1, 1]
+    pl = per.dropna(subset=["b_lagged"]).sort_values("b_lagged").reset_index(drop=True)
+    y = np.arange(len(pl))
+    sn, sp = pl["hi_lagged"] < 0, pl["lo_lagged"] > 0
+    cols = np.where(sn, FLOW, np.where(sp, vs.NODE_COLORS["PIJN"], "#c9d2db"))
+    ax_.hlines(y, pl["lo_lagged"], pl["hi_lagged"], color=cols, lw=1.4)
+    ax_.plot(pl["b_lagged"], y, "o", ms=2.6, color=vs.INK)
+    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
+    ax_.text(0.02, 0.97, f"median $b$ = {pl['b_lagged'].median():.2f}\n"
+             f"{int(sn.sum())} reliably negative\n{int(sp.sum())} reliably positive",
+             transform=ax_.transAxes, va="top", fontsize=8, color=vs.MUTED)
+    ax_.set_yticks([]); ax_.set_ylabel("Participants, ordered")
+    ax_.set_xlabel("Person-specific lag-1 slope (95% CI)")
+    ax_.set_title("Flow and pain, lag 1")
+    vs.panel_label(ax_, "E")
+
+    ax_ = ax[1, 2]
+    bins = np.linspace(-0.5, 0.5, 21)
+    ax_.hist(pp["b_contemp"], bins=bins, color=FLOW, alpha=0.55, edgecolor="white",
+             label="Same beep")
+    ax_.hist(pl["b_lagged"], bins=bins, color=vs.MUTED, alpha=0.55, edgecolor="white",
+             label="Lag 1")
+    ax_.axvline(0, color=vs.INK, lw=1.0, ls="--")
+    ax_.set_xlabel("Person-specific slope"); ax_.set_ylabel("Participants")
+    ax_.set_title("Concurrent is shifted, lagged is centred")
+    ax_.legend(fontsize=8); vs.bar_axes(ax_); vs.panel_label(ax_, "F")
+
+    fig.tight_layout(h_pad=2.8, w_pad=2.8)
+    vs.savefig(fig, FIG / "MAIN_04_flow_pain.png")
 
 
 def main():

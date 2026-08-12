@@ -135,7 +135,7 @@ are sparse, but the threat-to-pain edge is positive whenever it is selected.
 
 **MAIN_04: Baseline trait profiles and the momentary experience of pain**
 
-![Trait link](paper/assets/figures/main/MAIN_04_trait_link.png)
+![Trait link](paper/assets/figures/main/MAIN_05_trait_link.png)
 
 A baseline threat-value profile predicts more attention to pain and less goal engagement,
 specifically relative to biomedical and personality profiles, but does not moderate the
