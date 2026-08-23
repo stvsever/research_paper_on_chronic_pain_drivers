@@ -65,7 +65,7 @@
 \makeatother
 
 \newcommand{\figurenote}[1]{\par\vspace{2pt}\footnotesize\textit{Note.} #1}
-\title{Drivers of Pain in Daily Life: An EMA-Based Idiographic Network Analysis of Attention, Threat, Flow, and Activity Engagement in Chronic Pain}
+\title{Drivers of Pain in Daily Life: An EMA-Based Idiographic Network Analysis of Attention, Threat, and Activity Engagement in Chronic Pain}
 \author{Stijn Van Severen*, Ilse Viane, Annick De Paepe, and Geert Crombez}
 \date{}
 
@@ -77,7 +77,7 @@
 \begin{center}
 {\fontsize{18.2}{22.8}\selectfont\textbf{Drivers of Pain in Daily Life: An EMA-Based\\
 Idiographic Network Analysis of Attention, Threat,\\
-Flow, and Activity Engagement in Chronic Pain}\par}
+and Activity Engagement in Chronic Pain}\par}
 \vspace{1.2em}
 \normalsize
 Stijn Van Severen\textsuperscript{1,*}\,\orcidlink{0009-0003-9181-966X},
@@ -114,14 +114,11 @@ of 66 participants, and was positive in every participant for whom the regulariz
 network selected it. Between persons, a baseline threat-value profile (catastrophizing and
 vigilance) predicted more attention to pain
 ($r=.39$, $p=.001$) and less goal engagement ($r=-.30$, $p=.013$), and did so more specifically
-than biomedical severity and neuroticism. Because goal engagement is also the absorption
-component of flow, the activity items were additionally combined into a momentary flow
-experience: it was concurrently associated with lower pain ($b=-.094$, $p<.001$) and lower pain
-interference ($b=-.139$, $p<.001$), and showed no lagged association in either direction. Attention and threat, rather than pain intensity
+than biomedical severity and neuroticism. Attention and threat, rather than pain intensity
 alone, appear to drive the momentary experience of chronic pain, in a way that is directionally
 shared across patients but strongly person-specific in magnitude.\\[0.5em]
-\noindent\textit{Keywords:} chronic pain; attention to pain; threat value of pain; flow-induced analgesia;
-ecological momentary assessment; idiographic networks; multilevel vector autoregression
+\noindent\textit{Keywords:} chronic pain; attention to pain; threat value of pain; ecological
+momentary assessment; idiographic networks; multilevel vector autoregression
 \end{abstract}
 
 \vspace*{\fill}
@@ -146,7 +143,7 @@ pain is a candidate process linking that threat to daily disability
 Whether these laboratory processes operate in the everyday life of patients with chronic pain has
 been examined with experience-sampling (diary) methods, which repeatedly sample momentary pain,
 pain-related appraisals, attention to pain, and ongoing activity in the natural environment
-\citep{tennen1996daily,peters2000electronic}. Such methods make it possible to ask whether the
+\citep{tennen1996daily,affleck1999multilevel,peters2000electronic}. Such methods make it possible to ask whether the
 threat value of pain and the attention it recruits precede momentary pain in daily life, as the
 interruptive-function model predicts, and whether the activity that pain interrupts is displaced
 when pain and attention rise.
@@ -202,7 +199,11 @@ edges are read as within-person predictive associations rather than as causal ef
 \section{Method}
 
 \subsection{Participants and design}
-Patients with chronic musculoskeletal pain, recruited through a university pain clinic, first
+The data are a secondary analysis of a chronic-pain experience-sampling study reported by
+\citet{viane2004acceptance}, which examined acceptance of pain in relation to attention to pain
+and engagement with daily activities \citep[see also][]{viane2003acceptance}; the temporal
+questions asked here were not part of that report. Patients with chronic musculoskeletal pain,
+recruited through a university pain clinic, first
 completed a battery of validated questionnaires and then carried a palmtop computer that
 signalled them eight times per day for two weeks to complete a short momentary diary, together
 with a brief morning and evening diary. All 68 participants with momentary diary data met the
@@ -213,7 +214,7 @@ approached or exceeded the series length usually recommended for individual netw
 Baseline questionnaires were available for 67 participants. Sample characteristics are summarized
 in \Cref{tab:sample}.
 
-\input{../assets/tables/main/MAIN_01_sample_descriptives}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/main/MAIN_01_sample_descriptives}
 
 \subsection{Momentary measures}
 At each prompt, participants rated a set of items on seven-point scales (1 = not at all,
@@ -228,11 +229,9 @@ combination into a single threat node, and a model in which they were entered se
 reported as a sensitivity analysis. Goal engagement was ``I am absorbed in this activity'', the
 central goal-directed activity characteristic in the diary. Two further goal-directed
 characteristics, efficacy (``I am good at this'') and valence (``I like doing this''), were used
-in an extended model. Together with a challenge item (``this activity is a personal challenge for
-me''), these activity appraisals also index flow, a state of deep absorption and effortless
-concentration arising when perceived challenge and perceived skill are both high and matched, and
-experienced as intrinsically rewarding \citep{csikszentmihalyi1990flow,nakamura2014flow}; their
-combination is described below. Participants also reported their location, whether they were alone, whether
+in an extended model. A momentary challenge item (``this activity is a personal challenge for
+me'') was also recorded; it is analysed in a companion paper on the flow construct and is not part
+of the models reported here. Participants also reported their location, whether they were alone, whether
 they had taken pain medication, and whether the prompt disturbed them. The exact item wording and
 the mapping to analytic variables are documented in the study codebook.
 
@@ -292,37 +291,10 @@ five pre-specified couplings, a multilevel model estimated the coupling as a ran
 interaction with each standardized profile. This one-step test replaces the underpowered
 correlation of two-step per-person coefficients with baseline traits.
 
-\paragraph{Flow as a composite construct.} Goal engagement, one of the four core nodes, is the
-absorption component of flow, so the construct is partly present in the model already. Following
-the standard experience-sampling operationalization
-\citep{massimini1988systematic,moneta1996effect}, flow was represented by two structurally
-distinct parts rather than by a single sum, because summing the constituents conflates the
-antecedent condition with the outcome experience. The condition was expressed as balance and
-elevation, and the experience as the mean of absorption and enjoyment:
-%
-\begin{equation}
-\text{balance} = -\lvert C - S \rvert, \qquad
-\text{elevation} = \tfrac{1}{2}(C + S), \qquad
-\text{flow experience} = \tfrac{1}{2}(A + E),
-\label{eq:flow}
-\end{equation}
-%
-with $C$ challenge, $S$ skill, $A$ absorption, and $E$ enjoyment. The elevation term is required
-because balance alone would score a moment low on both challenge and skill, that is apathy, as
-perfectly balanced. Three further decisions matter for interpretation. First, the metric:
-person-mean centering was primary \citep{curran2011disaggregation}, because within-person standardization sets every participant's
-mean to zero and therefore assigns above-average moments to everyone, including participants who
-never reach flow in absolute terms; the raw scale, grand-mean $z$, and within-person $z$ were run
-as sensitivity analyses (\Cref{sfig:flowmeasure}, \Cref{tab:sup-flow}). Second, because momentary challenge co-varied strongly with self-reported
-physical activation ($r=.57$ within persons), all flow models were also estimated with activation
-as a covariate. Third, since composite measures can be driven by a single constituent and thereby
-obscure rather than summarize \citep{vanderweele2022constructed}, absorption, enjoyment,
-challenge, and skill were entered separately as well as jointly, and the benchmark network was
-re-estimated with the flow composite in place of the single absorption node. The four items were
-never summed into one score. This is a secondary, analyst-constructed measure: the original study
-analysed these items separately \citep{viane2004acceptance}.
-
-\paragraph{Robustness and diagnostics.} The benchmark temporal network was re-estimated after
+\paragraph{Robustness and diagnostics.} Momentary missingness was characterized and benchmarked
+against univariate and multivariate reconstruction methods on held-out prompts
+\citep{moritz2017imputets}; the reported models use complete cases, so the benchmark documents
+the cost of the missing prompts rather than replacing them. The benchmark temporal network was re-estimated after
 within-person detrending, with the two-item attention composite, with a stricter compliance
 threshold (at least 70 prompts), and in a six-node extension adding efficacy and valence.
 Sampling stability was assessed with leave-one-participant-out refitting and a person-level
@@ -331,18 +303,15 @@ associations, and within-person lag-1 residual autocorrelation. Daily functionin
 by relating each day's momentary experience to the evening reports of goal success and pain
 interference in multilevel models.
 
-\subsection{Hypotheses}
+\subsection{Literature-derived hypotheses}
 For RQ1, four hypotheses were specified. H1 predicted positive temporal persistence for pain,
 threat, attention, and engagement. H2 predicted a positive within-person threat-attention-pain
 circuit: a higher than usual threat value and more attention to pain would be followed by higher
 pain, and higher pain would be followed by more attention to pain. H3 predicted that higher pain
-would be followed by less goal engagement, the interruption of goal pursuit. For the flow
-construct, H4 predicted that a higher than usual flow experience would accompany lower pain and,
-more strongly, less pain interference, following the proposal that absorption in a competing goal
-blunts the interruptive function of pain. H5 predicted substantial person-specific heterogeneity in
-these couplings. For RQ2, H6 predicted that the baseline threat-value profile would explain
-individual differences in the momentary experience of pain better than the biomedical or
-personality profiles.
+would be followed by less goal engagement, the interruption of goal pursuit. H4 predicted
+substantial person-specific heterogeneity in these couplings. For RQ2, H5 predicted that the
+baseline threat-value profile would explain individual differences in the momentary experience of
+pain better than the biomedical or personality profiles.
 
 \section{Results}
 
@@ -363,14 +332,14 @@ valence (all $r$ between $-.08$ and $-.10$; \Cref{fig:variance}, Panel D).
 \raggedright
 \caption{Series length, within-person variance, and pain-driver correlations.}
 \label{fig:variance}
-\noindent\includegraphics[width=0.96\textwidth]{../assets/figures/main/MAIN_01_variance_feasibility.png}
+\noindent\includegraphics[width=0.96\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/main/MAIN_01_variance_feasibility.png}
 \figurenote{Panel A shows the distribution of completed prompts per person, with the median and
 the approximate idiographic series-length threshold marked. Panel B partitions each measure into
 between-person, between-day, and within-day variance. Panel C shows the within-day to
 between-person variance ratio. Panel D shows within-person correlations of each driver with pain.}
 \end{figure}
 
-\input{../assets/tables/main/MAIN_02_ema_descriptives_variance}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/main/MAIN_02_ema_descriptives_variance}
 
 \subsection{RQ1: A within-person threat-attention-pain circuit}
 The pooled benchmark provides the average within-person structure against which the
@@ -395,17 +364,17 @@ threat-pain associations (\Cref{tab:sup-contemporaneous-between}).
 \raggedright
 \caption{Pooled benchmark momentary networks from multilevel VAR.}
 \label{fig:networks}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/main/MAIN_02_mlvar_networks.png}
+\noindent\includegraphics[width=0.98\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/main/MAIN_02_mlvar_networks.png}
 \figurenote{Panel A shows the directed temporal (lag-1) network within day. Panel B shows the
 contemporaneous network at the same prompt. Blue edges are positive, red edges are negative, edge
 width scales with strength, and faded edges are not statistically significant. The between-person
 network is reported in \Cref{tab:sup-contemporaneous-between}.}
 \end{figure}
 
-\input{../assets/tables/main/MAIN_03_mlvar_temporal_effects}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/main/MAIN_03_mlvar_temporal_effects}
 
 \subsection{Individual heterogeneity in the pain-driver couplings}
-The average circuit summarizes wide person-to-person variation, supporting H5
+The average circuit summarizes wide person-to-person variation, supporting H4
 (\Cref{fig:heterogeneity}). The unregularized per-person threat-to-pain coefficient ranged from
 $-.24$ to $.86$ (mean $=.082$), the attention-to-pain coefficient from $-.31$ to $.73$
 (mean $=.068$), and the engagement-to-pain coefficient from $-.53$ to $.31$ (mean $=.001$;
@@ -429,7 +398,7 @@ four-node structure essentially unchanged (\Cref{sfig:extended}, \Cref{tab:sup-e
 \raggedright
 \caption{Individual heterogeneity in the pain-driver couplings.}
 \label{fig:heterogeneity}
-\noindent\includegraphics[width=0.96\textwidth]{../assets/figures/main/MAIN_03_idiographic_heterogeneity.png}
+\noindent\includegraphics[width=0.96\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/main/MAIN_03_idiographic_heterogeneity.png}
 \figurenote{Panel A shows the per-person lag-1 coefficients of threat, attention, and engagement
 predicting pain, with the per-person mean and the mlVAR fixed effect marked. Panel B shows each
 participant's unregularized threat-to-pain estimate with its 95\% confidence interval, sorted;
@@ -438,59 +407,6 @@ graphicalVAR selected each directed temporal edge. Panel D shows the between-per
 network, in which edge width and colour intensity scale with the standard deviation of the
 per-person lag-1 coefficient for that path.}
 \end{figure}
-
-\paragraph{Flow as a composite of the activity appraisals.} Because goal engagement is the
-absorption half of flow, the activity items were combined into a momentary flow experience
-(\Cref{eq:flow}) and carried through the same models. Within persons, the challenge-skill
-condition predicted the flow experience strongly, but entirely through elevation ($b=.744$,
-$SE=.024$, $p<.001$) and not through balance ($b=.006$, $p=.78$); between persons the balance
-effect was in fact negative ($b=-.111$, $p=.028$), as it was on the raw response scale
-($b=-.090$, $p<.001$). An additive model with challenge and skill as separate main effects fitted
-better than the balance-and-elevation form (AIC $16{,}880$ versus $17{,}321$) and their
-interaction was not significant ($p=.15$), so in these data the flow condition behaves additively
-rather than configurationally. Under the conservative absolute criterion 19.3\% of moments
-qualified as flow and four of 68 participants never reached it, whereas the within-person metrics
-placed no participant at zero, which is why prevalence is reported on the absolute scale only
-(\Cref{tab:sup-flow}). The flow experience was concurrently associated with lower pain
-($b=-.094$, $SE=.020$), lower pain interference ($b=-.139$, $SE=.025$), less attention to pain
-($b=-.074$, $SE=.019$), and a lower threat value ($b=-.079$, $SE=.014$), all $p<.001$ and all
-unchanged after adjusting for physical activation, supporting H4
-(\Cref{fig:flow}, Panel A). No lagged effect
-reached significance in either direction, while the autoregressive terms remained large
-(\Cref{fig:flow}, Panel B), so the association is concurrent rather than temporal. It was
-also person-specific in the same way as the other couplings: the concurrent slope was negative in
-73\% of participants, reliably so in 14 of 63, and reliably positive in 4 (\Cref{fig:flow},
-Panels D to F). The least painful moments were not the flow moments but the low-challenge,
-high-skill ones (\Cref{fig:flow}, Panel C).
-
-Two results bear on the construct itself. First, replacing the single absorption node by the
-composite reproduced the benchmark network almost exactly, with edge differences of $.003$ to
-$.027$ and no change of sign or significance: the composite adds a
-label rather than information. Second, the association with pain was not evenly distributed over
-the constituents. Entered alone, absorption ($b=-.069$), enjoyment
-($b=-.077$), and skill ($b=-.088$) each tracked lower pain while challenge did not ($b=-.004$,
-$p=.82$). Entered jointly, absorption ($b=-.055$, $p<.001$) and skill ($b=-.045$, $p<.001$)
-retained their associations, enjoyment fell to non-significance ($p=.09$), and challenge reversed
-sign and became positive ($b=.032$, $p=.004$). The composite is therefore carried by two of its
-four constituents, and one constituent works against the other three, which is the pattern that
-makes a summed score of such measures misleading \citep{vanderweele2022constructed}.
-
-\begin{figure}[htbp]
-\raggedright
-\caption{Flow and the momentary experience of pain.}
-\label{fig:flow}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/main/MAIN_04_flow_pain.png}
-\figurenote{Panel A shows the concurrent association of the flow experience with the four momentary
-pain measures, unadjusted and adjusted for physical activation. Panel B shows every lag-1 effect in
-both directions, estimated on person-standardized scores within day. Panel C shows the four
-challenge-skill channels against apathy as the reference. Panel D shows the person-specific
-concurrent flow-pain slope with its 95\% confidence interval, ordered by size, with the median
-marked; intervals excluding zero are highlighted. Panel E shows the same for the lag-1 slope. Panel
-F overlays the two person-level distributions. Error bars and intervals are 95\% confidence
-intervals.}
-\end{figure}
-
-\input{../assets/tables/main/MAIN_04_flow_pain_models}
 
 \subsection{RQ2: Baseline profiles and the momentary experience of pain}
 Between persons, the baseline
@@ -506,19 +422,16 @@ $R^2=.37$) and explained variance in mean engagement that pain alone did not
 ($R^2=.00$ to $R^2=.10$). Baseline profiles did not, however, moderate the \emph{within-person}
 coupling strengths: across the five pre-specified couplings and the three profiles, only one of
 15 cross-level interactions reached significance, no more than expected by chance
-(\Cref{fig:link}, Panel D, \Cref{tab:sup-moderation}). The same pattern extended to flow: a stronger baseline threat-value profile went with a lower
-average flow experience ($r=-.27$, $p=.028$), as did higher neuroticism ($r=-.26$, $p=.035$), both
-surviving adjustment for mean pain, whereas no profile predicted the person-specific flow-pain
-coupling. Trait vulnerability therefore shaped how
+(\Cref{fig:link}, Panel D, \Cref{tab:sup-moderation}). Trait vulnerability therefore shaped how
 much, on average, a patient attended to pain and disengaged from activity, but not the
-moment-to-moment coupling strengths, which remained person-specific. H6 was thus supported at the
+moment-to-moment coupling strengths, which remained person-specific. H5 was thus supported at the
 level of mean states but not at the level of the within-person dynamics.
 
 \begin{figure}[htbp]
 \raggedright
 \caption{Baseline trait profiles and the momentary experience of pain.}
 \label{fig:link}
-\noindent\includegraphics[width=0.96\textwidth]{../assets/figures/main/MAIN_05_trait_link.png}
+\noindent\includegraphics[width=0.96\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/main/MAIN_04_trait_link.png}
 \figurenote{Panel A shows the partial correlation (controlling mean momentary pain) of each
 baseline profile with mean momentary attention to pain and mean goal engagement. Panels B and C
 show the threat-value profile against mean attention to pain and mean goal engagement, with an
@@ -529,7 +442,7 @@ cross-level moderation of the within-person couplings by the threat-value profil
 confidence intervals.}
 \end{figure}
 
-\input{../assets/tables/main/MAIN_05_trait_between_person}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/main/MAIN_04_trait_between_person}
 
 \subsection{Robustness}
 The benchmark temporal circuit was stable across sensitivity analyses (\Cref{sfig:robustness},
@@ -573,21 +486,11 @@ intensity alone, governs how strongly pain captures attention
 \citep{crombez1998catastrophizing,crombez2013attention}. Threat and attention then preceded higher
 pain, and pain fed back into attention, closing a self-reinforcing loop that is consistent with
 accounts of hypervigilance and worry in chronic pain
-\citep{eccleston2007worry,vandamme2010keeping,crombez2012fear}. The interruption of goal
+\citep{eccleston2007worry,vandamme2010keeping,vlaeyen2000fear,crombez2012fear}. The interruption of goal
 engagement by pain was small and reached significance only in the person-level bootstrap, which
 fits the observation that most everyday activities were not pain-related
 and that engagement is largely momentary and context-bound; it is a real but modest effect that
-sits at the edge of what this design can resolve. Broadening that node into the momentary flow
-experience did not change this picture: absorption accompanied by enjoyment tracked lower pain and,
-more strongly, lower pain interference at the same moment, which is what an attentional account
-predicts \citep{vandamme2010keeping}, but it predicted nothing at the next prompt. Flow is in that
-sense the mirror image of pain interruption rather than a cause of relief, and the daily-life
-evidence is therefore weaker than the flow-induced analgesia proposed on the basis of induced-flow
-paradigms such as virtual reality and music \citep{gromakovskis2025flow}. Two features of everyday
-activity help explain the gap. Challenge in this sample co-occurred with physical exertion, which
-carries its own cost, and the least painful moments were not the flow moments but the low-challenge,
-high-skill ones, so what accompanied relief here looks more like competence without demand than
-optimal challenge.
+sits at the edge of what this design can resolve.
 
 The central RQ1 result, however, is that this shared circuit summarizes wide individual variation.
 The threat-to-pain coupling ranged from clearly negative to strongly positive across patients, and
@@ -613,20 +516,7 @@ vulnerability sets the average level of vigilance and disengagement, whereas the
 coupling is governed by state processes and context that baseline questionnaires do not index.
 This dissociation between level effects, which are trait-linked, and dynamic effects, which are
 person-specific, is itself an argument for measuring the dynamics directly rather than inferring
-them from traits \citep{wright2020personalized}. Average flow behaved the same way, being lower in
-patients with a stronger threat profile while leaving the person-specific flow-pain coupling
-unpredicted.
-
-The flow composite also carries a measurement lesson. It reproduced the benchmark network almost
-exactly, and its association with pain was carried by absorption and perceived skill, while
-enjoyment added nothing once they were included and challenge reversed sign. A construct whose
-components pull in opposite directions is poorly served by a summed score, and reporting the
-composite alone would have hidden both the driving constituent and the counteracting one
-\citep{vanderweele2022constructed}. The same applies to the defining challenge-skill balance, which
-was null within persons and negative between them, so that in this sample flow is better described
-by how demanding and how manageable an activity is than by how well the two are matched, an
-attenuation of the balance effect that is directionally consistent with meta-analytic evidence
-\citep{fong2015challenge}.
+them from traits \citep{wright2020personalized}.
 
 \subsection{Limitations}
 Several limitations qualify these conclusions. They concern, in turn, the individual estimates,
@@ -651,22 +541,12 @@ hours, no lag is carried overnight, and momentary reports are retrospective over
 Some pain processes, such as the reflexive capture of attention by a pain spike, may unfold faster
 than this design can observe, whereas others, such as behavioural disengagement, may require longer
 than a single prompt interval \citep{hamaker2017no}. The weak group-level interruption of
-engagement may reflect this mismatch of time scales as much as a weak process, and the same
-qualification applies with more force to flow: a state defined by moment-to-moment absorption may
-simply not be resolvable at a ninety-minute spacing, so the absence of lagged flow effects
-constrains what can be claimed at this resolution rather than at every resolution.
+engagement may reflect this mismatch of time scales as much as a weak process.
 
 Fourth, the momentary constructs are single items or short composites, chosen to keep the diary
 brief. The two-item attention analysis was reassuring and the threat composite combined two
 appraisals, but multi-item momentary measurement would improve reliability and would allow fear and
-catastrophizing to be separated rather than pooled into a single threat node. The flow measure is
-the clearest instance of this constraint. It rests on four single items and covers three of the
-nine dimensions Csikszentmihalyi describes, leaving sense of control, time transformation, loss of
-self-consciousness, and unambiguous feedback unmeasured, so it is a core proxy rather than a full
-measure of flow \citep{jackson2002assessing}; it is also a secondary construction, since the
-original study analysed these items separately. Because the open-text activity description was not
-coded, the confounding of challenge with physical exertion could be adjusted for statistically but
-not separated substantively, which limits how far the channel comparison can be interpreted.
+catastrophizing to be separated rather than pooled into a single threat node.
 
 Fifth, the RQ2 sample of 67 participants with baseline data is modest for individual-difference
 analyses. The between-person associations were robust, but the cross-level moderation was better
@@ -733,7 +613,7 @@ and eventually tailoring psychological pain care.
 \raggedright
 \caption{Design, compliance, and data quality.}
 \label{sfig:design}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_01_design_compliance.png}
+\noindent\includegraphics[width=0.98\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_01_design_compliance.png}
 \figurenote{Panel A shows completed prompts per participant with the median. Panel B shows the
 distribution of completed prompts against the idiographic threshold. Panel C shows compliance
 across the 14 days. Panel D shows prompts per person-day (violins) against the target of eight.
@@ -745,7 +625,7 @@ participant.}
 \raggedright
 \caption{Item distributions and per-person stationarity.}
 \label{sfig:stationarity}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_02_stationarity.png}
+\noindent\includegraphics[width=0.98\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_02_stationarity.png}
 \figurenote{Panel A shows the share of individual series flagged by a linear-trend test and by KPSS
 for each core node. Panels B and C show the distributions of per-person linear-trend and KPSS
 p-values. Panel D shows the skewness of the core items. Panel E shows example within-person pain
@@ -756,7 +636,7 @@ series. Panel F shows the mean within-person autocorrelation of each node at lag
 \raggedright
 \caption{Missingness and imputation benchmark.}
 \label{sfig:missingness}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_03_missingness_imputation.png}
+\noindent\includegraphics[width=0.98\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_03_missingness_imputation.png}
 \figurenote{Panel A shows momentary missingness by measure. Panels B and C show the held-out
 reconstruction error and correlation of univariate and multivariate imputation methods. Panel D
 shows the distribution of consecutive-missing run lengths. Panel E shows response counts by prompt
@@ -768,7 +648,7 @@ correlation.}
 \raggedright
 \caption{Per-person graphicalVAR feasibility.}
 \label{sfig:feasibility}
-\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_04_graphicalvar_feasibility.png}
+\noindent\includegraphics[width=0.92\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_04_graphicalvar_feasibility.png}
 \figurenote{Panel A shows selected temporal edges per person with the median. Panel B plots
 selected edges against series length. Panel C shows the temporal edge-selection frequency across
 persons. Panel D shows the number of participants with a nonzero key edge.}
@@ -778,7 +658,7 @@ persons. Panel D shows the number of participants with a nonzero key edge.}
 \raggedright
 \caption{S-GIMME shared and individual structure.}
 \label{sfig:sgimme}
-\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_05_sgimme.png}
+\noindent\includegraphics[width=0.92\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_05_sgimme.png}
 \figurenote{Panel A shows the S-GIMME subgroup sizes. Panel B shows the series length available for
 S-GIMME. Panel C lists the most common S-GIMME group-level paths, with counts indicating the
 participants for whom each path was retained at the group level. Panel D lists the most common
@@ -789,7 +669,7 @@ individual-level cross-variable paths.}
 \raggedright
 \caption{Extended six-node model.}
 \label{sfig:extended}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_06_extended_network.png}
+\noindent\includegraphics[width=0.98\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_06_extended_network.png}
 \figurenote{Panels A and B show the temporal and contemporaneous networks of the six-node model,
 which adds momentary efficacy and valence. Panel C compares the core four-node temporal
 coefficients between the primary and extended models.}
@@ -799,7 +679,7 @@ coefficients between the primary and extended models.}
 \raggedright
 \caption{Robustness of the temporal circuit.}
 \label{sfig:robustness}
-\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_07_robustness.png}
+\noindent\includegraphics[width=0.92\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_07_robustness.png}
 \figurenote{Panel A shows person cluster-bootstrap 95\% intervals for the cross-lagged edges. Panel
 B shows leave-one-participant-out ranges. Panel C compares within-person detrended coefficients with
 the primary coefficients. Panel D shows the edge-weight correlation of each sensitivity refit with
@@ -810,7 +690,7 @@ the primary network.}
 \raggedright
 \caption{Daily dysfunction dynamics.}
 \label{sfig:dysfunction}
-\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_08_daily_dysfunction.png}
+\noindent\includegraphics[width=0.92\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_08_daily_dysfunction.png}
 \figurenote{Panel A shows within-person day-level models relating the day's momentary experience to
 the evening reports of pain interference and goal success. Panel B shows within-person day-level
 correlations. Panel C shows day pain against evening interference within persons. Panel D shows the
@@ -821,7 +701,7 @@ distributions of the evening outcomes.}
 \raggedright
 \caption{Everyday context and time-in-study.}
 \label{sfig:context}
-\noindent\includegraphics[width=0.92\textwidth]{../assets/figures/supplementary/SUP_09_context.png}
+\noindent\includegraphics[width=0.92\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_09_context.png}
 \figurenote{Panel A shows where prompts occurred. Panel B shows the momentary states by location.
 Panel C shows the momentary states when alone versus accompanied. Panel D shows the week-2 minus
 week-1 drift for each measure with 95\% confidence intervals from participant-clustered mixed
@@ -832,43 +712,26 @@ models.}
 \raggedright
 \caption{Within-person and between-person correlations.}
 \label{sfig:correlations}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_10_within_between_correlations.png}
+\noindent\includegraphics[width=0.98\textwidth]{../../assets/01_manuscript_DeterminantsOfPain/figures/supplementary/SUP_10_within_between_correlations.png}
 \figurenote{Panel A shows correlations after within-person centring. Panel B shows correlations
 among person means. Panel C shows the between-person minus within-person difference matrix.}
-\end{figure}
-
-\clearpage
-\begin{figure}[htbp]
-\raggedright
-\caption{Measurement of the flow construct.}
-\label{sfig:flowmeasure}
-\noindent\includegraphics[width=0.98\textwidth]{../assets/figures/supplementary/SUP_11_flow_measurement.png}
-\figurenote{Panel A shows the response distribution of the four activity appraisals, labelled by
-their role in the flow model. Panel B shows their correlation structure, within persons below the
-diagonal and between persons above it. Panel C shows the share of each item's variance that is
-within person. Panel D shows the share of moments classified as flow under each standardization
-rule, before and after the experience gate, annotated with the number of participants who never
-reach the criterion; only the absolute rules allow a participant to score zero. Panel E shows the
-per-person share of flow moments under the liberal and the strict absolute criterion. Panel F shows
-the mean flow experience across the full challenge-skill plane, with the four channels marked.}
 \end{figure}
 
 \clearpage
 \subsection*{Supplementary Tables}
 \addcontentsline{toc}{subsection}{Supplementary Tables}
 
-\input{../assets/tables/supplementary/SUP_01_contemporaneous_between_edges}
-\input{../assets/tables/supplementary/SUP_02_stationarity}
-\input{../assets/tables/supplementary/SUP_03_imputation_comparison}
-\input{../assets/tables/supplementary/SUP_04_sgimme_paths}
-\input{../assets/tables/supplementary/SUP_05_graphicalvar_selection}
-\input{../assets/tables/supplementary/SUP_06_extended_model}
-\input{../assets/tables/supplementary/SUP_07_perperson_couplings}
-\input{../assets/tables/supplementary/SUP_08_robustness_stability}
-\input{../assets/tables/supplementary/SUP_09_sensitivity_agreement}
-\input{../assets/tables/supplementary/SUP_10_moderation}
-\input{../assets/tables/supplementary/SUP_11_daily_dysfunction}
-\input{../assets/tables/supplementary/SUP_12_context}
-\input{../assets/tables/supplementary/SUP_13_flow_operationalization}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_01_contemporaneous_between_edges}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_02_stationarity}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_03_imputation_comparison}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_04_sgimme_paths}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_05_graphicalvar_selection}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_06_extended_model}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_07_perperson_couplings}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_08_robustness_stability}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_09_sensitivity_agreement}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_10_moderation}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_11_daily_dysfunction}
+\input{../../assets/01_manuscript_DeterminantsOfPain/tables/supplementary/SUP_12_context}
 
 \end{document}

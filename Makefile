@@ -12,11 +12,11 @@ help:
 	@echo "  make run-all            - run the full analysis pipeline"
 	@echo "  make run-stage STAGE=07 - run one stage prefix"
 	@echo "  make run-from STAGE=07  - resume from a stage prefix"
-	@echo "  make paper    - compile paper/report/main.tex with tectonic"
-	@echo "  make check    - verify Python syntax and command entrypoints"
+	@echo "  make paper              - compile both manuscripts with tectonic"
+	@echo "  make check              - verify Python syntax and command entrypoints"
 	@echo "  make docker-build       - build the Docker image"
 	@echo "  make docker-check       - run make check inside Docker"
-	@echo "  make clean    - remove caches and build artifacts"
+	@echo "  make clean              - remove caches and build artifacts"
 
 venv:
 	$(PYTHON) -m venv $(VENV)
@@ -39,7 +39,8 @@ run-from: install
 	$(PY) $(PIPELINE) --from $(STAGE)
 
 paper:
-	cd paper/report && tectonic --reruns 4 main.tex
+	cd paper/report/01_manuscript_DeterminantsOfPain && tectonic --reruns 4 main.tex
+	cd paper/report/02_manuscript_FlowInducedAnalgesia && tectonic --reruns 4 main.tex
 
 check:
 	$(PYTHON) -m compileall src/utils

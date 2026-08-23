@@ -1,4 +1,4 @@
-"""Stage 13.1 - Main manuscript figures (MAIN_01 to MAIN_05)."""
+"""Stage 13.1 - Main figures for manuscript 01 (MAIN_01 to MAIN_04)."""
 from __future__ import annotations
 
 import sys
@@ -318,129 +318,12 @@ def main_04():
     vs.panel_label(ax, "F")
 
     fig.tight_layout(h_pad=2.8, w_pad=2.8)
-    vs.savefig(fig, FIG / "MAIN_05_trait_link.png")
-
-
-def main_05():
-    """Flow and the momentary experience of pain (stage 12).
-
-    Panels A to C give the pooled picture: the concurrent associations, all lag-1 effects in both
-    directions, and the four challenge-skill channels against apathy. Panels D to F give the
-    idiographic distribution behind it.
-    """
-    con = pd.read_csv(T / "12_flow_pain_contemporaneous.csv")
-    lag = pd.read_csv(T / "12_flow_pain_lagged.csv")
-    chan = pd.read_csv(T / "12_flow_channel_contrasts.csv")
-    per = pd.read_csv(T / "12_flow_perperson_slopes.csv")
-
-    OUT = ["PIJN", "PIJN_AFF", "ATTEND", "THREAT"]
-    LAB = {"PIJN": "Pain intensity", "PIJN_AFF": "Pain interference",
-           "ATTEND": "Attention to pain", "THREAT": "Threat value"}
-    FLOW = vs.NODE_COLORS["FLOWEXP"]
-
-    fig, ax = plt.subplots(2, 3, figsize=(15.6, 9.2))
-
-    ax_ = ax[0, 0]
-    y = np.arange(len(OUT))[::-1]
-    for shift, mdl, colr, lab in [(0.16, "base", vs.MUTED, "Unadjusted"),
-                                  (-0.16, "activity-adjusted", FLOW, "Activity-adjusted")]:
-        sub = con[(con["model"] == mdl) & (con["term"] == "FLOWEXP_w")].set_index("outcome")
-        est = np.array([sub.loc[o, "estimate"] for o in OUT])
-        se = np.array([sub.loc[o, "SE"] for o in OUT])
-        ax_.errorbar(est, y + shift, xerr=1.96 * se, fmt="o", ms=5, color=colr, ecolor=colr,
-                     elinewidth=1.6, capsize=2.5, label=lab)
-    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    ax_.set_yticks(y); ax_.set_yticklabels([LAB[o] for o in OUT], fontsize=8.5)
-    ax_.set_xlabel("Effect of the flow experience (95% CI)")
-    ax_.set_title("Same beep")
-    ax_.legend(fontsize=8, loc="upper left"); vs.panel_label(ax_, "A")
-
-    ax_ = ax[0, 1]
-    fw = lag[(lag["model"] == "flow(t-1) -> outcome(t)") &
-             (lag["term"] == "FLOWEXP_lag")].copy()
-    fw["label"] = "Flow -> " + fw["outcome"].map(LAB)
-    rv = lag[lag["model"] == "predictor(t-1) -> flow(t)"].copy()
-    rv = rv[rv["term"] == rv["outcome"] + "_lag"]
-    rv["label"] = rv["outcome"].map(LAB) + " -> Flow"
-    lg = pd.concat([fw, rv], ignore_index=True)
-    y = np.arange(len(lg))[::-1]
-    cols = [FLOW if l.startswith("Flow ->") else vs.NODE_COLORS["PIJN"] for l in lg["label"]]
-    for yy, e, se, c in zip(y, lg["estimate"], lg["SE"], cols):
-        ax_.hlines(yy, e - 1.96 * se, e + 1.96 * se, color=c, lw=2.2)
-        ax_.plot(e, yy, "o", ms=5, color=vs.INK, zorder=3)
-    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    ax_.set_yticks(y); ax_.set_yticklabels(lg["label"], fontsize=8)
-    ax_.set_xlabel("Lag-1 effect, standardized (95% CI)")
-    ax_.set_title("Lag 1, both directions")
-    vs.panel_label(ax_, "B")
-
-    ax_ = ax[0, 2]
-    ch = chan[chan["term"].str.startswith("chan")].copy()
-    ch["channel"] = ch["term"].str.replace("chan", "", regex=False)
-    piv = ch.pivot(index="channel", columns="outcome", values="estimate")
-    piv = piv.reindex(["Flow", "Relaxation", "Anxiety"])[OUT]
-    x = np.arange(len(OUT)); w = 0.26
-    for k, name in enumerate(piv.index):
-        ax_.bar(x + (k - 1) * w, piv.loc[name].values, w, color=vs.CHANNEL_COLORS[name],
-                edgecolor="white", label=name)
-    ax_.axhline(0, color=vs.INK, lw=0.8)
-    ax_.set_xticks(x); ax_.set_xticklabels([LAB[o].replace(" ", "\n") for o in OUT], fontsize=8)
-    ax_.set_ylabel("Difference from apathy")
-    ax_.set_title("The four channels against apathy")
-    ax_.legend(fontsize=8); vs.bar_axes(ax_); vs.panel_label(ax_, "C")
-
-    ax_ = ax[1, 0]
-    pp = per.dropna(subset=["b_contemp"]).sort_values("b_contemp").reset_index(drop=True)
-    y = np.arange(len(pp))
-    sneg, spos = pp["hi_contemp"] < 0, pp["lo_contemp"] > 0
-    cols = np.where(sneg, FLOW, np.where(spos, vs.NODE_COLORS["PIJN"], "#c9d2db"))
-    ax_.hlines(y, pp["lo_contemp"], pp["hi_contemp"], color=cols, lw=1.4)
-    ax_.plot(pp["b_contemp"], y, "o", ms=2.6, color=vs.INK)
-    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    ax_.axvline(pp["b_contemp"].median(), color=FLOW, lw=1.2, ls=":")
-    ax_.text(0.02, 0.97, f"median $b$ = {pp['b_contemp'].median():.2f}\n"
-             f"{int(sneg.sum())} of {len(pp)} reliably negative\n"
-             f"{int(spos.sum())} reliably positive",
-             transform=ax_.transAxes, va="top", fontsize=8, color=vs.MUTED)
-    ax_.set_yticks([]); ax_.set_ylabel("Participants, ordered")
-    ax_.set_xlabel("Person-specific concurrent slope (95% CI)")
-    ax_.set_title("Flow and pain, same beep")
-    vs.panel_label(ax_, "D")
-
-    ax_ = ax[1, 1]
-    pl = per.dropna(subset=["b_lagged"]).sort_values("b_lagged").reset_index(drop=True)
-    y = np.arange(len(pl))
-    sn, sp = pl["hi_lagged"] < 0, pl["lo_lagged"] > 0
-    cols = np.where(sn, FLOW, np.where(sp, vs.NODE_COLORS["PIJN"], "#c9d2db"))
-    ax_.hlines(y, pl["lo_lagged"], pl["hi_lagged"], color=cols, lw=1.4)
-    ax_.plot(pl["b_lagged"], y, "o", ms=2.6, color=vs.INK)
-    ax_.axvline(0, color=vs.INK, lw=0.9, ls="--")
-    ax_.text(0.02, 0.97, f"median $b$ = {pl['b_lagged'].median():.2f}\n"
-             f"{int(sn.sum())} reliably negative\n{int(sp.sum())} reliably positive",
-             transform=ax_.transAxes, va="top", fontsize=8, color=vs.MUTED)
-    ax_.set_yticks([]); ax_.set_ylabel("Participants, ordered")
-    ax_.set_xlabel("Person-specific lag-1 slope (95% CI)")
-    ax_.set_title("Flow and pain, lag 1")
-    vs.panel_label(ax_, "E")
-
-    ax_ = ax[1, 2]
-    bins = np.linspace(-0.5, 0.5, 21)
-    ax_.hist(pp["b_contemp"], bins=bins, color=FLOW, alpha=0.55, edgecolor="white",
-             label="Same beep")
-    ax_.hist(pl["b_lagged"], bins=bins, color=vs.MUTED, alpha=0.55, edgecolor="white",
-             label="Lag 1")
-    ax_.axvline(0, color=vs.INK, lw=1.0, ls="--")
-    ax_.set_xlabel("Person-specific slope"); ax_.set_ylabel("Participants")
-    ax_.set_title("Concurrent is shifted, lagged is centred")
-    ax_.legend(fontsize=8); vs.bar_axes(ax_); vs.panel_label(ax_, "F")
-
-    fig.tight_layout(h_pad=2.8, w_pad=2.8)
-    vs.savefig(fig, FIG / "MAIN_04_flow_pain.png")
+    vs.savefig(fig, FIG / "MAIN_04_trait_link.png")
 
 
 def main():
     np.random.seed(20260703)
-    main_01(); main_02(); main_03(); main_04(); main_05()
+    main_01(); main_02(); main_03(); main_04()
     print("main figures written to", FIG)
 
 

@@ -26,11 +26,27 @@ PIPELINE = SRC / "utils" / "pipeline"
 PIPELINE_SEPARATE = PIPELINE / "separate"
 
 PAPER = ROOT / "paper"
-FIG_MAIN = PAPER / "assets" / "figures" / "main"
-FIG_SUPP = PAPER / "assets" / "figures" / "supplementary"
-TABLES_PAPER = PAPER / "assets" / "tables"
+PAPER_ASSETS = PAPER / "assets"
+PAPER_REPORT = PAPER / "report"
+
+# The project carries two manuscripts off the same pipeline. Each owns its own asset tree so
+# that a figure or table always belongs to exactly one paper.
+#   01  Drivers of pain in daily life (the idiographic network study)
+#   02  Decomposing flow (the construct study)
+MS1 = "01_manuscript_DeterminantsOfPain"
+MS2 = "02_manuscript_FlowInducedAnalgesia"
+
+FIG_MAIN = PAPER_ASSETS / MS1 / "figures" / "main"
+FIG_SUPP = PAPER_ASSETS / MS1 / "figures" / "supplementary"
+TABLES_PAPER = PAPER_ASSETS / MS1 / "tables"
 TABLES_MAIN = TABLES_PAPER / "main"
 TABLES_SUPP = TABLES_PAPER / "supplementary"
+
+FLOW_FIG_MAIN = PAPER_ASSETS / MS2 / "figures" / "main"
+FLOW_FIG_SUPP = PAPER_ASSETS / MS2 / "figures" / "supplementary"
+FLOW_TABLES_PAPER = PAPER_ASSETS / MS2 / "tables"
+FLOW_TABLES_MAIN = FLOW_TABLES_PAPER / "main"
+FLOW_TABLES_SUPP = FLOW_TABLES_PAPER / "supplementary"
 
 # Raw source files (migrated from the gitignored Viane Outlook dump).
 # The baseline source is the "between" file, whose integer subject IDs match the diary and
@@ -59,6 +75,11 @@ def ensure_dirs() -> None:
         TABLES_PAPER,
         TABLES_MAIN,
         TABLES_SUPP,
+        FLOW_FIG_MAIN,
+        FLOW_FIG_SUPP,
+        FLOW_TABLES_PAPER,
+        FLOW_TABLES_MAIN,
+        FLOW_TABLES_SUPP,
     ):
         d.mkdir(parents=True, exist_ok=True)
 
