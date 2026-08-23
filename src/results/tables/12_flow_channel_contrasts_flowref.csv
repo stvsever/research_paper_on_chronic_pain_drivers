@@ -1,0 +1,17 @@
+"outcome","term","estimate","SE","lo","hi","p","n_obs"
+"PIJN","(Intercept)",4.434,0.132,4.175,4.693,2.206e-45,5976
+"PIJN","chan_flowrefRelaxation",-0.032,0.04,-0.109,0.046,0.4246,5976
+"PIJN","chan_flowrefAnxiety",0.207,0.044,0.121,0.293,2.203e-06,5976
+"PIJN","chan_flowrefApathy",0.179,0.039,0.102,0.255,4.748e-06,5976
+"PIJN_AFF","(Intercept)",3.756,0.148,3.466,4.047,1.205e-37,5938
+"PIJN_AFF","chan_flowrefRelaxation",-0.098,0.048,-0.193,-0.004,0.04122,5938
+"PIJN_AFF","chan_flowrefAnxiety",0.305,0.053,0.201,0.409,1.003e-08,5938
+"PIJN_AFF","chan_flowrefApathy",0.173,0.047,0.08,0.266,0.0002625,5938
+"ATTEND","(Intercept)",2.887,0.149,2.595,3.179,7.175e-30,5948
+"ATTEND","chan_flowrefRelaxation",-0.111,0.04,-0.189,-0.033,0.005114,5948
+"ATTEND","chan_flowrefAnxiety",0.162,0.044,0.076,0.248,0.0002121,5948
+"ATTEND","chan_flowrefApathy",0.169,0.039,0.092,0.245,1.631e-05,5948
+"THREAT","(Intercept)",2.228,0.136,1.962,2.494,1.41e-25,5954
+"THREAT","chan_flowrefRelaxation",-0.097,0.03,-0.156,-0.038,0.001346,5954
+"THREAT","chan_flowrefAnxiety",0.113,0.033,0.048,0.179,0.0006577,5954
+"THREAT","chan_flowrefApathy",0.07,0.03,0.012,0.128,0.01822,5954

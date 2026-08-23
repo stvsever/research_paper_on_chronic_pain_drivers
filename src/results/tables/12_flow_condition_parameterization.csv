@@ -1,0 +1,3 @@
+"model","npar","AIC","BIC","logLik","n_obs","delta_AIC"
+"balance + elevation",5,17545.4,17578.8,-8767.7,5976,265.7
+"challenge + skill (additive)",5,17279.7,17313.2,-8634.9,5976,0

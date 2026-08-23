@@ -1,0 +1,33 @@
+"model","outcome","term","estimate","SE","lo","hi","df","t","p","n_obs"
+"challenge + skill","FLOWEXP","(Intercept)",4.457,0.082,4.297,4.616,68.2,54.63,4.82e-58,5976
+"challenge + skill","FLOWEXP","CHALLENGE_w",0.285,0.008,0.27,0.3,5908.4,37.11,3.464e-271,5976
+"challenge + skill","FLOWEXP","EFFIC_w",0.507,0.01,0.488,0.526,5908.5,51.93,0,5976
+"challenge + skill + balance","FLOWEXP","(Intercept)",4.443,0.083,4.28,4.607,74.9,53.26,2.556e-61,5976
+"challenge + skill + balance","FLOWEXP","CHALLENGE_w",0.284,0.008,0.269,0.3,5908.7,36.94,5.743e-269,5976
+"challenge + skill + balance","FLOWEXP","EFFIC_w",0.508,0.01,0.488,0.527,5909.6,51.53,0,5976
+"challenge + skill + balance","FLOWEXP","balance_w",-0.009,0.011,-0.031,0.014,5954.3,-0.75,0.4522,5976
+"challenge + skill + overload","FLOWEXP","(Intercept)",4.443,0.083,4.28,4.607,74.9,53.26,2.556e-61,5976
+"challenge + skill + overload","FLOWEXP","CHALLENGE_w",0.276,0.014,0.248,0.304,5943.2,19.35,5.901e-81,5976
+"challenge + skill + overload","FLOWEXP","EFFIC_w",0.516,0.016,0.485,0.548,5940.1,32.1,1.164e-208,5976
+"challenge + skill + overload","FLOWEXP","overload",0.017,0.023,-0.028,0.062,5954.3,0.75,0.4522,5976
+"challenge x skill","FLOWEXP","(Intercept)",4.457,0.082,4.297,4.617,68.3,54.62,4.394e-58,5976
+"challenge x skill","FLOWEXP","CHALLENGE_w",0.285,0.008,0.27,0.3,5908.4,37.11,3.461e-271,5976
+"challenge x skill","FLOWEXP","EFFIC_w",0.507,0.01,0.488,0.526,5908.6,51.88,0,5976
+"challenge x skill","FLOWEXP","CHALLENGE_w:EFFIC_w",0,0.005,-0.01,0.01,5928.1,-0.04,0.9695,5976
+"quadratic response surface","FLOWEXP","(Intercept)",4.475,0.083,4.312,4.639,72.7,53.7,3.139e-60,5976
+"quadratic response surface","FLOWEXP","CHALLENGE_w",0.289,0.008,0.273,0.304,5912.6,36.45,1.428e-262,5976
+"quadratic response surface","FLOWEXP","EFFIC_w",0.508,0.011,0.487,0.53,5919.6,45.98,0,5976
+"quadratic response surface","FLOWEXP","I(CHALLENGE_w^2)",-0.008,0.004,-0.016,0,5958.2,-1.95,0.05069,5976
+"quadratic response surface","FLOWEXP","I(EFFIC_w^2)",0.003,0.005,-0.008,0.013,5946.4,0.49,0.6218,5976
+"quadratic response surface","FLOWEXP","CHALLENGE_w:EFFIC_w",0.001,0.005,-0.009,0.012,5928.5,0.25,0.804,5976
+"quadratic surface + balance","FLOWEXP","(Intercept)",4.371,0.087,4.201,4.54,85.3,50.45,2.677e-65,5976
+"quadratic surface + balance","FLOWEXP","CHALLENGE_w",0.295,0.008,0.279,0.311,5911.2,36.66,2.485e-265,5976
+"quadratic surface + balance","FLOWEXP","EFFIC_w",0.503,0.011,0.482,0.525,5919.1,45.34,0,5976
+"quadratic surface + balance","FLOWEXP","I(CHALLENGE_w^2)",-0.034,0.007,-0.048,-0.02,5924.4,-4.68,2.881e-06,5976
+"quadratic surface + balance","FLOWEXP","I(EFFIC_w^2)",-0.019,0.007,-0.033,-0.005,5934.1,-2.58,0.009769,5976
+"quadratic surface + balance","FLOWEXP","balance_w",-0.13,0.03,-0.188,-0.071,5928.9,-4.35,1.4e-05,5976
+"quadratic surface + balance","FLOWEXP","CHALLENGE_w:EFFIC_w",0.048,0.012,0.024,0.071,5921.6,4.01,6.039e-05,5976
+"balance x elevation","FLOWEXP","(Intercept)",4.486,0.084,4.322,4.65,75.1,53.72,1.154e-61,5976
+"balance x elevation","FLOWEXP","balance_w",0.02,0.012,-0.003,0.043,5955.1,1.73,0.08423,5976
+"balance x elevation","FLOWEXP","elevation_w",0.81,0.019,0.773,0.847,5922.5,42.76,0,5976
+"balance x elevation","FLOWEXP","balance_w:elevation_w",0.043,0.01,0.023,0.063,5929.4,4.2,2.733e-05,5976

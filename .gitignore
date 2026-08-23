@@ -80,6 +80,11 @@ src/results/tables/06_sgimme_inclusion.csv
 src/results/tables/06_sgimme_subgroup_membership.csv
 src/results/tables/07_graphicalvar_individual_summary.csv
 src/results/tables/08_trait_profiles.csv
+src/results/tables/12_flow_person_frame.csv
+src/results/tables/12_flow_person_prevalence.csv
+src/results/tables/12_flow_perperson_slopes.csv
+src/results/tables/12_flow_perperson_condition_slopes.csv
+src/results/models/12_flow_analytic_frame.csv
 src/results/networks/05_mlvar_core_subject_temporal_coefs.csv
 src/results/networks/06_sgimme_individual_path_estimates.csv
 src/results/networks/07_graphicalvar_individual_edges.csv

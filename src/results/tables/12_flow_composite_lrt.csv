@@ -1,0 +1,13 @@
+"outcome","question","restricted","full","df_restricted","df_full","AIC_restricted","AIC_full","delta_AIC","BIC_restricted","BIC_full","chisq","df","p"
+"PIJN","Does splitting the composite into absorption and enjoyment improve fit?","flow composite","absorption + enjoyment",5,6,18228.6,18230.6,-2,18262.1,18270.8,0.02,1,0.8906
+"PIJN","Do the condition items add over the experience constituents?","absorption + enjoyment","all four constituents",6,8,18230.6,18213.6,17,18270.8,18267.2,20.98,2,2.781e-05
+"PIJN","Do the four constituents improve on the composite?","flow composite","all four constituents",5,8,18228.6,18213.6,15,18262.1,18267.2,21,3,0.0001053
+"PIJN_AFF","Does splitting the composite into absorption and enjoyment improve fit?","flow composite","absorption + enjoyment",5,6,20369.4,20368.8,0.6,20402.9,20408.9,2.64,1,0.1042
+"PIJN_AFF","Do the condition items add over the experience constituents?","absorption + enjoyment","all four constituents",6,8,20368.8,20339.3,29.5,20408.9,20392.8,33.49,2,5.332e-08
+"PIJN_AFF","Do the four constituents improve on the composite?","flow composite","all four constituents",5,8,20369.4,20339.3,30.1,20402.9,20392.8,36.13,3,7.017e-08
+"ATTEND","Does splitting the composite into absorption and enjoyment improve fit?","flow composite","absorption + enjoyment",5,6,18194.3,18192.8,1.5,18227.7,18232.9,3.49,1,0.06166
+"ATTEND","Do the condition items add over the experience constituents?","absorption + enjoyment","all four constituents",6,8,18192.8,18173.8,19,18232.9,18227.4,22.96,2,1.034e-05
+"ATTEND","Do the four constituents improve on the composite?","flow composite","all four constituents",5,8,18194.3,18173.8,20.5,18227.7,18227.4,26.45,3,7.672e-06
+"THREAT","Does splitting the composite into absorption and enjoyment improve fit?","flow composite","absorption + enjoyment",5,6,14945.7,14939,6.7,14979.2,14979.1,8.74,1,0.003119
+"THREAT","Do the condition items add over the experience constituents?","absorption + enjoyment","all four constituents",6,8,14939,14917.7,21.3,14979.1,14971.2,25.3,2,3.209e-06
+"THREAT","Do the four constituents improve on the composite?","flow composite","all four constituents",5,8,14945.7,14917.7,28,14979.2,14971.2,34.04,3,1.947e-07

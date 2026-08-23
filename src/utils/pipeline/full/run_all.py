@@ -56,10 +56,15 @@ STEPS = [
     ("12", "R",  "12_flow_states/scripts/02_flow_pain_models.R", []),
     ("12", "py", "12_flow_states/scripts/03_flow_trait_link.py", []),
     ("12", "R",  "12_flow_states/scripts/04_flow_mlvar.R", []),
+    ("12", "R",  "12_flow_states/scripts/05_flow_construct_tests.R", []),
+    # Stage 13 builds the assets of manuscript 01, stage 14 those of manuscript 02.
     ("13", "py", "13_figures_tables/01_main_figures.py", []),
     ("13", "py", "13_figures_tables/02_supp_figures.py", []),
     ("13", "py", "13_figures_tables/03_tables.py", []),
     ("13", "py", "13_figures_tables/04_latex_tables.py", []),
+    ("14", "py", "14_flow_manuscript/01_main_figures.py", []),
+    ("14", "py", "14_flow_manuscript/02_supp_figures.py", []),
+    ("14", "py", "14_flow_manuscript/03_latex_tables.py", []),
 ]
 
 

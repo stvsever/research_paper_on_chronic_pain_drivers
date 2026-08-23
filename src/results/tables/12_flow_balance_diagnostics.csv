@@ -1,0 +1,7 @@
+"quantity","value"
+"cor(balance, -(C - S)^2)",0.927
+"cor(balance, C^2)",-0.506
+"cor(balance, S^2)",-0.324
+"cor(balance, elevation)",0.03
+"b challenge (additive)",0.285
+"b skill (additive)",0.507

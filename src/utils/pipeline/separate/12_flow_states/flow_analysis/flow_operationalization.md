@@ -119,6 +119,28 @@ not significant (p = .15).
 
 **The flow condition acts additively in these data, not configurationally.**
 
+Because the balance term expresses only one possible configural claim, and because it is
+interpretable only under a commensurability assumption that two single items cannot guarantee
+(Edwards & Parry, 1993), `05_flow_construct_tests.R` tests the configural hypothesis in five
+nested forms, each added to the additive challenge-plus-skill model under ML with a random
+intercept:
+
+| Term added to challenge + skill | chi-square | df | p | delta AIC | delta BIC |
+| --- | --- | --- | --- | --- | --- |
+| Balance, -\|C - S\| | 0.56 | 1 | .452 | -1.4 | -8.1 |
+| One-sided kink at C = S | 0.56 | 1 | .452 | -1.4 | -8.1 |
+| Interaction, C x S | 0.00 | 1 | .970 | -2.0 | -8.7 |
+| Quadratic response surface | 3.93 | 3 | .270 | -2.1 | -22.2 |
+| Four-channel quadrant | 8.16 | 3 | .043 | +2.2 | -17.9 |
+
+Only the quadrant scheme reaches p < .05, and BIC rejects it. Two comparisons in which balance
+does look significant are diagnostics of the parameterization rather than evidence of
+configurality: balance added to the quadratic surface (chi-square = 18.87, p < .001) is collinear
+with the squared discrepancy the surface already contains (r = .93), and the balance-by-elevation
+interaction inside the balance-elevation form (chi-square = 17.6, p < .001) reflects that form
+constraining challenge and skill to equal weight when the free estimates put skill at roughly
+twice challenge (.507 vs .285).
+
 ### V3, temporal structure and person specificity
 
 Condition at t-1 predicting the experience at t, controlling the flow-experience autoregression:
@@ -151,6 +173,12 @@ is strictly concurrent.
 Channel contrasts against apathy: flow is better on all four outcomes (-0.070 to -0.179), but
 **relaxation is better still** (-0.167 to -0.280), and anxiety is no better than apathy and
 significantly worse on interference (+0.131, p = .015).
+
+Head to head with **flow as the reference** (`12_flow_channel_contrasts_flowref.csv`), relaxation
+is reliably better on interference (-0.098, p = .041), attention (-0.111, p = .005), and threat
+(-0.097, p = .001), and **indistinguishable from flow on pain intensity** (-0.032, p = .42).
+Anxiety and apathy are reliably worse than flow on all four. The claim to make is therefore
+"relaxation beats flow on three of four outcomes and ties on the fourth", not "on every outcome".
 
 ### Person-level flow proneness and baseline profiles
 
@@ -191,11 +219,12 @@ zero; no multiplicity correction applied.
 | --- | --- |
 | Full analysis notebook | `analyze_flow.ipynb` (this directory) |
 | Figures | `figures/` (this directory) |
-| Analysis scripts (all estimation) | `../scripts/` (`01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`) |
+| Analysis scripts (all estimation) | `../scripts/` (`01_flow_construct.R`, `02_flow_pain_models.R`, `03_flow_trait_link.py`, `04_flow_mlvar.R`, `05_flow_construct_tests.R`) |
 | Numeric results | `src/results/tables/12_flow_*.csv` |
 | Derived analytic frame | `src/results/models/12_flow_analytic_frame.csv` |
-| Manuscript figures | `paper/assets/figures/main/MAIN_04_flow_pain.png`, `paper/assets/figures/supplementary/SUP_11_flow_measurement.png` |
-| Manuscript tables | `paper/assets/tables/main/MAIN_04_flow_pain_models.tex`, `paper/assets/tables/supplementary/SUP_13_flow_operationalization.tex` |
+| Manuscript figures | `paper/assets/02_manuscript_FlowInducedAnalgesia/figures/` (built by stage 14) |
+| Manuscript tables | `paper/assets/02_manuscript_FlowInducedAnalgesia/tables/` (built by stage 14) |
+| Manuscript | `paper/report/02_manuscript_FlowInducedAnalgesia/main.tex` |
 
 Regenerate the numbers with `make run-stage STAGE=12`, then re-run the notebook to refresh its
 tables and figures. Appendix A of the notebook maps every reported result to the script and file
@@ -207,11 +236,18 @@ that produced it.
 - Csikszentmihalyi, M., & Larson, R. (1987). *Journal of Nervous and Mental Disease*, 175(9),
   526-536. [doi:10.1097/00005053-198709000-00004](https://doi.org/10.1097/00005053-198709000-00004)
 - Massimini, F., & Carli, M. (1988). In *Optimal Experience*. Cambridge University Press.
-  [doi:10.1017/CBO9780511621956.014](https://doi.org/10.1017/CBO9780511621956.014)
+  [doi:10.1017/CBO9780511621956.016](https://doi.org/10.1017/CBO9780511621956.016)
 - Moneta, G. B., & Csikszentmihalyi, M. (1996). *Journal of Personality*, 64(2), 275-310.
   [doi:10.1111/j.1467-6494.1996.tb00512.x](https://doi.org/10.1111/j.1467-6494.1996.tb00512.x)
 - Fong, C. J., Zaleski, D. J., & Leach, J. K. (2015). *Journal of Positive Psychology*, 10(5),
   425-446. [doi:10.1080/17439760.2014.967799](https://doi.org/10.1080/17439760.2014.967799)
+- Carli, M., Delle Fave, A., & Massimini, F. (1988). In *Optimal Experience*, 288-306. Cambridge
+  University Press.
+  [doi:10.1017/CBO9780511621956.017](https://doi.org/10.1017/CBO9780511621956.017)
+- Edwards, J. R., & Parry, M. E. (1993). *Academy of Management Journal*, 36(6), 1577-1613.
+  [doi:10.2307/256822](https://doi.org/10.2307/256822)
+- VanderWeele, T. J. (2022). *Epidemiology*, 33(1), 141-151.
+  [doi:10.1097/EDE.0000000000001434](https://doi.org/10.1097/EDE.0000000000001434)
 - Nakamura, J., & Csikszentmihalyi, M. (2014). In *Flow and the Foundations of Positive
   Psychology*. Springer.
   [doi:10.1007/978-94-017-9088-8_16](https://doi.org/10.1007/978-94-017-9088-8_16)

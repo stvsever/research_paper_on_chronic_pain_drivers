@@ -1,0 +1,8 @@
+"question","restricted","full","df_restricted","df_full","AIC_restricted","AIC_full","delta_AIC","BIC_restricted","BIC_full","chisq","df","p"
+"Does balance add to an additive challenge + skill model?","challenge + skill","challenge + skill + balance",5,6,17279.7,17281.1,-1.4,17313.2,17321.3,0.56,1,0.4523
+"Does a one-sided kink at challenge = skill add (overload versus boredom)?","challenge + skill","challenge + skill + overload",5,6,17279.7,17281.1,-1.4,17313.2,17321.3,0.56,1,0.4523
+"Does a multiplicative challenge x skill interaction add?","challenge + skill","challenge x skill",5,6,17279.7,17281.7,-2,17313.2,17321.9,0,1,0.9695
+"Does a full second-order response surface add?","challenge + skill","quadratic surface",5,8,17279.7,17281.8,-2.1,17313.2,17335.4,3.93,3,0.2696
+"Does the four-channel quadrant structure add?","challenge + skill","challenge + skill + channel",5,8,17279.7,17277.6,2.2,17313.2,17331.1,8.16,3,0.04281
+"Diagnostic: balance added to the quadratic surface","quadratic surface","quadratic surface + balance",8,9,17281.8,17264.9,16.9,17335.4,17325.2,18.87,1,1.399e-05
+"Diagnostic: balance x elevation inside the balance-elevation form","balance + elevation","balance x elevation",5,6,17545.4,17529.8,15.6,17578.8,17569.9,17.6,1,2.731e-05
