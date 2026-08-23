@@ -123,7 +123,7 @@ remaining figures are in
 ## [R2] Manuscript 02: Decomposing Flow
 
 **Flow Is Not More Than Its Parts: Decomposing the Challenge-Skill Model and Its Momentary
-Association with Pain in Chronic Pain**
+Association with Chronic Pain**
 
 Four diary items map onto Csikszentmihalyi's flow model: challenge and skill form the antecedent
 condition, absorption and enjoyment the experience. The paper tests the two structural
