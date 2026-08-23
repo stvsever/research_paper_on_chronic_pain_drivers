@@ -1,0 +1,960 @@
+\documentclass[11pt,a4paper]{article}
+
+% Viane chronic-pain experience-sampling manuscript 02: the flow construct.
+% Compile with: tectonic main.tex
+% References use natbib with the bundled apalike BibTeX style, so no biber dependency is required.
+\PassOptionsToPackage{colorlinks=true,linkcolor=NavyBlue,citecolor=NavyBlue,urlcolor=NavyBlue}{hyperref}
+\usepackage[a4paper,margin=2.54cm,top=2.85cm,bottom=2.7cm,headheight=14pt,headsep=16pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xurl}
+\usepackage[american]{babel}
+\usepackage[round]{natbib}
+\usepackage{orcidlink}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\AtBeginDocument{%
+  \providecommand{\doi}[1]{\url{https://doi.org/#1}}%
+  \renewcommand{\doi}[1]{\url{https://doi.org/#1}}%
+}
+\captionsetup{font=small,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=false}
+\setlength{\parindent}{1.5em}
+\setlength{\textfloatsep}{14pt plus 3pt minus 3pt}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\onehalfspacing
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Decomposing Flow in Daily Life}
+\fancyhead[R]{\footnotesize Van Severen, Viane, De Paepe, \& Crombez}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\footnotesize Decomposing Flow in Daily Life}%
+  \fancyhead[R]{\footnotesize Van Severen, Viane, De Paepe, \& Crombez}%
+  \fancyfoot[C]{\footnotesize\thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 0fil}
+\setlength{\@fpbot}{0pt plus 1fil}
+\renewcommand{\topfraction}{0.94}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.82}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\makeatother
+
+\newcommand{\figurenote}[1]{\par\vspace{2pt}\footnotesize\textit{Note.} #1}
+\newcommand{\asset}[1]{../../assets/02_manuscript_FlowInducedAnalgesia/#1}
+\title{Flow Is Not More Than Its Parts: Decomposing the Challenge-Skill Model and Its Momentary Association with Pain in Chronic Pain}
+\author{Stijn Van Severen*, Ilse Viane, Annick De Paepe, and Geert Crombez}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{fancy}
+\vspace*{\fill}
+\begin{center}
+{\fontsize{18.2}{22.8}\selectfont\textbf{Flow Is Not More Than Its Parts:\\
+Decomposing the Challenge-Skill Model and Its\\
+Momentary Association with Pain in Chronic Pain}\par}
+\vspace{1.2em}
+\normalsize
+Stijn Van Severen\textsuperscript{1,*}\,\orcidlink{0009-0003-9181-966X},
+Ilse Viane\textsuperscript{1},
+Annick De Paepe\textsuperscript{1}\,\orcidlink{0000-0002-9366-3692}, and
+Geert Crombez\textsuperscript{1}\,\orcidlink{0000-0002-4744-8561}\\[0.6em]
+\footnotesize
+\textsuperscript{1}\,Department of Experimental-Clinical and Health Psychology,
+Ghent University, Ghent, Belgium\\
+\textsuperscript{*}\,Corresponding author: \href{mailto:stijn.vanseveren@ugent.be}{stijn.vanseveren@ugent.be}
+\end{center}
+\vspace{0.8em}
+
+\begin{abstract}
+\noindent
+Flow, the absorbed and intrinsically rewarding state said to arise when perceived challenge and
+perceived skill are both high and matched, has been proposed as a route to analgesia. The
+proposal rests on two structural assumptions that experience-sampling operationalizations build
+in rather than test: that the challenge-skill condition acts through the \emph{match} between
+its two components, and that the constituent appraisals form one construct that a composite
+summarizes fairly. We tested both assumptions, and the momentary association with pain, in
+$68$ patients with chronic pain who rated challenge, skill, absorption, and enjoyment together
+with pain, its interference, attention to pain, and its threat value eight times per day for two
+weeks ($5{,}976$ moments with all four appraisals, median $=92$ per person). Neither assumption
+held. Balance, the negative absolute challenge-skill discrepancy, added nothing to an additive
+model of challenge and skill ($\chi^2(1)=0.56$, $p=.45$), and neither did a one-sided kink at
+equality, a multiplicative interaction, or a full second-order response surface (all $p \geq .27$);
+between persons, better-matched activities went with \emph{less} flow experience ($b=-.111$,
+$p=.028$). Entering the four constituents jointly rather than as a composite improved fit for
+every pain outcome (all $p<.001$), because absorption and skill tracked lower pain
+($b=-.055$ and $b=-.045$) while challenge reversed sign and tracked \emph{higher} pain
+($b=+.032$, $p=.004$). The flow experience was concurrently associated with lower pain
+interference ($b=-.139$), pain ($b=-.094$), threat ($b=-.079$), and attention to pain
+($b=-.074$, all $p<.001$), but no lag-1 effect reached significance in either direction while
+autoregressive effects remained large, and the least painful region of the challenge-skill plane
+was the low-challenge, high-skill relaxation channel rather than flow. Flow in daily life with
+chronic pain is best described by how absorbing and how manageable an activity is, not by how
+well demand and capacity are matched; the composite adds a label where the components carry the
+information.\\[0.5em]
+\noindent\textit{Keywords:} flow; challenge-skill balance; chronic pain; constructed measures;
+ecological momentary assessment; multilevel modelling
+\end{abstract}
+
+\vspace*{\fill}
+\end{titlepage}
+\setcounter{page}{2}
+\section{Introduction}
+
+\subsection{Flow, and the proposal that it relieves pain}
+Flow is the state of complete absorption in an activity that is experienced as intrinsically
+rewarding and that arises, on the classic account, when the demands of the activity and the
+person's capacity to meet them are both high and in balance
+\citep{csikszentmihalyi1990flow,nakamura2014flow}. The construct was built for
+experience sampling from the start: challenge and skill were rated at signalled moments, and the
+resulting challenge-skill plane was divided into four channels, flow, anxiety, relaxation, and
+apathy, whose quality of experience was then compared
+\citep{massimini1988systematic,carli1988quality,csikszentmihalyi1987validity}.
+
+Interest in flow has recently reached pain research. \citet{gromakovskis2025flow} review evidence
+for flow-induced analgesia, the proposal that deep absorption in a competing activity blunts pain,
+and place it alongside the biopsychosocial and neurobiological accounts of pain modulation. The
+proposal is attractive because it converges with an established idea in pain psychology. In the
+cognitive-affective model of the interruptive function of pain \citep{eccleston1999pain}, pain and
+current goals compete for a limited attentional capacity, and the outcome of that competition
+depends on the threat value of the pain and on the characteristics of the activity it interrupts
+\citep{crombez1998catastrophizing,crombez1999fear,vandamme2010keeping}. Threat-related appraisal and
+monitoring amplify the attentional pull of pain
+\citep{crombez2013attention,eccleston2007worry}, and the same appraisals sustain avoidance of
+demanding activity \citep{crombez2012fear}. Flow describes the opposite pole of the
+same competition: an activity so absorbing that competing signals fail to intrude. If that is
+right, flow states should be states of reduced pain.
+
+The evidence adduced for flow-induced analgesia comes almost entirely from paradigms in which
+flow is induced, through virtual reality, music, or structured tasks, and pain is measured during
+the induction \citep{gromakovskis2025flow}. Such designs support causal inference but say little
+about whether the same relation holds in the unstructured daily life of patients whose pain is
+persistent. That is an ecological question, and experience sampling is the method built to answer it
+\citep{myingermeys2018experience,shiffman2008ecological,stone1998strategies}, with an established
+record in chronic pain specifically
+\citep{tennen1996daily,affleck1999multilevel,peters2000electronic}.
+
+\subsection{Two structural assumptions that are usually assumed rather than tested}
+Before asking whether flow accompanies less pain, it is worth asking what a momentary flow score
+actually contains. Two structural assumptions are built into the standard operationalization.
+
+The first is \textbf{configurality}. The channel model does not claim that high challenge is good
+or that high skill is good; it claims that their \emph{correspondence} is what matters, and that
+correspondence at a high level is what produces flow. Operationally, this is usually captured by a
+balance term, the negative absolute discrepancy $-|C-S|$, entered alongside an elevation term
+$(C+S)/2$ that keeps a jointly low but perfectly matched moment, that is apathy, from counting as
+optimal \citep{moneta1996effect}. If the configural claim is right, the balance term should carry
+variance in the flow experience over and above what challenge and skill contribute on their own.
+The evidence here is mixed: meta-analytically, the challenge-skill balance relates to flow only
+modestly \citep{fong2015challenge}, and experimental work has found the balance effect to be
+moderated rather than universal \citep{engeser2008flow}. A further problem is methodological
+rather than substantive. A term built from an absolute difference imposes constraints that are
+rarely examined and is only interpretable if a point on the challenge scale means the same thing
+as a point on the skill scale; the recommended alternative is to keep the two components in their
+own metric and to test the congruence hypothesis as a constrained case of a polynomial response
+surface \citep{edwards1993polynomial,edwards1994congruence}.
+
+The second is \textbf{composite coherence}. Momentary flow is typically indexed by summing or
+averaging its constituent appraisals. \citet{vanderweele2022constructed} shows why a constructed
+measure of this kind can mislead. The same composite coefficient is produced by three very
+different worlds: one in which all constituents relate to the outcome similarly, so that the
+composite is a fair summary; one in which a single constituent does all the work, so that the
+composite is a diluted version of that constituent under a more ambitious name; and one in which
+constituents work in opposite directions and partly cancel, so that the composite actively hides
+the structure it claims to summarize. The three cannot be distinguished from the composite itself,
+and the practical implication differs sharply between them, because an intervention has to know
+which component to move. The remedy is to report the constituents separately as well as jointly.
+
+Both assumptions matter for the pain question specifically. Challenge, in a population with
+chronic pain, is not a neutral quantity. Demanding activity is also physically effortful, and
+effort has its own cost; a literature on activity pacing, avoidance, and endurance describes
+exactly this trade-off \citep{andrews2012activity,vlaeyen2000fear}. If challenge and absorption
+pull in opposite directions with respect to pain, a composite that averages them will be quiet
+about the most clinically consequential part of the construct.
+
+\subsection{The present study}
+This study uses a chronic-pain experience-sampling dataset in which patients answered a short
+momentary diary eight times per day for two weeks. Four of the diary items map onto the flow
+model: challenge and skill form the antecedent condition, and absorption and enjoyment form the
+experience itself. The same prompts recorded momentary pain, the extent to which pain interfered
+with what the person was doing, attention to pain, and the threat value of pain, which makes it
+possible to ask the ecological counterpart of the flow-induced-analgesia question. The data are a
+secondary analysis: the source study analysed these items separately and never as a flow index
+\citep{viane2004acceptance}, so every flow variable here is an analyst-constructed measure and is
+reported as such. A companion paper uses the same diary to model the within-person
+threat-attention-pain circuit and treats the absorption item as goal engagement without flow
+framing; the present paper is about the flow construct itself. Because the data are
+observational, all associations are read as within-person predictive relations rather than causal
+effects \citep{rohrer2018thinking}. Three research questions guide the analysis.
+
+\begin{description}[leftmargin=2.2em,itemsep=2pt]
+  \item[\textbf{RQ1.}] Does the challenge-skill condition relate to the momentary flow experience
+  configurationally, as the channel model requires, or additively?
+  \item[\textbf{RQ2.}] Does the flow composite carry information about the momentary experience of
+  pain that its four constituents, entered separately, do not?
+  \item[\textbf{RQ3.}] Is the momentary flow experience associated with a better experience of pain
+  in daily life, concurrently and prospectively, and is the flow channel the least painful region
+  of the challenge-skill plane?
+\end{description}
+
+\section{Method}
+
+\subsection{Participants and design}
+The data are a secondary analysis of a chronic-pain experience-sampling study reported by
+\citet{viane2004acceptance}, which examined acceptance of pain in relation to attention to pain
+and engagement with daily activities \citep[see also][]{viane2003acceptance}; the flow question
+asked here was not part of that report. Patients with chronic musculoskeletal pain, recruited
+through a university pain clinic, first completed a battery of validated questionnaires and then
+carried a palmtop computer that signalled them eight times per day for two weeks to complete a
+short momentary diary, together with a brief morning and evening diary. Sixty-eight participants
+met the study's compliance criterion of at least 25 completed prompts. Of their completed prompts,
+$5{,}976$ carried all four activity appraisals and form the analytic frame for this paper
+(median $=92$ per person); the $4.6\%$ of prompts lost to a missing appraisal are characterized in
+\Cref{sfig:frame} and \Cref{tab:sup-robustness}. Baseline questionnaires were available for 67
+participants. Sample characteristics and the momentary appraisals are summarized in
+\Cref{tab:frame}.
+
+\input{\asset{tables/main/MAIN_01_sample_and_frame}}
+
+\subsection{Momentary measures}
+At each prompt, participants described the activity they were engaged in and rated it on
+seven-point scales (1 = not at all, 7 = very much). Four ratings operationalize flow. Challenge was
+``this activity is a personal challenge for me'' and skill was ``I am good at this''; together they
+form the antecedent condition. Absorption was ``I am absorbed in this activity'' and enjoyment was
+``I like doing this''; together they form the experience, absorption supplying the concentration
+component and enjoyment the autotelic marker. The same prompt recorded momentary pain (``I am in
+pain now''), pain interference (``my pain hinders me''), attention to pain (``I focus on my
+pain''), and the threat value of pain, scored as the mean of momentary fear (``I am afraid of the
+pain now'') and catastrophizing (``I feel that my pain is becoming too much for me''). A
+self-reported physical activation item was recorded as well and is used as a covariate throughout,
+because challenge co-varied strongly with being physically active ($r=.57$ within persons) and
+activity has its own relation to pain.
+
+These four appraisals cover three of the nine dimensions Csikszentmihalyi describes, namely the
+challenge-skill configuration, concentration through absorption, and the autotelic quality through
+enjoyment. Clear goals, unambiguous feedback, sense of control, loss of self-consciousness, and
+time transformation were not measured. The instrument is therefore a core flow proxy rather than a
+flow scale \citep{jackson2002assessing}, and it is described as such throughout.
+
+\subsection{Baseline measures}
+Baseline questionnaires provided three person-level profiles used in the person-level analyses.
+The threat-value profile combined the Pain Catastrophizing Scale total \citep{sullivan1995pain} and
+the Pain Vigilance and Awareness Questionnaire total \citep{roelofs2003pvaq}. The biomedical
+profile combined the West Haven-Yale Multidimensional Pain Inventory pain-severity subscale
+\citep{kerns1985mpi} and pain duration. The personality profile was NEO-FFI neuroticism
+\citep{costa1992neo}. Each profile was standardized.
+
+\subsection{Operationalizing flow}
+Following the standard experience-sampling operationalization
+\citep{massimini1988systematic,moneta1996effect}, the four items were represented as two
+structurally distinct parts rather than as one sum, because summing them conflates the antecedent
+condition with the outcome experience. The condition was expressed as balance and elevation, and
+the experience as the mean of absorption and enjoyment:
+%
+\begin{equation}
+\text{balance} = -\lvert C - S \rvert, \qquad
+\text{elevation} = \tfrac{1}{2}(C + S), \qquad
+\text{flow experience} = \tfrac{1}{2}(A + E),
+\label{eq:flow}
+\end{equation}
+%
+with $C$ challenge, $S$ skill, $A$ absorption, and $E$ enjoyment. The elevation term is not
+optional: without it, a moment low on both challenge and skill would score as perfectly balanced
+and therefore as optimal, which is apathy rather than flow. For the descriptive channel analysis a
+moment was assigned to flow when both condition items were high, to anxiety when only challenge
+was high, to relaxation when only skill was high, and to apathy when neither was
+\citep{carli1988quality}.
+
+Two measurement decisions shape everything that follows and are reported explicitly. The first is
+the metric. Person-mean centering was primary \citep{curran2011disaggregation}, because it
+separates a person's momentary fluctuation from their level. Within-person standardization was
+run as a sensitivity analysis but cannot carry prevalence claims: it sets every participant's mean
+to zero and therefore assigns above-average moments to everyone, including a participant who never
+reaches flow in any absolute sense. All prevalence statements are therefore made on the raw
+absolute scale, with both a conservative criterion (both condition items at least 5) and a liberal
+one (both at least 4); the grand-mean $z$ metric was run as a further sensitivity analysis
+(\Cref{sfig:standardization}, \Cref{tab:sup-prevalence}, \Cref{tab:sup-standardization}). The
+second is provenance: these are single momentary items, not validated subscales, and the source
+study analysed them separately, so every flow variable is a secondary, analyst-constructed measure.
+
+\subsection{Statistical modelling}
+Analyses were implemented in a reproducible pipeline in which statistical models were written in
+\textsf{R} \citep{rcoreteam2024} and orchestrated from \textsf{Python}, which handled
+preprocessing, tables, and visualization. Multilevel models were fitted with \textsf{lme4}
+\citep{bates2015lme4}. Every reported table and figure was regenerated from the processed data.
+
+\paragraph{RQ1: configural or additive.} The condition-to-experience model regressed the flow
+experience on balance and elevation, decomposed into within-person and between-person components,
+with random slopes for both within-person terms. Because the balance parameterization is only one
+of several ways to express a configural claim, and because a term built from an absolute
+difference is interpretable only under a commensurability assumption that two single items cannot
+guarantee \citep{edwards1993polynomial,edwards1994congruence}, the configural hypothesis was
+tested in four further forms, each of which keeps challenge and skill in their own metric and each
+of which is a nested extension of the additive model: a balance term added to the additive model,
+a one-sided kink at $C=S$ that allows overload to differ from boredom, a multiplicative
+$C \times S$ interaction, a full second-order response surface, and the four-channel quadrant
+classification. These nested comparisons were estimated by maximum likelihood with a random
+intercept, so that only the fixed-effect structure differs between the compared models, and were
+evaluated by likelihood-ratio test, AIC, and BIC. The two parameterizations of the condition,
+balance-and-elevation versus additive challenge-and-skill, have the same number of parameters and
+are not nested, so they were compared by information criterion.
+
+\paragraph{RQ2: does the composite carry the information.} Absorption, enjoyment, challenge, and
+skill were entered as the only appraisal in the model (``alone'') and then all four together
+(``jointly''), predicting each of the four momentary pain measures, with physical activation as a
+covariate. The comparison of the two sets is the constituent decomposition that
+\citet{vanderweele2022constructed} recommends, and a change of sign between them is the signature
+of statistical suppression \citep{mackinnon2000equivalence}. Because the flow experience is the
+mean of absorption and enjoyment, the composite model is exactly the constituent model under the
+constraint that those two carry equal weight and that challenge and skill carry none, so the two
+are nested and can be compared by likelihood-ratio test. As an independent, multivariate check, the
+companion paper's benchmark multilevel vector autoregressive network \citep{epskamp2018gaussian}
+was re-estimated with the flow composite substituted for the single absorption node, and the two
+networks were compared edge by edge.
+
+\paragraph{RQ3: flow and the momentary experience of pain.} Concurrent multilevel models regressed
+each pain measure on the flow experience, with the condition terms in the model, a random slope for
+the flow experience, and both without and with physical activation as a covariate. Temporal models
+regressed each pain measure at $t$ on the flow experience at $t-1$ while controlling the outcome's
+own autoregression, and the reverse direction as well, so that the temporal picture is reported in
+both directions rather than in one. Lags were built between adjacent prompts within the same study
+day, so no lag crosses the overnight gap, and were estimated on person-standardized scores. The
+four channels were compared with apathy as the reference, the conventional contrast, and again with
+flow as the reference, which turns the ordering claim into a direct test. Person-specific
+associations were estimated by unregularized ordinary least squares for each participant with at
+least 50 usable moments.
+
+\paragraph{Robustness.} Every focal model was re-estimated on all four standardization metrics,
+with day and prompt position as level-1 covariates, and at compliance floors of 20, 30, 50, and 70
+completed moments per person. Moments lost to listwise deletion were compared with retained moments
+on every momentary measure. No correction for multiplicity was applied; the nested tests are
+pre-specified contrasts of a single construct rather than a screen.
+
+\subsection{Hypotheses}
+Six hypotheses follow from the flow literature and from the flow-induced-analgesia proposal. For
+RQ1, H1 predicted configurality: balance should relate positively to the flow experience over and
+above elevation, and more generally some configural term should improve on the additive model. For
+RQ2, H2 predicted composite coherence: the four constituents should relate to pain in the same
+direction and to a comparable degree, so that entering them separately adds nothing. For RQ3, H3
+predicted a concurrent association, with the flow experience accompanying lower pain and, more
+strongly, less pain interference, since an attentional account targets the interruptive rather than
+the sensory aspect of pain; H4 predicted the temporal counterpart, that a higher than usual flow
+experience would be followed by lower pain at the next prompt; and H5 predicted that the flow
+channel would be the least painful of the four channels. H6 predicted that these associations would
+vary substantially across patients.
+
+\section{Results}
+
+\subsection{The instrument, and how often it finds flow}
+The four appraisals behaved as momentary states rather than as traits: between $76$ and $79\%$ of
+each item's variance was within person (ICCs $.21$ to $.24$; \Cref{fig:instrument}, Panel C,
+\Cref{tab:frame}). Their levels were not symmetric. Skill (mean $=4.79$) and enjoyment
+(mean $=4.90$) sat well above the scale midpoint while challenge sat well below it
+(mean $=3.28$), so most everyday activity in this sample was manageable and liked but not
+demanding (\Cref{fig:instrument}, Panel A). Within persons, challenge correlated only $r=.17$ with
+skill, whereas absorption correlated $r=.53$ with challenge and $r=.42$ with skill
+(\Cref{fig:instrument}, Panel B, \Cref{tab:sup-itemcorr}).
+
+How often the diary calls a moment a flow moment depended almost entirely on the classification
+rule (\Cref{fig:instrument}, Panel D, \Cref{tab:sup-prevalence}). Under the conservative absolute
+criterion, $19.3\%$ of moments qualified and four of 68 participants never reached the criterion at
+all; under the liberal absolute criterion $36.8\%$ qualified and no participant scored zero. The
+relative rules gave intermediate figures ($24.6$ to $27.8\%$) but, as expected, placed no
+participant at zero, which is why they cannot carry a prevalence claim. Person-level proneness
+ranged from never to two thirds of a participant's moments (\Cref{fig:instrument}, Panel E). One
+descriptive result is worth stating before any modelling: under the conservative rule the modal
+channel was not flow ($22.0\%$ of moments met the condition) but relaxation, that is high skill with
+low challenge ($37.0\%$), with apathy next ($32.3\%$) and anxiety rare ($8.6\%$;
+\Cref{fig:instrument}, Panel F).
+
+\begin{figure}[htbp]
+\raggedright
+\caption{The four momentary appraisals and how often the diary calls a moment a flow moment.}
+\label{fig:instrument}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/main/MAIN_01_flow_instrument.png}}
+\figurenote{Panel A shows the response distribution of the four appraisals, labelled by their role
+in the flow model. Panel B shows their correlation structure, within persons below the diagonal and
+between persons above it. Panel C shows the share of each item's variance that lies within persons.
+Panel D shows the share of moments classified as flow under each rule, before and after the
+experience gate, annotated with the number of participants who never reach the criterion. Panel E
+shows the per-person share of flow moments under the liberal and the strict absolute criterion.
+Panel F shows the share of moments in each channel under the strict rule, annotated with the mean
+flow experience of that channel.}
+\end{figure}
+
+\subsection{RQ1: the condition acts additively, not configurationally}
+In the standard parameterization, the challenge-skill condition predicted the flow experience
+strongly, and did so entirely through elevation (within persons $b=.744$, $SE=.024$, $p<.001$;
+between persons $b=.796$, $SE=.085$, $p<.001$) rather than through balance (within persons
+$b=.006$, $SE=.020$, $95\%$ CI $[-.033, .045]$, $p=.78$; \Cref{fig:configural}, Panel A,
+\Cref{tab:condition}). With just under $6{,}000$ moments this is an informative null rather than an
+absence of power: the interval rules out any balance effect larger than $.05$, against an elevation
+effect of $.74$ on the same scale \citep{lakens2018equivalence}. Between persons the balance effect
+was not merely absent but reversed, so that participants whose activities were on average better
+matched reported on average \emph{less} flow experience ($b=-.111$, $SE=.049$, $p=.028$). The
+reversal was not an artefact of centering: on the raw response scale it was larger and more
+precisely estimated ($b=-.090$, $p<.001$), and across all four standardization metrics the
+elevation effect stayed between $.74$ and $.89$ while the balance effect was never positive
+(\Cref{fig:configural}, Panel B, \Cref{tab:sup-standardization}). Person by person, the balance
+slope was centred on zero (median $=+.009$, range $-.27$ to $+.31$) whereas the elevation slope was
+positive in all 68 participants (median $=+.758$, range $+.23$ to $+.98$; \Cref{fig:configural},
+Panel F).
+
+Because the balance term expresses only one of several possible configural claims, and because it
+is interpretable only if a point on the challenge scale means the same as a point on the skill
+scale \citep{edwards1993polynomial}, the configural hypothesis was tested in four further forms,
+each keeping challenge and skill in their own metric and each nested in a comparison with the
+additive model (\Cref{fig:configural}, Panel C, \Cref{tab:condition}). None improved on additivity.
+Adding balance to a model that already contained challenge and skill gained nothing
+($\chi^2(1)=0.56$, $p=.45$, $\Delta$AIC $=-1.4$). Allowing a one-sided kink at $C=S$, so that
+overload could differ from boredom, gained nothing ($\chi^2(1)=0.56$, $p=.45$). A multiplicative
+$C \times S$ interaction gained nothing ($\chi^2(1)=0.00$, $p=.97$), as it also did not in the
+random-slope model reported in \Cref{tab:sup-condmodels} ($p=.15$). A full second-order response
+surface gained nothing ($\chi^2(3)=3.93$, $p=.27$). The four-channel quadrant classification was
+the only configural form to reach conventional significance ($\chi^2(3)=8.16$, $p=.043$,
+$\Delta$AIC $=+2.2$), but BIC preferred the additive model over it by $17.9$, so the quadrant
+scheme buys a marginal improvement at a cost that the more conservative criterion rejects. The
+additive model also decisively outperformed the balance-and-elevation form at the same number of
+parameters ($\Delta$AIC $=265.7$ with a random intercept, and $441.1$ in the random-slope models
+of \Cref{tab:condition}), which is what should happen when a parameterization discards information:
+the balance form constrains challenge and skill to equal weight, whereas the free additive estimates
+put skill at roughly twice challenge ($b=.507$ versus $b=.285$; \Cref{fig:configural}, Panel E).
+
+Two comparisons in which balance does appear to matter are reported for completeness and are
+diagnostics of the parameterization rather than evidence for configurality
+(\Cref{sfig:baldiag}, \Cref{tab:sup-baldiag}). Balance interacts with elevation inside the
+balance-and-elevation form ($\chi^2(1)=17.6$, $p<.001$), with a balance effect that is negative at
+low elevation ($b=-.031$, $p=.06$) and positive at high elevation ($b=+.070$, $p<.001$); this is
+what happens when a parameterization forces two components with unequal weights into a single
+symmetric difference, and it disappears once challenge and skill are free. Balance also gains
+significance when added to the full quadratic surface ($\chi^2(1)=18.87$, $p<.001$), but balance
+correlates $.93$ with the squared discrepancy that the surface already contains, so neither
+coefficient is interpretable alone, and the joint test of the surface against additivity is null.
+The most direct evidence is descriptive and needs no parameterization at all: within a band of
+elevation, mean flow experience is flat or slightly declining across the whole range of mismatch
+(\Cref{fig:configural}, Panel D), and the residuals of the additive model show no ridge along the
+$C=S$ diagonal (\Cref{sfig:baldiag}, Panel A). H1 was therefore not supported.
+
+\begin{figure}[htbp]
+\raggedright
+\caption{Is the challenge-skill condition configural or additive?}
+\label{fig:configural}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/main/MAIN_02_configural_versus_additive.png}}
+\figurenote{Panel A shows the balance and elevation effects on the flow experience, within and
+between persons. Panel B shows the same two terms estimated on each of the four standardization
+metrics. Panel C shows the AIC gained over the additive challenge-plus-skill model by each
+configural extension, annotated with its likelihood-ratio test; green marks $p<.05$. Panel D shows
+the observed mean flow experience against the size of the challenge-skill mismatch within three
+bands of elevation. Panel E shows the additive main effects and the multiplicative interaction.
+Panel F shows the person-specific balance and elevation slopes. Error bars and intervals are
+$95\%$ confidence intervals.}
+\end{figure}
+
+\input{\asset{tables/main/MAIN_02_condition_to_experience}}
+
+\subsection{RQ2: the composite hides a sign reversal among its constituents}
+Entered as the only appraisal in the model, three of the four constituents tracked lower momentary
+pain: skill ($b=-.088$), enjoyment ($b=-.077$), and absorption ($b=-.069$, all $p<.001$), while
+challenge was flat ($b=-.004$, $p=.82$). The composite behaved as their average
+($b=-.096$, $p<.001$). Entered jointly, the picture changed in three ways
+(\Cref{fig:decomposition}, Panels A and B, \Cref{tab:decomposition}). Absorption ($b=-.055$,
+$p<.001$) and skill ($b=-.045$, $p<.001$) kept their associations. Enjoyment fell to
+non-significance ($b=-.023$, $p=.089$), so its apparent relation to pain was variance it shared
+with the other two rather than a contribution of its own. And challenge reversed sign and became
+reliably positive ($b=+.032$, $p=.004$): once skill and absorption are held constant, a more
+demanding moment is a more painful one. The reversal is the classic signature of suppression
+\citep{mackinnon2000equivalence}, and its source is visible in the correlation structure, since
+challenge co-varies $r=.53$ with absorption and $r=.17$ with skill, both of which track lower pain
+(\Cref{fig:decomposition}, Panel E). It was not confined to pain intensity: challenge was reliably
+positive for pain interference ($b=+.053$), attention to pain ($b=+.031$), and the threat value of
+pain ($b=+.035$, all $p<.01$), so on every outcome one constituent of the flow construct works
+against the other three (\Cref{fig:decomposition}, Panel B).
+
+Because the flow experience is the mean of absorption and enjoyment, the composite model is the
+constituent model under a linear constraint, and the two can be compared directly. For pain
+intensity, splitting the composite into its two experience components changed nothing
+($\chi^2(1)=0.02$, $p=.89$), so the composite is a fair summary of \emph{those two}. Adding the two
+condition items, however, improved fit substantially for every outcome (pain $\chi^2(3)=21.0$,
+interference $\chi^2(3)=36.1$, attention $\chi^2(3)=26.5$, threat $\chi^2(3)=34.0$, all $p<.001$;
+\Cref{fig:decomposition}, Panel D). The flow architecture as a whole therefore loses information
+relative to its parts, and it loses it in the specific way \citet{vanderweele2022constructed}
+warns about, by averaging over constituents that pull in opposite directions.
+
+An independent, multivariate check pointed the same way. Substituting the flow composite for the
+single absorption node in the companion paper's four-node temporal network reproduced that network
+almost exactly: across all 22 estimated parameters the two networks correlated $r=.997$, the
+largest edge change was $.027$, and no edge changed sign or significance
+(\Cref{fig:decomposition}, Panel F, \Cref{tab:sup-network}). In a dynamic system of four nodes,
+then, the composite behaves indistinguishably from its dominant constituent. H2 was not supported.
+
+\begin{figure}[htbp]
+\raggedright
+\caption{Constituent decomposition of the flow composite.}
+\label{fig:decomposition}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/main/MAIN_03_constituent_decomposition.png}}
+\figurenote{Panel A shows each constituent's association with momentary pain when it is the only
+appraisal in the model (hollow) and when all four are entered together (filled), with the composite
+marked. Panel B shows the joint coefficients for all four pain measures. Panel C shows how far each
+coefficient moves between the two models. Panel D shows the AIC gained over the composite by
+splitting it in two and by using all four constituents. Panel E shows the within-person
+correlations among the constituents that produce the suppression. Panel F plots every parameter of
+the benchmark temporal and contemporaneous networks against the same parameter after the composite
+is substituted for the absorption node. Error bars are $95\%$ confidence intervals.}
+\end{figure}
+
+\input{\asset{tables/main/MAIN_03_constituent_decomposition}}
+
+\subsection{RQ3: a concurrent association, no temporal one, and a channel ordering that
+inverts the prediction}
+At the same prompt, a higher than usual flow experience accompanied a better experience of pain on
+all four measures: less pain interference ($b=-.139$, $SE=.025$), lower pain intensity
+($b=-.094$, $SE=.020$), a lower threat value ($b=-.079$, $SE=.014$), and less attention to pain
+($b=-.074$, $SE=.019$; all $p<.001$; \Cref{fig:flowpain}, Panel A, \Cref{tab:flowpain}). All four
+survived adjustment for physical activation, which matters because challenge co-varies with being
+active and activity independently raises pain in this sample (\Cref{sfig:robust}, Panels A and B).
+The ordering of the effects is itself informative and is what an attentional account predicts:
+interference, the interruptive aspect of pain, moved most, and moved half again as much as
+intensity, the sensory aspect. H3 was supported.
+
+The temporal test gave the opposite answer. No lag-1 effect approached significance in either
+direction: neither the flow experience at $t-1$ predicting any pain measure at $t$
+($p$ between $.44$ and $.92$), nor any pain measure at $t-1$ predicting the flow experience at $t$
+($p$ between $.28$ and $.94$), with every point estimate below $|b|=.02$ (\Cref{fig:flowpain},
+Panel B). This is not a failure of the design to see time. In the same models the autoregressive
+effects were large and highly significant (pain $b=.395$, interference $b=.352$, threat $b=.321$,
+attention $b=.266$, all $p<.001$), so the models detect temporal structure where it exists and
+detect none between flow and pain (\Cref{sfig:temporal}, Panel D). The same held inside the flow
+construct itself: the challenge-skill condition at $t-1$ did not predict the flow experience at
+$t$ (elevation $b=.052$, $p=.062$; balance $b=-.007$, $p=.70$), which is $6\%$ of the same-prompt
+elevation effect estimated on the identical rows ($b=.856$; \Cref{sfig:temporal}, Panels A and B,
+\Cref{tab:sup-condlag}). The flow-pain relation in these data is co-occurrence, not prediction, and
+without temporal precedence the direction cannot be identified: absorption may dampen pain, or low
+pain may make absorption possible. H4 was not supported.
+
+The channel comparison inverted the predicted ordering. Against apathy, the conventional reference,
+flow looked good on every measure (pain $b=-.179$, interference $b=-.173$, attention $b=-.169$,
+threat $b=-.070$), but relaxation looked better still (pain $b=-.210$, interference $b=-.272$,
+attention $b=-.280$, threat $b=-.167$; \Cref{fig:plane}, Panel D, \Cref{tab:channels}). Tested
+head to head with flow as the reference, relaxation was reliably better on pain interference
+($b=-.098$, $p=.041$), attention to pain ($b=-.111$, $p=.005$), and the threat value of pain
+($b=-.097$, $p=.001$), and indistinguishable from flow on pain intensity ($b=-.032$, $p=.42$);
+anxiety and apathy were reliably worse than flow on all four (\Cref{fig:plane}, Panel E). Plotted
+over the full challenge-skill plane, the least painful region was the high-skill, low-challenge
+corner rather than the high-high corner (\Cref{fig:plane}, Panels B and C). This follows directly
+from the decomposition: within persons, skill tracked lower pain while challenge did not, and once
+entered jointly challenge tracked higher pain, so the most favourable corner of the plane is
+low-challenge and high-skill by construction (\Cref{fig:plane}, Panel F). H5 was therefore
+rejected in favour of the relaxation channel on three of four outcomes and was not supported on the
+fourth.
+
+\begin{figure}[htbp]
+\raggedright
+\caption{The flow experience and the momentary experience of pain.}
+\label{fig:flowpain}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/main/MAIN_04_flow_and_pain.png}}
+\figurenote{Panel A shows the concurrent association of the flow experience with the four momentary
+pain measures, unadjusted and adjusted for physical activation. Panel B shows every lag-1 effect in
+both directions, with the four autoregressive effects from the same models below the dotted line as
+the reference for what a detectable temporal effect looks like here. Panels C and D show the
+person-specific concurrent and lag-1 slopes with their $95\%$ confidence intervals, ordered by size;
+intervals excluding zero are highlighted. Panel E overlays the two person-level distributions.
+Panel F shows the concurrent estimate at four compliance floors.}
+\end{figure}
+
+\input{\asset{tables/main/MAIN_04_flow_and_pain}}
+
+\subsection{Person-specific heterogeneity}
+The average concurrent association summarized wide variation, supporting H6. The person-specific
+flow-pain slope was negative in $73\%$ of the 63 participants with enough moments to estimate it,
+with a median of $-.137$ and a range from $-.465$ to $+.445$; it was reliably negative in 14
+participants and reliably positive in 4 (\Cref{fig:flowpain}, Panels C and E, \Cref{tab:flowpain}).
+Those four are not noise around a common effect but participants whose confidence intervals exclude
+zero on the other side, and for whom a flow-based intervention would plausibly be
+counterproductive. The lag-1 slopes, by contrast, were centred on zero (median $=.000$, $49\%$
+negative, reliably negative in 2 and reliably positive in none), reproducing the pooled null at the
+individual level (\Cref{fig:flowpain}, Panel D). Between-person spread was of the same order as the
+average effect itself: the random-slope standard deviation was $.114$ for pain intensity against a
+fixed effect of $-.094$, and $.146$ for interference against $-.139$ (\Cref{sfig:robust}, Panel E).
+
+Person-level flow variables related to the baseline profiles in a way that did not extend to the
+coupling (\Cref{sfig:personlevel}, \Cref{tab:sup-personlevel}). A stronger baseline threat-value
+profile went with a lower average flow experience ($r=-.27$, $p=.028$; partial $r=-.27$,
+$p=.025$ controlling mean pain), as did higher neuroticism ($r=-.26$, $p=.035$; partial $r=-.29$,
+$p=.022$), whereas the biomedical profile was unrelated ($r=.03$, $p=.80$). No profile predicted the
+person-specific flow-pain slope (all $p \geq .18$). Baseline characteristics thus indexed how much
+flow a patient typically experienced but not how that experience related to their pain, so the
+heterogeneity in the coupling is not reducible to the trait differences measured here.
+
+\subsection{Robustness}
+The conclusions did not depend on the analytic choices that could have driven them
+(\Cref{sfig:robust}, \Cref{tab:sup-robustness}). The concurrent flow-pain estimate moved from
+$-.094$ to $-.088$ across compliance floors of 20, 30, 50, and 70 completed moments per person and
+remained significant throughout. Adding day and prompt position as level-1 covariates left every
+focal estimate essentially unchanged (elevation $.744$ to $.746$; flow to pain $-.094$ to $-.101$),
+although prompt position was itself a significant predictor. The condition results held on all four
+standardization metrics. Listwise deletion removed $4.6\%$ of prompts; the removed moments carried
+slightly more negative affect ($d=0.19$) and threat ($d=0.15$) and slightly less physical
+activation ($d=-0.24$), but did not differ in pain intensity ($d=-0.12$, $p=.05$),
+interference, or attention (\Cref{sfig:frame}, Panel D).
+
+\begin{figure}[htbp]
+\raggedright
+\caption{The challenge-skill plane and where the least painful moments sit.}
+\label{fig:plane}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/main/MAIN_05_challenge_skill_plane.png}}
+\figurenote{Panels A to C show the mean flow experience, mean pain intensity, and mean pain
+interference across the full raw challenge-skill plane, with the four channels marked and cells
+holding fewer than 15 moments left blank. Panel D shows each channel against apathy, the
+conventional reference. Panel E shows each channel against flow, the direct head-to-head test;
+grey intervals are not significant. Panel F shows the person-centred mean pain at each level of
+challenge and of skill. Error bars and intervals are $95\%$ confidence intervals.}
+\end{figure}
+
+\input{\asset{tables/main/MAIN_05_channels}}
+
+\section{Discussion}
+This study asked whether the flow construct survives contact with the daily life of patients with
+chronic pain, and whether the momentary flow experience accompanies or precedes a better experience
+of pain. Three findings stand out. First, the challenge-skill condition acted additively rather
+than configurationally: no functional form of the match between challenge and skill improved on a
+model with the two components entered separately, and between persons better-matched activity went
+with less flow experience, not more. Second, the composite lost information relative to its
+constituents, because absorption and skill tracked lower pain while challenge, once the others were
+held constant, tracked higher pain. Third, the flow experience accompanied a better experience of
+pain at the same moment, most strongly for interference, but predicted nothing at the next prompt,
+and the least painful region of the challenge-skill plane was the relaxation channel rather than
+flow. Each research question is discussed in turn, followed by limitations and future directions.
+
+\subsection{Main findings}
+\subsubsection{Additive rather than configural (RQ1)}
+The classic account is explicitly configural: flow is not what high challenge produces, nor what
+high skill produces, but what their correspondence at a high level produces
+\citep{csikszentmihalyi1990flow,massimini1988systematic}. In these data that claim failed in every
+form in which it was tested. The balance term was null within persons and reversed between them; a
+one-sided kink at equality, a multiplicative interaction, and a full second-order response surface
+each added nothing; and the four-channel quadrant scheme improved fit only marginally and was
+rejected by BIC. What remained was an ordinary additive structure in which skill weighed about
+twice as much as challenge.
+
+Two features of this result deserve emphasis. The first is that the null is informative rather than
+underpowered. With just under $6{,}000$ moments the balance estimate was two orders of magnitude
+smaller than the elevation effect it competed with and was pinned down to within $\pm.04$, so the
+finding is that there is nothing to see, not that nothing could be seen
+\citep{lakens2018equivalence}. The second is that the tests do not depend on the assumption that
+makes difference scores fragile. A balance term is interpretable only if a point on the challenge
+scale is commensurate with a point on the skill scale, which two single diary items cannot
+guarantee; the interaction and response-surface tests keep both components in their own metric and
+require no such assumption \citep{edwards1993polynomial,edwards1994congruence}. They agreed with
+the balance test, and the descriptive picture, flat mean flow experience across the whole range of
+mismatch within a band of elevation, agreed with both.
+
+The between-person reversal is the one positive finding in this section, and it has a clinical
+reading. A patient whose activities are consistently well matched in challenge and skill is
+plausibly a patient who has adjusted downward to what feels safely manageable. Challenge and skill
+then correspond nicely, but at a low level, and activity avoidance scores statistically as good
+balance. That interpretation connects directly to the literature on pacing, avoidance, and
+endurance in chronic pain \citep{andrews2012activity,vlaeyen2000fear}, and it is a pattern one
+would not expect to see in the student and worker samples in which the channel model was developed
+\citep{carli1988quality}. It also suggests that the elevation term, which indexes the level of
+engagement, is the one that actually varies meaningfully in this population.
+
+These results sit alongside the wider flow literature rather than against it. In meta-analysis the
+balance between challenge and skill relates to flow only modestly \citep{fong2015challenge}, and
+experimental work has found the balance effect to be conditional rather than general
+\citep{engeser2008flow}. The present contribution is to test the claim on its own home ground,
+signal-contingent experience sampling, in a clinical sample and in several functional forms at
+once.
+
+\subsubsection{The composite adds a label where the components carry the information (RQ2)}
+\citet{vanderweele2022constructed} distinguishes three worlds behind an identical composite
+coefficient, and these data fall into the least comfortable of them. The composite of all four
+appraisals averages over constituents that pull in opposite directions with respect to pain:
+absorption and skill favourable, enjoyment redundant once the other two are present, and challenge
+unfavourable. Reporting the composite alone would have hidden both the driving constituent and the
+counteracting one, and would have obscured the fact that the most clinically actionable component,
+challenge, is the one that carries a cost.
+
+That challenge carries a cost is substantively plausible rather than a statistical curiosity. A
+demanding moment takes something out of a person with chronic pain even when they are equal to it,
+and in this sample challenge co-occurred with physical exertion. The suppression pattern is exactly
+what should be expected when a variable with an unfavourable direct relation is positively
+correlated with variables that have favourable ones \citep{mackinnon2000equivalence}, and it
+converges with the channel finding: if challenge is unfavourable and skill favourable, the best
+corner of the plane must be low-challenge and high-skill, which is what the surfaces show.
+
+The network substitution makes the same point on a different axis. The decomposition says the
+composite is carried by two of its four parts; the network says that in a dynamic system the
+composite behaves indistinguishably from its dominant constituent, reproducing 22 parameters at
+$r=.997$ with no change of sign or significance. Two independent lines of evidence, one
+coefficient-level and one multivariate, converge on the conclusion that the flow architecture adds
+a label rather than information. The recommendation that follows is concrete and transferable: when
+flow is measured in experience sampling, report the constituents separately and jointly alongside
+any composite, because the composite can conceal a sign reversal among them.
+
+\subsubsection{Co-occurrence rather than analgesia (RQ3)}
+The concurrent association was robust, survived adjustment for physical activation, and was ordered
+as an attentional account predicts, with interference moving more than intensity
+\citep{eccleston1999pain,vandamme2010keeping}. But it did not extend in time. Neither direction
+produced a lag-1 effect, while the autoregressions in the same models were large, so the null is
+informative about this design rather than uninterpretable. Absent temporal precedence, the relation
+is co-occurrence and the direction is not identified: absorption may dampen pain, and low pain may
+equally make absorption possible.
+
+That is weaker evidence than the flow-induced-analgesia proposal requires, and it is an honest
+result rather than a disappointing one. The induced-flow paradigms that motivate the proposal
+measure pain during an induction \citep{gromakovskis2025flow}; the present design asks whether
+naturally occurring absorption still shows a footprint an hour and a half later, and it does not.
+The two findings are compatible, and the gap between them is exactly the ecological question worth
+posing.
+
+The channel result is the most directly contrary to the flow account, and also the most
+clinically useful. If the goal is a less painful moment in daily life, these data point toward being
+competent at something undemanding rather than toward seeking out optimal challenge. Relaxation beat
+flow on interference, attention, and threat, and matched it on intensity; anxiety and apathy were
+worse than both. This is a moderate, empirically grounded counterweight to the enthusiasm for
+flow-based intervention: not that flow does nothing, but that in everyday life it is the skill
+component that does the work, the challenge component carries a cost, and the most favourable
+moments are not the flow moments.
+
+Finally, the group average was not universal. In 4 of 63 participants the concurrent flow-pain
+slope was reliably positive, and no baseline profile predicted where a given patient fell.
+Baseline characteristics indexed how much flow a patient typically experienced but not how that
+experience related to their pain, a dissociation between level and coupling that is an argument for
+measuring the dynamics directly rather than inferring them from questionnaires
+\citep{wright2020personalized,fisher2018lack,molenaar2004manifesto}.
+
+\subsection{Limitations}
+Several limitations qualify these conclusions. They concern, in turn, the measurement of the
+construct, the causal status of the associations, the temporal resolution, the confounding of
+challenge with exertion, the statistical power for person-level analyses, and the generality of the
+sample.
+
+First, and most importantly, the flow measure rests on four single momentary items and covers three
+of the nine dimensions Csikszentmihalyi describes, leaving clear goals, unambiguous feedback, sense
+of control, loss of self-consciousness, and time transformation unmeasured. It is a core flow proxy
+rather than a flow scale \citep{jackson2002assessing}, and it is a secondary,
+analyst-constructed measure, since the source study analysed these items separately
+\citep{viane2004acceptance}. Single-item measurement also raises a specific technical objection to
+the decomposition: measurement error in correlated predictors can produce sign reversals under
+joint entry as an artefact. Three considerations weigh against that reading here. The reversal is
+not marginal ($p=.004$ in nearly $6{,}000$ moments) and holds on all four pain outcomes; it is
+theoretically interpretable, since demanding activity plausibly costs something; and it converges
+with the independent channel finding, which does not depend on joint entry at all. The objection
+nevertheless remains open, and replication with multi-item momentary flow scales is the way to
+close it.
+
+Second, the analysis is observational. Nothing was manipulated, and flow, pain, and activity can
+influence one another through unmeasured time-varying causes such as mood, medication, or the
+demands of the moment, so all estimates are within-person predictive associations rather than
+causal effects \citep{rohrer2018thinking}. The channel comparison in particular contrasts moments
+that participants selected rather than conditions to which they were assigned.
+
+Third, the temporal resolution is coarse and unequal. Adjacent prompts are separated by variable
+hours, no lag is carried overnight, and momentary reports are retrospective over a short window.
+Flow is by definition a state that fluctuates from moment to moment, and an episode can begin and
+end entirely within one interval. The absence of lagged effects is therefore open to two readings
+that these data cannot separate: a measurement limitation, in which the state fluctuates faster
+than the sampling grid, or a substantive null, in which flow accompanies less pain only while it
+lasts. The first is the more likely and is how the result is framed here, but the second is
+compatible with the induction studies, which also measure pain during rather than after the state
+\citep{hamaker2017no}.
+
+Fourth, the confounding of challenge with physical exertion could be adjusted for but not
+dissolved. Challenge correlated $r=.57$ within persons with self-reported physical activation, and
+although every model was estimated with activation as a covariate and none of the focal estimates
+moved, the open-text activity descriptions were not coded, so demand and exertion could not be
+separated substantively. This limits how far the channel ordering can be interpreted as a statement
+about psychological demand rather than about physical load.
+
+Fifth, the person-level analyses rest on 68 participants, and 63 of them contributed enough moments
+for an individual slope. That is adequate for describing heterogeneity but modest for explaining
+it, so the absence of trait moderation should be read as a failure to detect rather than as
+evidence of no moderation.
+
+Sixth, all data come from a single chronic-pain cohort recruited at one pain clinic, with a
+predominance of women and of back and widespread pain. The channel model was developed in
+non-clinical samples, and the between-person balance reversal reported here may well be specific to
+a population that has reason to adjust its activities downward. Replication in other pain
+conditions, and in non-clinical samples using the same nested tests, is needed before either the
+structural or the substantive conclusions are generalized.
+
+\subsection{Future directions}
+Four directions follow. First, the structural tests used here cost little and should be routine.
+Any study that reports a momentary flow composite can also report its constituents alone and
+jointly, and any study that reports a balance term can also report the nested comparison against
+an additive model and a response surface. Whether the failure of configurality found here is
+specific to chronic pain or general is an empirical question that existing datasets could answer
+immediately.
+
+Second, the temporal question needs a design built for it. Burst sampling, event-contingent prompts
+triggered by the start and end of activities, or continuous passive sensing of activity would
+shorten the interval enough to distinguish a genuinely concurrent-only relation from one that the
+ninety-minute grid cannot resolve. Only such a design can move the flow-induced-analgesia question
+from co-occurrence toward precedence.
+
+Third, the channel result invites an experimental test. Because relaxation, not flow, was the least
+painful region of the plane, a within-person experiment that assigns competent but undemanding
+activity against equally absorbing but demanding activity would separate the skill and challenge
+components that these observational data can only decompose statistically. That is also the design
+that would test whether the cost of challenge is psychological demand or physical exertion.
+
+Fourth, the dissociation between level and coupling deserves following up. Baseline profiles
+predicted how much flow a patient experienced but not how that experience related to their pain,
+and four patients showed a reliably positive coupling. Whether person-specific coupling estimates
+carry information beyond questionnaires, and whether they can be used to decide for whom an
+activity-based intervention is appropriate, is an open and clinically consequential question
+\citep{wright2020personalized}.
+
+\section{Conclusion}
+Measured moment by moment in the daily life of patients with chronic pain, the flow construct did
+not hold together in the way its standard operationalization assumes: the match between challenge
+and skill added nothing to the two components entered separately, in any functional form tested,
+and between persons better-matched activity accompanied less flow rather than more, while the
+four-item composite lost information relative to its constituents because absorption and skill
+tracked lower pain and challenge, once the others were held constant, tracked higher pain. The
+flow experience did accompany a better experience of pain at the same prompt, most strongly its
+interference, but it predicted nothing at the next prompt while autoregressive effects in the same
+models remained large, and the least painful region of the challenge-skill plane was the
+low-challenge, high-skill relaxation channel rather than flow. Taken together, these results
+recommend that experience-sampling research report the constituents of flow separately and jointly
+rather than a composite, and they suggest that what accompanies relief in everyday life with
+chronic pain is competence without demand rather than optimal challenge.
+
+\clearpage
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\clearpage
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+\subsection*{Supplementary Figures}
+\addcontentsline{toc}{subsection}{Supplementary Figures}
+
+\begin{figure}[H]
+\raggedright
+\caption{The flow analytic frame.}
+\label{sfig:frame}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/supplementary/SUP_01_analytic_frame.png}}
+\figurenote{Panel A shows the number of moments per participant with all four appraisals answered.
+Panel B shows the item means with their standard deviations against the scale midpoint. Panel C
+shows the between-person variance share of each item. Panel D compares the moments dropped by
+listwise deletion with those retained; coloured bars are significant at $p<.05$. Panel E shows the
+item means by prompt position within the day, restricted to positions with at least 150 moments.
+Panel F shows the flow experience and pain intensity across the 14 study days.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{How the standardization rule decides every descriptive claim.}
+\label{sfig:standardization}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/supplementary/SUP_02_standardization.png}}
+\figurenote{Panel A shows the median participant's share of flow moments under each rule, with the
+full person range. Panel B shows the channel composition of all moments under each rule. Panel C
+shows the balance and elevation effects estimated on each metric. Panel D shows the ordered
+per-person prevalence under the two absolute rules. Panel E shows how often two rules agree on
+whether a given moment is a flow moment. Panel F shows how many participants never reach flow under
+each rule; only the absolute rules can represent absence.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Diagnostics of the balance parameterization.}
+\label{sfig:baldiag}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/supplementary/SUP_03_balance_diagnostics.png}}
+\figurenote{Panel A shows the mean residual of the additive challenge-plus-skill model over the
+challenge-skill plane; a configural effect would appear as a ridge along the dashed diagonal.
+Panel B shows the coefficients of the full second-order response surface. Panel C shows the simple
+slopes of balance at low, average, and high elevation inside the balance-and-elevation
+parameterization. Panel D repeats the mismatch-within-elevation description on the person-centred
+metric. Panel E places every nested test on a common significance scale, separating the tests of
+configurality from the two diagnostics of the parameterization. Panel F shows the number of moments
+in each cell of the plane.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Temporal architecture of the construct.}
+\label{sfig:temporal}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/supplementary/SUP_04_temporal_architecture.png}}
+\figurenote{Panel A shows the condition terms predicting the flow experience at the same prompt and
+one prompt later, estimated on the same rows. Panel B compares the same-prompt and lagged elevation
+effects directly. Panel C shows the between-person standard deviation of each lag-1 effect. Panel D
+places the lag-1 flow effects next to the outcome's own autoregression from the same model. Panels
+E and F show the temporal and contemporaneous networks estimated with the flow composite in place
+of the absorption node; asterisks mark $p<.05$.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Person-level flow proneness, coupling, and baseline profiles.}
+\label{sfig:personlevel}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/supplementary/SUP_05_person_level.png}}
+\figurenote{Panel A shows the partial correlation of each person-level flow variable with each
+baseline profile, controlling the participant's mean momentary pain; asterisks mark $p<.05$. Panel
+B shows the variance in each mean momentary state added by flow proneness over the three profiles.
+Panel C compares participants whose flow-pain slope is negative with the rest. Panels D and E plot
+the person-specific slope against the participant's mean flow experience and against the number of
+moments they contributed. Panel F places each participant on the challenge-skill plane, coloured by
+their share of flow moments.}
+\end{figure}
+
+\begin{figure}[H]
+\raggedright
+\caption{Robustness of the flow-pain association.}
+\label{sfig:robust}
+\noindent\includegraphics[width=0.98\textwidth]{\asset{figures/supplementary/SUP_06_robustness.png}}
+\figurenote{Panel A shows the flow experience, balance, and elevation estimated together in the
+same concurrent model. Panel B shows the effect of momentary physical activation in those models.
+Panel C shows how far each focal estimate moves when day and prompt position are added as
+covariates. Panel D shows the raw momentary profile of the four channels. Panel E compares the
+between-person standard deviation of the flow slope with the absolute size of the fixed effect.
+Panel F shows the person-centred distributions of the two focal variables.}
+\end{figure}
+
+\clearpage
+\subsection*{Supplementary Tables}
+\addcontentsline{toc}{subsection}{Supplementary Tables}
+
+\input{\asset{tables/supplementary/SUP_01_item_correlations}}
+\input{\asset{tables/supplementary/SUP_02_prevalence}}
+\input{\asset{tables/supplementary/SUP_03_standardization_sensitivity}}
+\input{\asset{tables/supplementary/SUP_04_condition_models}}
+\input{\asset{tables/supplementary/SUP_05_balance_diagnostics}}
+\input{\asset{tables/supplementary/SUP_06_condition_lagged}}
+\input{\asset{tables/supplementary/SUP_07_network_substitution}}
+\input{\asset{tables/supplementary/SUP_08_channel_profiles}}
+\input{\asset{tables/supplementary/SUP_09_person_level}}
+\input{\asset{tables/supplementary/SUP_10_robustness}}
+
+\end{document}

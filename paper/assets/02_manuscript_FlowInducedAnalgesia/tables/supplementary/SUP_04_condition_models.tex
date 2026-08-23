@@ -1,0 +1,43 @@
+\begin{table}[!htbp]
+\raggedright
+\caption{Fixed effects of every nested condition model.}
+\label{tab:sup-condmodels}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcccc@{}}
+\toprule
+Model & Term & $b$ & SE & 95\% CI & $p$ \\
+\midrule
+challenge + skill & Challenge & 0.285 & 0.008 & [0.270, 0.300] & <.001 \\
+challenge + skill & Skill & 0.507 & 0.010 & [0.488, 0.526] & <.001 \\
+challenge + skill + balance & Challenge & 0.284 & 0.008 & [0.269, 0.300] & <.001 \\
+challenge + skill + balance & Skill & 0.508 & 0.010 & [0.488, 0.527] & <.001 \\
+challenge + skill + balance & Balance & -0.009 & 0.011 & [-0.031, 0.014] & .452 \\
+challenge + skill + overload & Challenge & 0.276 & 0.014 & [0.248, 0.304] & <.001 \\
+challenge + skill + overload & Skill & 0.516 & 0.016 & [0.485, 0.548] & <.001 \\
+challenge + skill + overload & Overload kink & 0.017 & 0.023 & [-0.028, 0.062] & .452 \\
+challenge x skill & Challenge & 0.285 & 0.008 & [0.270, 0.300] & <.001 \\
+challenge x skill & Skill & 0.507 & 0.010 & [0.488, 0.526] & <.001 \\
+challenge x skill & Challenge $\times$ skill & 0.000 & 0.005 & [-0.010, 0.010] & .970 \\
+quadratic response surface & Challenge & 0.289 & 0.008 & [0.273, 0.304] & <.001 \\
+quadratic response surface & Skill & 0.508 & 0.011 & [0.487, 0.530] & <.001 \\
+quadratic response surface & Challenge$^2$ & -0.008 & 0.004 & [-0.016, 0.000] & .051 \\
+quadratic response surface & Skill$^2$ & 0.003 & 0.005 & [-0.008, 0.013] & .622 \\
+quadratic response surface & Challenge $\times$ skill & 0.001 & 0.005 & [-0.009, 0.012] & .804 \\
+quadratic surface + balance & Challenge & 0.295 & 0.008 & [0.279, 0.311] & <.001 \\
+quadratic surface + balance & Skill & 0.503 & 0.011 & [0.482, 0.525] & <.001 \\
+quadratic surface + balance & Challenge$^2$ & -0.034 & 0.007 & [-0.048, -0.020] & <.001 \\
+quadratic surface + balance & Skill$^2$ & -0.019 & 0.007 & [-0.033, -0.005] & .010 \\
+quadratic surface + balance & Balance & -0.130 & 0.030 & [-0.188, -0.071] & <.001 \\
+quadratic surface + balance & Challenge $\times$ skill & 0.048 & 0.012 & [0.024, 0.071] & <.001 \\
+balance x elevation & Balance & 0.020 & 0.012 & [-0.003, 0.043] & .084 \\
+balance x elevation & Elevation & 0.810 & 0.019 & [0.773, 0.847] & <.001 \\
+balance x elevation & Balance $\times$ elevation & 0.043 & 0.010 & [0.023, 0.063] & <.001 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} All models predict the flow experience from person-mean centred predictors with a random person intercept, estimated by maximum likelihood. The ``quadratic surface + balance'' model is reported for completeness; its balance coefficient is not interpretable in isolation because balance correlates .93 with the squared discrepancy that the surface already contains.}
+\endgroup
+\end{table}

@@ -1,0 +1,43 @@
+\begin{table}[!htbp]
+\raggedright
+\caption{Is the challenge-skill condition configural or additive?}
+\label{tab:condition}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textit{Panel A.} Balance and elevation predicting the flow experience (multilevel model with random slopes).\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Term & $b$ & SE & 95\% CI & $p$ & Random SD \\
+\midrule
+Balance, within person & 0.006 & 0.020 & [-0.033, 0.045] & .782 & 0.131 \\
+Elevation, within person & 0.744 & 0.024 & [0.697, 0.791] & <.001 & 0.164 \\
+Balance, between persons & -0.111 & 0.049 & [-0.207, -0.015] & .028 &  \\
+Elevation, between persons & 0.796 & 0.085 & [0.629, 0.963] & <.001 &  \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel B.} Nested likelihood-ratio tests of every configural functional form, each added to the additive challenge-plus-skill model.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Term added to challenge + skill & $\Delta$ df & $\chi^2$ & $p$ & $\Delta$ AIC & $\Delta$ BIC \\
+\midrule
+Balance, $-|C-S|$ & 1 & 0.56 & .452 & -1.4 & -8.1 \\
+One-sided kink at $C=S$ & 1 & 0.56 & .452 & -1.4 & -8.1 \\
+Interaction, $C \times S$ & 1 & 0.00 & .970 & -2.0 & -8.7 \\
+Quadratic response surface & 3 & 3.93 & .270 & -2.1 & -22.2 \\
+Four-channel quadrant & 3 & 8.16 & .043 & 2.2 & -17.9 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel C.} The two parameterizations of the condition at equal degrees of freedom.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
+\toprule
+Parameterization & df & AIC & BIC & $\Delta$ AIC \\
+\midrule
+balance + elevation & 5 & 17545.4 & 17578.8 & 265.7 \\
+challenge + skill (additive) & 5 & 17279.7 & 17313.2 & 0.0 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} Balance is $-|C-S|$ and elevation $(C+S)/2$, both person-mean centred; $C$ is challenge and $S$ skill. Panel A is estimated with REML and random slopes for both within-person terms. Panels B and C are estimated with maximum likelihood and a random intercept, so that only the fixed-effect structure differs across the compared models. Positive $\Delta$ AIC and $\Delta$ BIC favour the more complex model. The four appraisals are single momentary items; every flow variable is a secondary, analyst-constructed measure, since the source study analysed the items separately.}
+\endgroup
+\end{table}

@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\raggedright
+\caption{Substituting the flow composite for the single absorption node.}
+\label{tab:sup-network}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Edge & Benchmark (absorption) & $p$ & With the composite & $p$  & Difference \\
+\midrule
+Pain(t-1) $\rightarrow$ activity node(t) & -0.048 & .065 & -0.021 & .413 & 0.027 \\
+Activity node(t-1) $\rightarrow$ Pain(t) & 0.003 & .809 & 0.000 & .991 & -0.003 \\
+Pain - activity node (contemporaneous) & -0.064 & .003 & -0.066 & .002 & -0.002 \\
+Attention - activity node (contemporaneous) & -0.022 & .188 & -0.027 & .109 & -0.005 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} Both networks are multilevel vector autoregressive models on four nodes: momentary pain, its threat value, attention to pain, and either goal absorption (benchmark) or the flow composite. Only the edges that involve the substituted node can change; none changes sign or significance.}
+\endgroup
+\end{table}

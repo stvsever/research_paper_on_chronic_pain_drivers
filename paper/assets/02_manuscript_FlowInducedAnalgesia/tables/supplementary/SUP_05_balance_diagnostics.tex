@@ -1,0 +1,43 @@
+\begin{table}[!htbp]
+\raggedright
+\caption{Diagnostics of the balance parameterization.}
+\label{tab:sup-baldiag}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textit{Panel A.} Why the balance term is not interpretable on its own.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lc@{}}
+\toprule
+Quantity & Value \\
+\midrule
+$r$(balance, $-(C-S)^2$) & 0.927 \\
+$r$(balance, $C^2$) & -0.506 \\
+$r$(balance, $S^2$) & -0.324 \\
+$r$(balance, elevation) & 0.030 \\
+$b$ challenge (additive model) & 0.285 \\
+$b$ skill (additive model) & 0.507 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel B.} Simple slopes of balance across elevation.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Elevation & Value (centred) & Balance $b$ & SE & 95\% CI & $p$ \\
+\midrule
+-1 SD & -1.179 & -0.031 & 0.016 & [-0.063, 0.002] & .064 \\
+person mean & 0.000 & 0.020 & 0.012 & [-0.003, 0.043] & .084 \\
++1 SD & 1.179 & 0.070 & 0.017 & [0.037, 0.103] & <.001 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel C.} The two comparisons in which balance appears to matter.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
+\toprule
+Comparison & $\chi^2$ & df & $p$ & $\Delta$ AIC \\
+\midrule
+balance added to the quadratic surface & 18.87 & 1 & <.001 & 16.9 \\
+balance x elevation inside the balance-elevation form & 17.60 & 1 & <.001 & 15.6 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} $C$ is challenge and $S$ skill, both person-mean centred. Balance is a monotone transformation of the absolute discrepancy and therefore nearly collinear with the squared discrepancy that a quadratic surface already contains; the balance-and-elevation form additionally constrains challenge and skill to equal weight, which the free additive estimates reject. Both comparisons in Panel C are properties of those parameterizations rather than evidence of configurality, which is why no configural form beats the additive model in \Cref{tab:condition}.}
+\endgroup
+\end{table}

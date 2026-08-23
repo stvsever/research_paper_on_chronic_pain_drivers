@@ -1,0 +1,23 @@
+\begin{table}[!htbp]
+\raggedright
+\caption{Does the challenge-skill condition precede the flow experience?}
+\label{tab:sup-condlag}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcccc@{}}
+\toprule
+Model & Term & $b$ & SE & $p$ & $n$ obs \\
+\midrule
+Lag 1 & Balance at $t-1$ & -0.007 & 0.017 & .696 & 5,065 \\
+Lag 1 & Elevation at $t-1$ & 0.052 & 0.028 & .062 & 5,065 \\
+Lag 1 & Flow experience at $t-1$ & 0.108 & 0.019 & <.001 & 5,065 \\
+Same beep & Balance, same beep & -0.001 & 0.022 & .963 & 5,065 \\
+Same beep & Elevation, same beep & 0.856 & 0.022 & <.001 & 5,065 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} Both models are fitted on the same rows so the lagged and same-beep estimates are directly comparable. The lag-1 model controls the flow experience's own autoregression; predictors are person-standardized and lags are built within day.}
+\endgroup
+\end{table}

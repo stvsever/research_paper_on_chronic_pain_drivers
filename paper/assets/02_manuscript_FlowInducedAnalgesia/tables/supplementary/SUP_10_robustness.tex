@@ -1,0 +1,45 @@
+\begin{table}[!htbp]
+\raggedright
+\caption{Robustness of the flow analyses.}
+\label{tab:sup-robustness}
+\footnotesize
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textit{Panel A.} The flow-pain estimate at four compliance floors.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Compliance floor & $n$ persons & $n$ moments & $b$ & SE & $p$ \\
+\midrule
+$\geq$ 20 moments & 68 & 5,969 & -0.0937 & 0.0200 & <.001 \\
+$\geq$ 30 moments & 67 & 5,944 & -0.0938 & 0.0202 & <.001 \\
+$\geq$ 50 moments & 63 & 5,772 & -0.0912 & 0.0208 & <.001 \\
+$\geq$ 70 moments & 61 & 5,653 & -0.0883 & 0.0212 & <.001 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel B.} Day and prompt position added as level-1 covariates.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccc@{}}
+\toprule
+Model & Focal term & $b$ without & $b$ with & $p$ & $p$ beep & $p$ day \\
+\midrule
+V2: condition $\rightarrow$ experience & elevation\_w & 0.7443 & 0.7456 & <.001 & <.001 & .959 \\
+Flow $\rightarrow$ pain (activity-adjusted) & FLOWEXP\_w & -0.0937 & -0.1010 & <.001 & <.001 & .079 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{6pt}\noindent\textit{Panel C.} Moments lost to listwise deletion.\par\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Measure & Mean, retained & Mean, dropped & $n$ dropped & Cohen's $d$ & $p$ \\
+\midrule
+Pain intensity & 4.53 & 4.36 & 286 & -0.115 & .052 \\
+Pain interference & 3.86 & 3.79 & 272 & -0.043 & .476 \\
+Attention to pain & 2.89 & 2.95 & 255 & 0.034 & .593 \\
+Threat value & 2.23 & 2.44 & 268 & 0.151 & .019 \\
+Negative affect & 1.92 & 2.14 & 280 & 0.193 & .002 \\
+Positive affect & 4.23 & 4.27 & 286 & 0.033 & .583 \\
+Physical activation & 3.05 & 2.62 & 274 & -0.235 & <.001 \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}\noindent\parbox{\textwidth}{\footnotesize\textit{Note.} Panel A repeats the activity-adjusted concurrent model of pain intensity with a stricter minimum number of completed moments per participant. In Panel B the focal estimate is compared with and without day and prompt position; prompt position is itself significant but moves no focal estimate. Panel C compares the moments retained in the flow analytic frame with the 4.6\% dropped for a missing appraisal.}
+\endgroup
+\end{table}
