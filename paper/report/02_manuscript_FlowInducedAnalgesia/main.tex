@@ -207,11 +207,8 @@ with what the person was doing, attention to pain, and the threat value of pain,
 possible to ask the ecological counterpart of the flow-induced-analgesia question. The data are a
 secondary analysis: the source study analysed these items separately and never as a flow index
 \citep{viane2004acceptance}, so every flow variable here is an analyst-constructed measure and is
-reported as such. A companion paper uses the same diary to model the within-person
-threat-attention-pain circuit and treats the absorption item as goal engagement without flow
-framing; the present paper is about the flow construct itself. Because the data are
-observational, all associations are read as within-person predictive relations rather than causal
-effects \citep{rohrer2018thinking}. Three research questions guide the analysis.
+reported as such. Because the data are observational, all associations are read as within-person
+predictive relations rather than causal effects \citep{rohrer2018thinking}. Three research questions guide the analysis.
 
 \begin{description}[leftmargin=2.2em,itemsep=2pt]
   \item[\textbf{RQ1.}] Does the challenge-skill condition relate to the momentary flow experience
@@ -234,7 +231,7 @@ through a university pain clinic, first completed a battery of validated questio
 carried a palmtop computer that signalled them eight times per day for two weeks to complete a
 short momentary diary, together with a brief morning and evening diary. Sixty-eight participants
 met the study's compliance criterion of at least 25 completed prompts. Of their completed prompts,
-$5{,}976$ carried all four activity appraisals and form the analytic frame for this paper
+$5{,}976$ carried all four activity appraisals and form the analytic frame for the analyses
 (median $=92$ per person); the $4.6\%$ of prompts lost to a missing appraisal are characterized in
 \Cref{sfig:frame} and \Cref{tab:sup-robustness}. Baseline questionnaires were available for 67
 participants. Sample characteristics and the momentary appraisals are summarized in
@@ -333,10 +330,11 @@ covariate. The comparison of the two sets is the constituent decomposition that
 of statistical suppression \citep{mackinnon2000equivalence}. Because the flow experience is the
 mean of absorption and enjoyment, the composite model is exactly the constituent model under the
 constraint that those two carry equal weight and that challenge and skill carry none, so the two
-are nested and can be compared by likelihood-ratio test. As an independent, multivariate check, the
-companion paper's benchmark multilevel vector autoregressive network \citep{epskamp2018gaussian}
-was re-estimated with the flow composite substituted for the single absorption node, and the two
-networks were compared edge by edge.
+are nested and can be compared by likelihood-ratio test. As an independent, multivariate check, a
+four-node multilevel vector autoregressive network \citep{epskamp2018gaussian} of momentary pain,
+its threat value, attention to pain, and absorption was estimated and then re-estimated with the
+flow composite substituted for the single absorption node, and the two networks were compared edge
+by edge.
 
 \paragraph{RQ3: flow and the momentary experience of pain.} Concurrent multilevel models regressed
 each pain measure on the flow experience, with the condition terms in the model, a random slope for
@@ -507,8 +505,9 @@ relative to its parts, and it loses it in the specific way \citet{vanderweele202
 warns about, by averaging over constituents that pull in opposite directions.
 
 An independent, multivariate check pointed the same way. Substituting the flow composite for the
-single absorption node in the companion paper's four-node temporal network reproduced that network
-almost exactly: across all 22 estimated parameters the two networks correlated $r=.997$, the
+single absorption node in a four-node temporal network of momentary pain, its threat value,
+attention to pain, and absorption reproduced that network almost exactly: across all 22 estimated
+parameters the two networks correlated $r=.997$, the
 largest edge change was $.027$, and no edge changed sign or significance
 (\Cref{fig:decomposition}, Panel F, \Cref{tab:sup-network}). In a dynamic system of four nodes,
 then, the composite behaves indistinguishably from its dominant constituent. H2 was not supported.
