@@ -119,7 +119,8 @@ def main_02():
                         "form, each added to the additive challenge-plus-skill model."),
          (pc, "lcccc", "The two parameterizations of the condition at equal degrees of "
                        "freedom.")],
-        "Is the challenge-skill condition configural or additive?", "tab:condition",
+        "The challenge-skill condition predicting the flow experience, and nested "
+        "tests of configurality.", "tab:condition",
         note=("Balance is $-|C-S|$ and elevation $(C+S)/2$, both person-mean centred; "
               "$C$ is challenge and $S$ skill. Panel A is estimated with REML and random "
               "slopes for both within-person terms. Panels B and C are estimated with "
@@ -449,7 +450,7 @@ def sup_06():
         "$p$": [fmt_p(v) for v in c["p"]],
         "$n$ obs": [f"{int(v):,}" for v in c["n_obs"]]})
     write("SUP_06_condition_lagged.tex", latex_table(
-        tab, "Does the challenge-skill condition precede the flow experience?",
+        tab, "The challenge-skill condition at the previous prompt and at the same prompt.",
         "tab:sup-condlag", colspec="llcccc",
         note=("Both models are fitted on the same rows so the lagged and same-beep "
               "estimates are directly comparable. The lag-1 model controls the flow "
